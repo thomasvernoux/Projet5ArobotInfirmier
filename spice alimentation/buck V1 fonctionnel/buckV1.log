@@ -8,15 +8,15 @@ Gmin = 0.115292
 Gmin = 0.0123794
 Gmin = 0.00132923
 Gmin = 0.000142725
+Gmin = 1.5325e-005
+Gmin = 1.6455e-006
+Gmin = 1.76685e-007
 vernier = 0.5
+Gmin = 4.51803e-008
 vernier = 0.666667
-Gmin = 4.98766e-005
 vernier = 0.888888
+Gmin = 8.72299e-009
 vernier = 1
-Gmin = 7.53781e-006
-Gmin = 8.09366e-007
-Gmin = 8.6905e-008
-Gmin = 9.33136e-009
 Gmin = 1.00195e-009
 Gmin = 1.07583e-010
 Gmin = 1.15517e-011
@@ -26,20 +26,20 @@ Gmin = 0
 Gmin stepping succeeded in finding the operating point.
 
 
-Date: Fri Sep 24 17:20:26 2021
-Total elapsed time: 0.172 seconds.
+Date: Fri Sep 24 17:25:12 2021
+Total elapsed time: 0.811 seconds.
 
 tnom = 27
 temp = 27
 method = modified trap
-totiter = 2764
-traniter = 2226
-tranpoints = 1045
-accept = 1045
-rejected = 0
-matrix size = 13
-fillins = 7
+totiter = 78054
+traniter = 77522
+tranpoints = 19288
+accept = 13665
+rejected = 5623
+matrix size = 18
+fillins = 8
 solver = Alternate
-Matrix Compiler1: 1.04 KB object code size  0.3/0.2/[0.1]
-Matrix Compiler2: 1.35 KB object code size  0.2/0.2/[0.2]
+Matrix Compiler1: 1.48 KB object code size  0.4/0.3/[0.2]
+Matrix Compiler2: 1.92 KB object code size  0.3/0.4/[0.3]
 
