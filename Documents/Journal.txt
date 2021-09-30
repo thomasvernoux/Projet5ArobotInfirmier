@@ -1,5 +1,7 @@
 2021/09/24
 Mise en place du groupe, organisation des taches.
+30/09/2021
+Finalisation des simulations pour le controle mosfet (PWL) par Paul.
 
 
 
