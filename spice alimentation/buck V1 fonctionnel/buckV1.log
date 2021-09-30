@@ -1,4 +1,4 @@
-Circuit: * C:\Users\thoma\Documents\GitHub\Projet5ArobotInfirmier\spice alimentation\buckV1.asc
+Circuit: * A:\Bureau\Projet Robot Infirmier\spice alimentation\buck V1 fonctionnel\buckV1.asc
 
 Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
 Starting Gmin stepping
@@ -12,34 +12,38 @@ Gmin = 1.5325e-005
 Gmin = 1.6455e-006
 Gmin = 1.76685e-007
 vernier = 0.5
-Gmin = 4.51803e-008
-vernier = 0.666667
-vernier = 0.888888
-Gmin = 8.72299e-009
+vernier = 0.25
+Gmin = 6.41063e-008
+vernier = 0.333333
+vernier = 0.444444
+Gmin = 2.97567e-008
+vernier = 0.592592
+Gmin = 8.80658e-009
+vernier = 0.790123
 vernier = 1
-Gmin = 1.00195e-009
-Gmin = 1.07583e-010
-Gmin = 1.15517e-011
-Gmin = 1.24035e-012
-Gmin = 1.33182e-013
+Gmin = 1.33156e-009
+Gmin = 1.42975e-010
+Gmin = 1.53518e-011
+Gmin = 1.64839e-012
+Gmin = 1.76994e-013
 Gmin = 0
 Gmin stepping succeeded in finding the operating point.
 
 
-Date: Fri Sep 24 17:25:12 2021
-Total elapsed time: 0.811 seconds.
+Date: Thu Sep 30 18:07:05 2021
+Total elapsed time: 1.401 seconds.
 
 tnom = 27
 temp = 27
 method = modified trap
-totiter = 78054
-traniter = 77522
-tranpoints = 19288
-accept = 13665
-rejected = 5623
-matrix size = 18
-fillins = 8
+totiter = 101726
+traniter = 101021
+tranpoints = 31817
+accept = 21343
+rejected = 10474
+matrix size = 19
+fillins = 12
 solver = Alternate
-Matrix Compiler1: 1.48 KB object code size  0.4/0.3/[0.2]
-Matrix Compiler2: 1.92 KB object code size  0.3/0.4/[0.3]
+Matrix Compiler1: 1.64 KB object code size  0.5/0.3/[0.2]
+Matrix Compiler2: 2.09 KB object code size  0.4/0.6/[0.4]
 

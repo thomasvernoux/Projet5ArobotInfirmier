@@ -1,0 +1,19 @@
+* A:\Bureau\Projet Robot Infirmier\spice alimentation\buck V1 fonctionnel\buckV1.asc
+V1 Vcc 0 36
+M1 Vcc cmd N001 N001 BSP89
+D1 0 N002 1N4148
+L1 N002 sortie 100m
+C1 sortie 0 1µ
+R1 sortie 0 100k
+V2 comp 0 10
+XU2 comp sortie Vcc 0 cmd OP1177
+R2 N002 N001 10k
+.model D D
+.lib A:\Documents\LTspiceXVII\lib\cmp\standard.dio
+.model NMOS NMOS
+.model PMOS PMOS
+.lib A:\Documents\LTspiceXVII\lib\cmp\standard.mos
+.tran 50m
+.lib ADI1.lib
+.backanno
+.end
