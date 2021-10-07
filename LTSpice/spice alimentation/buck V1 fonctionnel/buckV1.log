@@ -1,0 +1,45 @@
+Circuit: * C:\Users\thoma\Documents\GitHub\Projet5ArobotInfirmier\spice alimentation\buck V1 fonctionnel\buckV1.asc
+
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Gmin = 10
+Gmin = 1.07374
+Gmin = 0.115292
+Gmin = 0.0123794
+Gmin = 0.00132923
+Gmin = 0.000142725
+Gmin = 1.5325e-005
+Gmin = 1.6455e-006
+Gmin = 1.76685e-007
+vernier = 0.5
+Gmin = 2.96428e-008
+vernier = 0.666667
+Gmin = 7.61066e-009
+vernier = 0.888888
+vernier = 1
+Gmin = 1.00195e-009
+Gmin = 1.07583e-010
+Gmin = 1.15517e-011
+Gmin = 1.24035e-012
+Gmin = 1.33182e-013
+Gmin = 0
+Gmin stepping succeeded in finding the operating point.
+
+
+Date: Fri Oct 01 12:05:15 2021
+Total elapsed time: 1.069 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 107492
+traniter = 106972
+tranpoints = 30559
+accept = 23724
+rejected = 6835
+matrix size = 20
+fillins = 4
+solver = Alternate
+Matrix Compiler1: 1.39 KB object code size  0.4/0.3/[0.1]
+Matrix Compiler2: off  [0.4]/0.5/0.4
+
