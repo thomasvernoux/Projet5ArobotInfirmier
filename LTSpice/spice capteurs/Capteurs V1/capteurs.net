@@ -1,0 +1,16 @@
+* C:\Users\thoma\Documents\GitHub\Projet5ArobotInfirmier\LTSpice\spice capteurs\Capteurs V1\capteurs.asc
+D§R 0 N003 D
+D§iR 0 N004 D
+R1 N002 N003 50
+R2 N002 N004 50
+V1 N002 0 5
+I1 N001 0 1m
+R3 Vs N001 1k
+V2 12 0 12
+XU1 0 N001 12 0 Vs level.2 Avol=1Meg GBW=10Meg Slew=10Meg ilimit=25m rail=0 Vos=0 phimargin=45 en=0 enk=0 in=0 ink=0 Rin=500Meg
+.model D D
+.lib C:\Users\thoma\Documents\LTspiceXVII\lib\cmp\standard.dio
+.dc I1 1m 10m 0.1m
+.lib UniversalOpamps2.sub
+.backanno
+.end
