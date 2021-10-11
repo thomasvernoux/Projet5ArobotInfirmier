@@ -93,12 +93,16 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+
+  int a = 3;
+
+
+
   while (1)
   {
 
+	  a ++;
 
-
-	  int a = 3;
 
 
 
