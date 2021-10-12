@@ -128,8 +128,9 @@ int main(void)
 
 
 	  HAL_UART_Receive_IT(&huart1, &D, sizeof(D));
-	  HAL_Delay(100);
-
+	  while ((UartReady != SET)&&(UartError != SET))
+	    {
+	    }
 
 	  HAL_Delay(1000);
 

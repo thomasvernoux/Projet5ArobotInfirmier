@@ -1444,3 +1444,181 @@ arm-none-eabi-size   Projet_Robot_Infirmier.elf
   11860	     20	   1836	  13716	   3594	Projet_Robot_Infirmier.elf
 Finished building: default.size.stdout
  
+16:28:01 **** Incremental Build of configuration Debug for project LPUART_TwoBoards_ComIT ****
+make -j4 all 
+arm-none-eabi-size   LPUART_TwoBoards_ComIT.elf 
+   text	   data	    bss	    dec	    hex	filename
+  16004	    124	   1812	  17940	   4614	LPUART_TwoBoards_ComIT.elf
+Finished building: default.size.stdout
+ 
+16:28:43 **** Incremental Build of configuration Debug for project Projet_Robot_Infirmier ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F072xB -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:130:33: warning: passing argument 2 of 'HAL_UART_Receive_IT' from incompatible pointer type [-Wincompatible-pointer-types]
+  130 |    HAL_UART_Receive_IT(&huart1, &D, sizeof(D));
+      |                                 ^~
+      |                                 |
+      |                                 char (*)[4]
+In file included from ../Core/Inc/stm32f0xx_hal_conf.h:288,
+                 from ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart.h:1531:75: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'char (*)[4]'
+ 1531 | HAL_StatusTypeDef HAL_UART_Receive_IT(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size);
+      |                                                                  ~~~~~~~~~^~~~~
+../Core/Src/main.c:115:9: warning: variable 'buffer' set but not used [-Wunused-but-set-variable]
+  115 |    char buffer[5];
+      |         ^~~~~~
+arm-none-eabi-gcc -o "Projet_Robot_Infirmier.elf" @"objects.list"   -mcpu=cortex-m0 -T"A:\Bureau\Projet Robot Infirmier\STM32\projetF072RB\Projet_Robot_Infirmier\STM32F072RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Projet_Robot_Infirmier.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Projet_Robot_Infirmier.elf
+ 
+arm-none-eabi-size   Projet_Robot_Infirmier.elf 
+arm-none-eabi-objdump -h -S  Projet_Robot_Infirmier.elf  > "Projet_Robot_Infirmier.list"
+arm-none-eabi-objcopy  -O binary  Projet_Robot_Infirmier.elf  "Projet_Robot_Infirmier.bin"
+   text	   data	    bss	    dec	    hex	filename
+  11836	     20	   1836	  13692	   357c	Projet_Robot_Infirmier.elf
+Finished building: default.size.stdout
+ 
+Finished building: Projet_Robot_Infirmier.bin
+ 
+Finished building: Projet_Robot_Infirmier.list
+ 
+16:29:01 **** Incremental Build of configuration Debug for project LPUART_TwoBoards_ComIT ****
+make -j4 all 
+arm-none-eabi-size   LPUART_TwoBoards_ComIT.elf 
+   text	   data	    bss	    dec	    hex	filename
+  16004	    124	   1812	  17940	   4614	LPUART_TwoBoards_ComIT.elf
+Finished building: default.size.stdout
+ 
+16:29:01 **** Incremental Build of configuration Debug for project Projet_Robot_Infirmier ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F072xB -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:130:33: warning: passing argument 2 of 'HAL_UART_Receive_IT' from incompatible pointer type [-Wincompatible-pointer-types]
+  130 |    HAL_UART_Receive_IT(&huart1, &D, sizeof(D));
+      |                                 ^~
+      |                                 |
+      |                                 char (*)[4]
+In file included from ../Core/Inc/stm32f0xx_hal_conf.h:288,
+                 from ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart.h:1531:75: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'char (*)[4]'
+ 1531 | HAL_StatusTypeDef HAL_UART_Receive_IT(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size);
+      |                                                                  ~~~~~~~~~^~~~~
+../Core/Src/main.c:115:9: warning: variable 'buffer' set but not used [-Wunused-but-set-variable]
+  115 |    char buffer[5];
+      |         ^~~~~~
+arm-none-eabi-gcc -o "Projet_Robot_Infirmier.elf" @"objects.list"   -mcpu=cortex-m0 -T"A:\Bureau\Projet Robot Infirmier\STM32\projetF072RB\Projet_Robot_Infirmier\STM32F072RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Projet_Robot_Infirmier.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Projet_Robot_Infirmier.elf
+ 
+arm-none-eabi-size   Projet_Robot_Infirmier.elf 
+arm-none-eabi-objdump -h -S  Projet_Robot_Infirmier.elf  > "Projet_Robot_Infirmier.list"
+arm-none-eabi-objcopy  -O binary  Projet_Robot_Infirmier.elf  "Projet_Robot_Infirmier.bin"
+   text	   data	    bss	    dec	    hex	filename
+  11836	     20	   1836	  13692	   357c	Projet_Robot_Infirmier.elf
+Finished building: default.size.stdout
+ 
+Finished building: Projet_Robot_Infirmier.bin
+ 
+Finished building: Projet_Robot_Infirmier.list
+ 
+16:29:10 **** Incremental Build of configuration Debug for project LPUART_TwoBoards_ComIT ****
+make -j4 all 
+arm-none-eabi-size   LPUART_TwoBoards_ComIT.elf 
+   text	   data	    bss	    dec	    hex	filename
+  16004	    124	   1812	  17940	   4614	LPUART_TwoBoards_ComIT.elf
+Finished building: default.size.stdout
+ 
+16:29:10 **** Incremental Build of configuration Debug for project Projet_Robot_Infirmier ****
+make -j4 all 
+arm-none-eabi-size   Projet_Robot_Infirmier.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11836	     20	   1836	  13692	   357c	Projet_Robot_Infirmier.elf
+Finished building: default.size.stdout
+ 
+16:29:17 **** Incremental Build of configuration Debug for project Projet_Robot_Infirmier ****
+make -j4 all 
+arm-none-eabi-size   Projet_Robot_Infirmier.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11836	     20	   1836	  13692	   357c	Projet_Robot_Infirmier.elf
+Finished building: default.size.stdout
+ 
+16:29:17 **** Incremental Build of configuration Debug for project Projet_Robot_Infirmier ****
+make -j4 all 
+arm-none-eabi-size   Projet_Robot_Infirmier.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11836	     20	   1836	  13692	   357c	Projet_Robot_Infirmier.elf
+Finished building: default.size.stdout
+ 
+16:29:44 **** Incremental Build of configuration Debug for project LPUART_TwoBoards_ComIT ****
+make -j4 all 
+arm-none-eabi-size   LPUART_TwoBoards_ComIT.elf 
+   text	   data	    bss	    dec	    hex	filename
+  16004	    124	   1812	  17940	   4614	LPUART_TwoBoards_ComIT.elf
+Finished building: default.size.stdout
+ 
+16:29:44 **** Incremental Build of configuration Debug for project Projet_Robot_Infirmier ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F072xB -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:130:33: warning: passing argument 2 of 'HAL_UART_Receive_IT' from incompatible pointer type [-Wincompatible-pointer-types]
+  130 |    HAL_UART_Receive_IT(&huart1, &D, sizeof(D));
+      |                                 ^~
+      |                                 |
+      |                                 char (*)[4]
+In file included from ../Core/Inc/stm32f0xx_hal_conf.h:288,
+                 from ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart.h:1531:75: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'char (*)[4]'
+ 1531 | HAL_StatusTypeDef HAL_UART_Receive_IT(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size);
+      |                                                                  ~~~~~~~~~^~~~~
+../Core/Src/main.c:115:9: warning: variable 'buffer' set but not used [-Wunused-but-set-variable]
+  115 |    char buffer[5];
+      |         ^~~~~~
+arm-none-eabi-gcc -o "Projet_Robot_Infirmier.elf" @"objects.list"   -mcpu=cortex-m0 -T"A:\Bureau\Projet Robot Infirmier\STM32\projetF072RB\Projet_Robot_Infirmier\STM32F072RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Projet_Robot_Infirmier.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Projet_Robot_Infirmier.elf
+ 
+arm-none-eabi-size   Projet_Robot_Infirmier.elf 
+arm-none-eabi-objdump -h -S  Projet_Robot_Infirmier.elf  > "Projet_Robot_Infirmier.list"
+arm-none-eabi-objcopy  -O binary  Projet_Robot_Infirmier.elf  "Projet_Robot_Infirmier.bin"
+   text	   data	    bss	    dec	    hex	filename
+  11836	     20	   1836	  13692	   357c	Projet_Robot_Infirmier.elf
+Finished building: default.size.stdout
+ 
+Finished building: Projet_Robot_Infirmier.bin
+Finished building: Projet_Robot_Infirmier.list
+ 
+ 
+16:30:00 **** Incremental Build of configuration Debug for project Projet_Robot_Infirmier ****
+make -j4 all 
+arm-none-eabi-size   Projet_Robot_Infirmier.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11836	     20	   1836	  13692	   357c	Projet_Robot_Infirmier.elf
+Finished building: default.size.stdout
+ 
+16:30:01 **** Incremental Build of configuration Debug for project Projet_Robot_Infirmier ****
+make -j4 all 
+arm-none-eabi-size   Projet_Robot_Infirmier.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11836	     20	   1836	  13692	   357c	Projet_Robot_Infirmier.elf
+Finished building: default.size.stdout
+ 
+16:30:24 **** Incremental Build of configuration Debug for project LPUART_TwoBoards_ComIT ****
+make -j4 all 
+arm-none-eabi-size   LPUART_TwoBoards_ComIT.elf 
+   text	   data	    bss	    dec	    hex	filename
+  16004	    124	   1812	  17940	   4614	LPUART_TwoBoards_ComIT.elf
+Finished building: default.size.stdout
+ 
+16:30:25 **** Incremental Build of configuration Debug for project Projet_Robot_Infirmier ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F072xB -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:29:10: fatal error: stm32g4xx_nucleo.h: No such file or directory
+   29 | #include "stm32g4xx_nucleo.h"
+      |          ^~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [Core/Src/subdir.mk:40: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.

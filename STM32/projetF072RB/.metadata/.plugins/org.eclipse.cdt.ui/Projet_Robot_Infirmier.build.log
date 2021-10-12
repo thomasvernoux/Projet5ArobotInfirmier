@@ -1,10 +1,12 @@
-16:17:16 **** Incremental Build of configuration Debug for project Projet_Robot_Infirmier ****
+16:30:25 **** Incremental Build of configuration Debug for project Projet_Robot_Infirmier ****
 make -j4 all 
-arm-none-eabi-size   Projet_Robot_Infirmier.elf 
-   text	   data	    bss	    dec	    hex	filename
-  11860	     20	   1836	  13716	   3594	Projet_Robot_Infirmier.elf
-Finished building: default.size.stdout
- 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F072xB -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:29:10: fatal error: stm32g4xx_nucleo.h: No such file or directory
+   29 | #include "stm32g4xx_nucleo.h"
+      |          ^~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [Core/Src/subdir.mk:40: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
 
-16:17:16 Build Finished. 0 errors, 0 warnings. (took 311ms)
+16:30:25 Build Failed. 2 errors, 0 warnings. (took 364ms)
 
