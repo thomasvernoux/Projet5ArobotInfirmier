@@ -103,6 +103,7 @@ int main(void)
 
 	  a ++;
 
+	  a ++;
 
 
 
@@ -115,7 +116,8 @@ int main(void)
 
 
 
-	  HAL_Delay(100);
+
+	  //HAL_Delay(100);
 
 
     /* USER CODE END WHILE */

@@ -1,0 +1,10 @@
+16:17:16 **** Incremental Build of configuration Debug for project Projet_Robot_Infirmier ****
+make -j4 all 
+arm-none-eabi-size   Projet_Robot_Infirmier.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11860	     20	   1836	  13716	   3594	Projet_Robot_Infirmier.elf
+Finished building: default.size.stdout
+ 
+
+16:17:16 Build Finished. 0 errors, 0 warnings. (took 311ms)
+

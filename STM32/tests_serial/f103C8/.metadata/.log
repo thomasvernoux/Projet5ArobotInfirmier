@@ -1,0 +1,67 @@
+!SESSION 2021-10-12 08:49:12.661 -----------------------------------------------
+eclipse.buildId=Version 1.7.0
+java.version=11.0.10
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=fr_FR
+Framework arguments:  A:\Bureau\Codes\STM32\tests 005\.cproject
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data A:\Bureau\Projet Robot Infirmier\STM32\tests_serial\f103C8 A:\Bureau\Codes\STM32\tests 005\.cproject
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2021-10-12 08:49:18.551
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2021-10-12 08:49:18.610
+!MESSAGE Log4j initialized with config file A:\Bureau\Projet Robot Infirmier\STM32\tests_serial\f103C8\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2021-10-12 08:49:25.451
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2021-10-12 08:49:30.225
+!MESSAGE Indexed 'test_005' (20 sources, 97 headers) in 2,49 sec: 6 769 declarations; 19 442 references; 6 unresolved inclusions; 268 syntax errors; 835 unresolved names (3,1 %)
+!SESSION 2021-10-12 08:49:40.220 -----------------------------------------------
+eclipse.buildId=Version 1.7.0
+java.version=11.0.10
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=fr_FR
+Framework arguments:  A:\Bureau\Projet Robot Infirmier\STM32\tests_serial\f103C8\.cproject
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 A:\Bureau\Projet Robot Infirmier\STM32\tests_serial\f103C8\.cproject
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2021-10-12 08:49:44.260
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2021-10-12 08:49:44.315
+!MESSAGE Log4j initialized with config file A:\Bureau\Projet Robot Infirmier\STM32\tests_serial\f103C8\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2021-10-12 08:49:54.657
+!MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2021-10-12 08:50:56.303 -----------------------------------------------
+eclipse.buildId=Version 1.7.0
+java.version=11.0.10
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=fr_FR
+Framework arguments:  A:\Bureau\Projet Robot Infirmier\STM32\tests_serial\f103C8\.cproject
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data A:\Bureau\Projet Robot Infirmier\STM32\tests_serial\f103C8 A:\Bureau\Projet Robot Infirmier\STM32\tests_serial\f103C8\.cproject
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2021-10-12 08:51:00.563
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2021-10-12 08:51:00.624
+!MESSAGE Log4j initialized with config file A:\Bureau\Projet Robot Infirmier\STM32\tests_serial\f103C8\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2021-10-12 08:51:10.999
+!MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2021-10-12 08:54:36.315 -----------------------------------------------
+eclipse.buildId=Version 1.7.0
+java.version=11.0.10
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=fr_FR
+Framework arguments:  A:\Bureau\Projet Robot Infirmier\STM32\tests_serial\f103C8\.cproject
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data A:\Bureau\Projet Robot Infirmier\STM32\tests_serial\f103C8 A:\Bureau\Projet Robot Infirmier\STM32\tests_serial\f103C8\.cproject
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2021-10-12 08:54:40.276
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2021-10-12 08:54:40.330
+!MESSAGE Log4j initialized with config file A:\Bureau\Projet Robot Infirmier\STM32\tests_serial\f103C8\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2021-10-12 08:54:50.255
+!MESSAGE Started RMI Server, listening on port 41337
