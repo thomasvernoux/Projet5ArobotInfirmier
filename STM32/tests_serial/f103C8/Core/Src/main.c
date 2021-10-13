@@ -25,6 +25,8 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
+#include "T_fonctions.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -105,7 +107,9 @@ int main(void)
 
 	  a ++;
 
-	  HAL_Delay(1);
+	  T_Delay(1);
+
+	  //HAL_Delay(1);
 
 
 
