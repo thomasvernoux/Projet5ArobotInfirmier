@@ -9,7 +9,7 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
--include Drivers/STM32F1xx_HAL_Driver/Src/subdir.mk
+-include Drivers/STM32F1xx_HAL_Driver/subdir.mk
 -include Core/Startup/subdir.mk
 -include Core/Src/subdir.mk
 -include subdir.mk
@@ -61,8 +61,8 @@ all: main-build
 main-build: tests_serial.elf secondary-outputs
 
 # Tool invocations
-tests_serial.elf: $(OBJS) $(USER_OBJS) A:\Bureau\Projet\ Robot\ Infirmier\STM32\tests_serial\f103C8\STM32F103C8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "tests_serial.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"A:\Bureau\Projet Robot Infirmier\STM32\tests_serial\f103C8\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="tests_serial.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+tests_serial.elf: $(OBJS) $(USER_OBJS) C:\Users\thoma\Documents\GitHub\Projet5ArobotInfirmier\STM32\tests_serial\f103C8\STM32F103C8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "tests_serial.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\thoma\Documents\GitHub\Projet5ArobotInfirmier\STM32\tests_serial\f103C8\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="tests_serial.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

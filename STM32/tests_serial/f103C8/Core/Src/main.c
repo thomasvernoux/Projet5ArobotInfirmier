@@ -105,6 +105,7 @@ int main(void)
 
 	  a ++;
 
+	  HAL_Delay(1);
 
 
 
