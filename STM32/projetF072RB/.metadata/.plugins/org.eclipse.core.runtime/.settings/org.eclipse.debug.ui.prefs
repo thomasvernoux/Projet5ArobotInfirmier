@@ -1,3 +1,5 @@
+Console.highWaterMark=88000
+StringVariablePreferencePage=150,125,125,99,
 eclipse.preferences.version=1
 org.eclipse.debug.ui.MemoryView.orientation=0
 org.eclipse.debug.ui.MemoryView.orientation.org.eclipse.debug.ui.MemoryView.0=0

@@ -1,7 +1,10 @@
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
-configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:LPUART_TwoBoards_ComIT Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Projet_Robot_Infirmier Debug
+configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:LPUART_TwoBoards_ComIT Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Projet_Robot_Infirmier Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:tests_lidar_f103C8 Debug
 eclipse.preferences.version=1
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:LPUART_TwoBoards_ComIT\ Debug/activeLaunchMode=run
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:LPUART_TwoBoards_ComIT\ Debug/activeLaunchTarget=null\:---
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Projet_Robot_Infirmier\ Debug/activeLaunchMode=debug
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Projet_Robot_Infirmier\ Debug/activeLaunchTarget=null\:---
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:tests_lidar_f103C8\ Debug/activeLaunchMode=debug
