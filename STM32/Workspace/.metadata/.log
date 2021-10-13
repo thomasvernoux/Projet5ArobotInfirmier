@@ -1,0 +1,106 @@
+!SESSION 2021-10-13 20:05:11.930 -----------------------------------------------
+eclipse.buildId=Version 1.7.0
+java.version=11.0.10
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=fr_FR
+Framework arguments:  A:\Bureau\Projet Robot Infirmier\STM32\STM32-F072RB\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 A:\Bureau\Projet Robot Infirmier\STM32\STM32-F072RB\.project
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2021-10-13 20:05:57.632
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2021-10-13 20:05:57.701
+!MESSAGE Log4j initialized with config file A:\Bureau\Projet Robot Infirmier\STM32\Workspace\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2021-10-13 20:06:04.590
+!MESSAGE Started RMI Server, listening on port 41338
+
+!ENTRY org.eclipse.cdt.core 1 0 2021-10-13 20:06:09.919
+!MESSAGE Indexed 'Projet_Robot_Infirmier_F072RB' (25 sources, 106 headers) in 3,05 sec: 8 338 declarations; 35 450 references; 6 unresolved inclusions; 293 syntax errors; 1 130 unresolved names (2,5 %)
+
+!ENTRY org.eclipse.cdt.core 4 0 2021-10-13 20:06:10.853
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.core.internal.runtime.InternalPlatform.getOS(InternalPlatform.java:398)
+	at org.eclipse.core.runtime.Platform.getOS(Platform.java:1195)
+	at org.eclipse.cdt.managedbuilder.internal.core.Builder.getOptimalParallelJobNum(Builder.java:2497)
+	at org.eclipse.cdt.managedbuilder.internal.core.Builder.decodeParallelizationNumber(Builder.java:623)
+	at org.eclipse.cdt.managedbuilder.internal.core.Builder.loadFromProject(Builder.java:792)
+	at org.eclipse.cdt.managedbuilder.internal.core.Builder.<init>(Builder.java:237)
+	at org.eclipse.cdt.managedbuilder.internal.core.ToolChain.<init>(ToolChain.java:281)
+	at org.eclipse.cdt.managedbuilder.internal.core.FolderInfo.<init>(FolderInfo.java:148)
+	at org.eclipse.cdt.managedbuilder.internal.core.Configuration.<init>(Configuration.java:434)
+	at org.eclipse.cdt.managedbuilder.internal.dataprovider.ConfigurationDataProvider.load(ConfigurationDataProvider.java:405)
+	at org.eclipse.cdt.managedbuilder.internal.dataprovider.ConfigurationDataProvider.loadConfiguration(ConfigurationDataProvider.java:573)
+	at org.eclipse.cdt.internal.core.settings.model.CConfigurationDescriptionCache.loadData(CConfigurationDescriptionCache.java:139)
+	at org.eclipse.cdt.internal.core.settings.model.CProjectDescription.loadDatas(CProjectDescription.java:199)
+	at org.eclipse.cdt.internal.core.settings.model.xml.XmlProjectDescriptionStorage.loadProjectDescription(XmlProjectDescriptionStorage.java:510)
+	at org.eclipse.cdt.internal.core.settings.model.xml.XmlProjectDescriptionStorage.getProjectDescription(XmlProjectDescriptionStorage.java:240)
+	at org.eclipse.cdt.internal.core.settings.model.CProjectDescriptionManager.getProjectDescriptionInternal(CProjectDescriptionManager.java:427)
+	at org.eclipse.cdt.internal.core.settings.model.CProjectDescriptionManager.getProjectDescription(CProjectDescriptionManager.java:409)
+	at org.eclipse.cdt.internal.core.settings.model.CProjectDescriptionManager.getProjectDescription(CProjectDescriptionManager.java:403)
+	at org.eclipse.cdt.internal.core.settings.model.CProjectDescriptionManager.getProjectDescription(CProjectDescriptionManager.java:396)
+	at org.eclipse.cdt.core.model.CoreModel.getProjectDescription(CoreModel.java:1436)
+	at org.eclipse.cdt.internal.core.model.TranslationUnit.getLanguage(TranslationUnit.java:781)
+	at org.eclipse.cdt.internal.core.pdom.indexer.ProjectIndexerInputAdapter.getLanguages(ProjectIndexerInputAdapter.java:234)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.getLanguage(AbstractIndexerTask.java:1145)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.parseLinkage(AbstractIndexerTask.java:910)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.runTask(AbstractIndexerTask.java:572)
+	at org.eclipse.cdt.internal.core.pdom.indexer.PDOMIndexerTask.run(PDOMIndexerTask.java:164)
+	at org.eclipse.cdt.internal.core.pdom.indexer.PDOMUpdateTask.run(PDOMUpdateTask.java:96)
+	at org.eclipse.cdt.internal.core.pdom.PDOMIndexerJob.run(PDOMIndexerJob.java:160)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 4 2 2021-10-13 20:06:10.855
+!MESSAGE An internal error occurred during: "C/C++ Indexer".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.core.internal.runtime.InternalPlatform.getOS(InternalPlatform.java:398)
+	at org.eclipse.core.runtime.Platform.getOS(Platform.java:1195)
+	at org.eclipse.cdt.managedbuilder.internal.core.Builder.getOptimalParallelJobNum(Builder.java:2497)
+	at org.eclipse.cdt.managedbuilder.internal.core.Builder.decodeParallelizationNumber(Builder.java:623)
+	at org.eclipse.cdt.managedbuilder.internal.core.Builder.loadFromProject(Builder.java:792)
+	at org.eclipse.cdt.managedbuilder.internal.core.Builder.<init>(Builder.java:237)
+	at org.eclipse.cdt.managedbuilder.internal.core.ToolChain.<init>(ToolChain.java:281)
+	at org.eclipse.cdt.managedbuilder.internal.core.FolderInfo.<init>(FolderInfo.java:148)
+	at org.eclipse.cdt.managedbuilder.internal.core.Configuration.<init>(Configuration.java:434)
+	at org.eclipse.cdt.managedbuilder.internal.dataprovider.ConfigurationDataProvider.load(ConfigurationDataProvider.java:405)
+	at org.eclipse.cdt.managedbuilder.internal.dataprovider.ConfigurationDataProvider.loadConfiguration(ConfigurationDataProvider.java:573)
+	at org.eclipse.cdt.internal.core.settings.model.CConfigurationDescriptionCache.loadData(CConfigurationDescriptionCache.java:139)
+	at org.eclipse.cdt.internal.core.settings.model.CProjectDescription.loadDatas(CProjectDescription.java:199)
+	at org.eclipse.cdt.internal.core.settings.model.xml.XmlProjectDescriptionStorage.loadProjectDescription(XmlProjectDescriptionStorage.java:510)
+	at org.eclipse.cdt.internal.core.settings.model.xml.XmlProjectDescriptionStorage.getProjectDescription(XmlProjectDescriptionStorage.java:240)
+	at org.eclipse.cdt.internal.core.settings.model.CProjectDescriptionManager.getProjectDescriptionInternal(CProjectDescriptionManager.java:427)
+	at org.eclipse.cdt.internal.core.settings.model.CProjectDescriptionManager.getProjectDescription(CProjectDescriptionManager.java:409)
+	at org.eclipse.cdt.internal.core.settings.model.CProjectDescriptionManager.getProjectDescription(CProjectDescriptionManager.java:403)
+	at org.eclipse.cdt.internal.core.settings.model.CProjectDescriptionManager.getProjectDescription(CProjectDescriptionManager.java:396)
+	at org.eclipse.cdt.core.model.CoreModel.getProjectDescription(CoreModel.java:1436)
+	at org.eclipse.cdt.internal.core.model.TranslationUnit.getLanguage(TranslationUnit.java:781)
+	at org.eclipse.cdt.internal.core.pdom.indexer.ProjectIndexerInputAdapter.getLanguages(ProjectIndexerInputAdapter.java:234)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.getLanguage(AbstractIndexerTask.java:1145)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.parseLinkage(AbstractIndexerTask.java:910)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.runTask(AbstractIndexerTask.java:572)
+	at org.eclipse.cdt.internal.core.pdom.indexer.PDOMIndexerTask.run(PDOMIndexerTask.java:164)
+	at org.eclipse.cdt.internal.core.pdom.indexer.PDOMUpdateTask.run(PDOMUpdateTask.java:96)
+	at org.eclipse.cdt.internal.core.pdom.PDOMIndexerJob.run(PDOMIndexerJob.java:160)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2021-10-13 20:06:25.238 -----------------------------------------------
+eclipse.buildId=Version 1.7.0
+java.version=11.0.10
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=fr_FR
+Framework arguments:  A:\Bureau\Projet Robot Infirmier\STM32\STM32-F072RB\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 A:\Bureau\Projet Robot Infirmier\STM32\STM32-F072RB\.project
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2021-10-13 20:06:29.190
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2021-10-13 20:06:29.246
+!MESSAGE Log4j initialized with config file A:\Bureau\Projet Robot Infirmier\STM32\Workspace\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2021-10-13 20:06:39.006
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2021-10-13 20:06:42.566
+!MESSAGE Indexed 'Projet_Robot_Infirmier_F072RB' (25 sources, 107 headers) in 2,98 sec: 8 338 declarations; 36 686 references; 2 unresolved inclusions; 33 syntax errors; 188 unresolved names (0,42 %)
