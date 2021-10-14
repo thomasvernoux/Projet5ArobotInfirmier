@@ -98,8 +98,8 @@ int main(void)
 
 
 
-  char UART1_rxBuffer [12];
-  HAL_UART_Receive_IT (&huart1, UART1_rxBuffer, 12);
+  char UART1_rxBuffer [10];
+
 
 
   while (1)
@@ -108,14 +108,12 @@ int main(void)
 	  char Data[] = "coucou";
 
 
-	  HAL_UART_Transmit(&huart1, Data, sizeof(Data), 100);
+
+	  HAL_UART_Receive(&huart1, UART1_rxBuffer, 10, 2000);
 
 
 
-	  HAL_UART_Transmit(&huart1, UART1_rxBuffer, 12, 100);
 
-
-	  HAL_Delay(1000);
 
 
 
