@@ -20,7 +20,6 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "tim.h"
-#include "usart.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
@@ -91,8 +90,6 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-  MX_USART1_UART_Init();
-  MX_USART2_UART_Init();
   MX_TIM1_Init();
   /* USER CODE BEGIN 2 */
 
@@ -102,23 +99,41 @@ int main(void)
   /* USER CODE BEGIN WHILE */
 
 
-  HAL_UART_Receive_IT(&huart1, UART1_rxBuffer, sizeof(UART1_rxBuffer));
-  HAL_UART_Receive_IT(&huart2, UART2_rxBuffer, sizeof(UART2_rxBuffer));
+  //HAL_UART_Receive_IT(&huart1, UART1_rxBuffer, sizeof(UART1_rxBuffer));
+  //HAL_UART_Receive_IT(&huart2, UART1_rxBuffer, sizeof(UART1_rxBuffer));
+  //bHAL_UART_Receive_IT(&huart3, UART2_rxBuffer, sizeof(UART2_rxBuffer));
 
-  tests_lidar();
+  //tests_lidar();
 
 
 
   while (1)
   {
 
-
-
 	  /*
 	  char Data[] = "coucou";
 	  HAL_UART_Transmit(&huart1, Data, 10, 100);
 	  HAL_Delay(2000);
 	  */
+
+
+	  /*
+	  char Data[] = "A520";
+	  HAL_UART_Transmit(&huart3, Data, sizeof(Data), 1000);
+	  HAL_Delay(10);
+	  HAL_UART_Transmit(&huart1, Data, sizeof(Data), 1000);
+	  HAL_Delay(10);
+	  HAL_UART_Transmit(&huart2, Data, sizeof(Data), 1000);
+	  */
+
+	  HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_2);
+	  HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_3);
+
+	  HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_10);
+	  HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_4);
+
+	  //send_lidar_request();
+	  HAL_Delay(10);
 
 
 
@@ -171,7 +186,6 @@ void SystemClock_Config(void)
 {
   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
-  RCC_PeriphCLKInitTypeDef PeriphClkInit = {0};
 
   /** Initializes the RCC Oscillators according to the specified parameters
   * in the RCC_OscInitTypeDef structure.
@@ -196,13 +210,6 @@ void SystemClock_Config(void)
   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
 
   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_1) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_USART1|RCC_PERIPHCLK_USART2;
-  PeriphClkInit.Usart1ClockSelection = RCC_USART1CLKSOURCE_PCLK1;
-  PeriphClkInit.Usart2ClockSelection = RCC_USART2CLKSOURCE_PCLK1;
-  if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK)
   {
     Error_Handler();
   }

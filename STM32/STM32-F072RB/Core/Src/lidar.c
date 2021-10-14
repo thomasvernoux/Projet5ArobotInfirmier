@@ -7,7 +7,7 @@
 
 
 #include "lidar.h"
-#include "usart.h"
+//#include "usart.h"
 #include "gpio.h"
 #include "main.h"
 #include "tim.h"
@@ -22,7 +22,12 @@ void tests_lidar(){
 
 
 
+
 	reset_lidar();
+
+
+
+
 
 
 
@@ -39,6 +44,38 @@ void mouvement_moteur(int vitesse){
 
 void reset_lidar(){
 	char Data = "A540";
-	HAL_UART_Transmit(&huart2, Data, sizeof(Data), 100);
+	//HAL_UART_Transmit(&huart2, Data, sizeof(Data), 100);
+	return;
 }
+
+
+
+void send_lidar(char Data[]){
+	//HAL_UART_Transmit(&huart2, Data, sizeof(Data), 100);
+
+
+	return;
+}
+
+
+void send_lidar_request(){
+	char Data = "A520";
+	//HAL_UART_Transmit(&huart2, Data, sizeof(Data), 100);
+	return;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 

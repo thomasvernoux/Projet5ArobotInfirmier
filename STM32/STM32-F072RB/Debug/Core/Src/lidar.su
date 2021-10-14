@@ -1,3 +1,5 @@
 lidar.c:17:6:tests_lidar	16	static
-lidar.c:36:6:mouvement_moteur	16	static
-lidar.c:40:6:reset_lidar	16	static
+lidar.c:41:6:mouvement_moteur	16	static
+lidar.c:45:6:reset_lidar	16	static
+lidar.c:53:6:send_lidar	16	static
+lidar.c:61:6:send_lidar_request	16	static
