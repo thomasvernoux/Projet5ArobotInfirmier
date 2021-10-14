@@ -46,6 +46,9 @@
 
 /* USER CODE BEGIN PV */
 
+char UART1_rxBuffer [10]; // Variables des buffers des UARTS 1 et 2
+char UART2_rxBuffer [10];
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -97,19 +100,20 @@ int main(void)
   /* USER CODE BEGIN WHILE */
 
 
-
-  char UART1_rxBuffer [10];
+  HAL_UART_Receive_IT(&huart1, UART1_rxBuffer, sizeof(UART1_rxBuffer));
+  HAL_UART_Receive_IT(&huart2, UART2_rxBuffer, sizeof(UART2_rxBuffer));
 
 
 
   while (1)
   {
 
-	  char Data[] = "coucou";
+	  //char Data[] = "coucou";
+	  HAL_Delay(2000);
 
 
 
-	  HAL_UART_Receive(&huart1, UART1_rxBuffer, 10, 2000);
+
 
 
 
