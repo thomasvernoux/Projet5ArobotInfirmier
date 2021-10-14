@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name Lib_KICAD_Capteurs_ESE)(type Legacy)(uri ${KIPRJMOD}/Lib_KICAD_Capteurs_ESE.lib)(options "")(descr ""))
+)
