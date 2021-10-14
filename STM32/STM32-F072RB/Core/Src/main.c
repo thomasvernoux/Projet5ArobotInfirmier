@@ -19,6 +19,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "tim.h"
 #include "usart.h"
 #include "gpio.h"
 
@@ -92,6 +93,7 @@ int main(void)
   MX_GPIO_Init();
   MX_USART1_UART_Init();
   MX_USART2_UART_Init();
+  MX_TIM1_Init();
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
@@ -103,13 +105,20 @@ int main(void)
   HAL_UART_Receive_IT(&huart1, UART1_rxBuffer, sizeof(UART1_rxBuffer));
   HAL_UART_Receive_IT(&huart2, UART2_rxBuffer, sizeof(UART2_rxBuffer));
 
+  tests_lidar();
+
 
 
   while (1)
   {
 
-	  //char Data[] = "coucou";
+
+
+	  /*
+	  char Data[] = "coucou";
+	  HAL_UART_Transmit(&huart1, Data, 10, 100);
 	  HAL_Delay(2000);
+	  */
 
 
 
