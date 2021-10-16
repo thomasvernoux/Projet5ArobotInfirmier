@@ -97,7 +97,7 @@ int main(void)
   while (1)
   {
 	  char Data[] = "A520";
-	  HAL_UART_Transmit(&huart2, Data, sizeof(Data), 1000);
+	  HAL_UART_Transmit(&huart2, Data, 8, 1000);
 
 
 
