@@ -95,10 +95,10 @@ int main(void)
   {
 
 
+	  HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_9);
+	  HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_8);
+	  HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_10);
 	  HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_0);
-	  HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_1);
-	  HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_2);
-	  HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_3);
 
 	  HAL_Delay(10);
 

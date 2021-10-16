@@ -104,3 +104,37 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64 A:\Bureau\Projet Robot
 
 !ENTRY org.eclipse.cdt.core 1 0 2021-10-13 20:06:42.566
 !MESSAGE Indexed 'Projet_Robot_Infirmier_F072RB' (25 sources, 107 headers) in 2,98 sec: 8 338 declarations; 36 686 references; 2 unresolved inclusions; 33 syntax errors; 188 unresolved names (0,42 %)
+!SESSION 2021-10-16 12:53:24.982 -----------------------------------------------
+eclipse.buildId=Version 1.7.0
+java.version=11.0.10
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=fr_FR
+Framework arguments:  A:\Bureau\Projet Robot Infirmier\STM32\STM32-F072RB\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data A:\Bureau\Projet Robot Infirmier\STM32\Workspace A:\Bureau\Projet Robot Infirmier\STM32\STM32-F072RB\.project
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2021-10-16 12:53:29.890
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2021-10-16 12:53:29.971
+!MESSAGE Log4j initialized with config file A:\Bureau\Projet Robot Infirmier\STM32\Workspace\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2021-10-16 12:53:40.781
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2021-10-16 12:53:43.952
+!MESSAGE Indexed 'Projet_Robot_Infirmier_F072RB' (22 sources, 106 headers) in 2,7 sec: 8 422 declarations; 46 834 references; 2 unresolved inclusions; 33 syntax errors; 188 unresolved names (0,34 %)
+!SESSION 2021-10-16 12:54:25.490 -----------------------------------------------
+eclipse.buildId=Version 1.7.0
+java.version=11.0.10
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=fr_FR
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2021-10-16 12:54:30.501
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2021-10-16 12:54:30.561
+!MESSAGE Log4j initialized with config file A:\Bureau\Projet Robot Infirmier\STM32\Workspace\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2021-10-16 12:54:41.510
+!MESSAGE Started RMI Server, listening on port 41337

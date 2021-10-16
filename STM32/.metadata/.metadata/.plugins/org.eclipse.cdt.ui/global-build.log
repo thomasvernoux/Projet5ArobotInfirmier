@@ -1,0 +1,66 @@
+13:07:27 **** Build of configuration Default for project Projet_Robot_Infirmier_F072RB ****
+make all 
+Cannot run program "make": Launching failed
+
+Error: Program "make" not found in PATH
+PATH=[C:/ST/STM32CubeIDE_1.6.1/STM32CubeIDE//plugins/com.st.stm32cube.ide.jre.win64_2.0.0.202105032045/jre/bin/client;C:/ST/STM32CubeIDE_1.6.1/STM32CubeIDE//plugins/com.st.stm32cube.ide.jre.win64_2.0.0.202105032045/jre/bin;A:\Python\Scripts\;A:\Python\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\PuTTY\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin\;C:\Program Files\IVI Foundation\VISA\Win64\Bin\;C:\Program Files (x86)\IVI Foundation\IVI\bin;C:\Program Files\IVI Foundation\IVI\bin;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin;C:\Users\Thomas VERNOUX\AppData\Local\Microsoft\WindowsApps;C:\Users\Thomas VERNOUX\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Thomas VERNOUX\AppData\Local\GitHubDesktop\bin;A:\Bureau\Projet Robot Infirmier\STM32\STM32-F072RB]
+13:08:39 **** Incremental Build of configuration Default for project Projet_Robot_Infirmier_F072RB ****
+make all 
+Cannot run program "make": Launching failed
+
+Error: Program "make" not found in PATH
+PATH=[C:/ST/STM32CubeIDE_1.6.1/STM32CubeIDE//plugins/com.st.stm32cube.ide.jre.win64_2.0.0.202105032045/jre/bin/client;C:/ST/STM32CubeIDE_1.6.1/STM32CubeIDE//plugins/com.st.stm32cube.ide.jre.win64_2.0.0.202105032045/jre/bin;A:\Python\Scripts\;A:\Python\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\PuTTY\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin\;C:\Program Files\IVI Foundation\VISA\Win64\Bin\;C:\Program Files (x86)\IVI Foundation\IVI\bin;C:\Program Files\IVI Foundation\IVI\bin;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin;C:\Users\Thomas VERNOUX\AppData\Local\Microsoft\WindowsApps;C:\Users\Thomas VERNOUX\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Thomas VERNOUX\AppData\Local\GitHubDesktop\bin;A:\Bureau\Projet Robot Infirmier\STM32\STM32-F072RB]
+13:08:47 **** Incremental Build of configuration Default for project Projet_Robot_Infirmier_F072RB ****
+make all 
+Cannot run program "make": Launching failed
+
+Error: Program "make" not found in PATH
+PATH=[C:/ST/STM32CubeIDE_1.6.1/STM32CubeIDE//plugins/com.st.stm32cube.ide.jre.win64_2.0.0.202105032045/jre/bin/client;C:/ST/STM32CubeIDE_1.6.1/STM32CubeIDE//plugins/com.st.stm32cube.ide.jre.win64_2.0.0.202105032045/jre/bin;A:\Python\Scripts\;A:\Python\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\PuTTY\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin\;C:\Program Files\IVI Foundation\VISA\Win64\Bin\;C:\Program Files (x86)\IVI Foundation\IVI\bin;C:\Program Files\IVI Foundation\IVI\bin;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin;C:\Users\Thomas VERNOUX\AppData\Local\Microsoft\WindowsApps;C:\Users\Thomas VERNOUX\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Thomas VERNOUX\AppData\Local\GitHubDesktop\bin;A:\Bureau\Projet Robot Infirmier\STM32\STM32-F072RB]
+13:10:50 **** Incremental Build of configuration Default for project Projet_Robot_Infirmier_F072RB ****
+make all 
+Cannot run program "make": Launching failed
+
+Error: Program "make" not found in PATH
+PATH=[C:/ST/STM32CubeIDE_1.6.1/STM32CubeIDE//plugins/com.st.stm32cube.ide.jre.win64_2.0.0.202105032045/jre/bin/client;C:/ST/STM32CubeIDE_1.6.1/STM32CubeIDE//plugins/com.st.stm32cube.ide.jre.win64_2.0.0.202105032045/jre/bin;A:\Python\Scripts\;A:\Python\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\PuTTY\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin\;C:\Program Files\IVI Foundation\VISA\Win64\Bin\;C:\Program Files (x86)\IVI Foundation\IVI\bin;C:\Program Files\IVI Foundation\IVI\bin;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin;C:\Users\Thomas VERNOUX\AppData\Local\Microsoft\WindowsApps;C:\Users\Thomas VERNOUX\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Thomas VERNOUX\AppData\Local\GitHubDesktop\bin;A:\Bureau\Projet Robot Infirmier\STM32\STM32-F072RB]
+13:11:17 **** Incremental Build of configuration Default for project Projet_Robot_Infirmier_F072RB ****
+make all 
+Cannot run program "make": Launching failed
+
+Error: Program "make" not found in PATH
+PATH=[C:/ST/STM32CubeIDE_1.6.1/STM32CubeIDE//plugins/com.st.stm32cube.ide.jre.win64_2.0.0.202105032045/jre/bin/client;C:/ST/STM32CubeIDE_1.6.1/STM32CubeIDE//plugins/com.st.stm32cube.ide.jre.win64_2.0.0.202105032045/jre/bin;A:\Python\Scripts\;A:\Python\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\PuTTY\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin\;C:\Program Files\IVI Foundation\VISA\Win64\Bin\;C:\Program Files (x86)\IVI Foundation\IVI\bin;C:\Program Files\IVI Foundation\IVI\bin;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin;C:\Users\Thomas VERNOUX\AppData\Local\Microsoft\WindowsApps;C:\Users\Thomas VERNOUX\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Thomas VERNOUX\AppData\Local\GitHubDesktop\bin;A:\Bureau\Projet Robot Infirmier\STM32\STM32-F072RB]
+13:31:45 **** Clean-only build of configuration Default for project Projet_Robot_Infirmier_F072RB ****
+make clean 
+Cannot run program "make": Launching failed
+
+Error: Program "make" not found in PATH
+PATH=[C:/ST/STM32CubeIDE_1.6.1/STM32CubeIDE//plugins/com.st.stm32cube.ide.jre.win64_2.0.0.202105032045/jre/bin/client;C:/ST/STM32CubeIDE_1.6.1/STM32CubeIDE//plugins/com.st.stm32cube.ide.jre.win64_2.0.0.202105032045/jre/bin;A:\Python\Scripts\;A:\Python\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\PuTTY\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin\;C:\Program Files\IVI Foundation\VISA\Win64\Bin\;C:\Program Files (x86)\IVI Foundation\IVI\bin;C:\Program Files\IVI Foundation\IVI\bin;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin;C:\Users\Thomas VERNOUX\AppData\Local\Microsoft\WindowsApps;C:\Users\Thomas VERNOUX\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Thomas VERNOUX\AppData\Local\GitHubDesktop\bin;A:\Bureau\Projet Robot Infirmier\STM32\STM32-F072RB]
+13:31:45 **** Build of configuration Default for project Projet_Robot_Infirmier_F072RB ****
+make all 
+Cannot run program "make": Launching failed
+
+Error: Program "make" not found in PATH
+PATH=[C:/ST/STM32CubeIDE_1.6.1/STM32CubeIDE//plugins/com.st.stm32cube.ide.jre.win64_2.0.0.202105032045/jre/bin/client;C:/ST/STM32CubeIDE_1.6.1/STM32CubeIDE//plugins/com.st.stm32cube.ide.jre.win64_2.0.0.202105032045/jre/bin;A:\Python\Scripts\;A:\Python\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\PuTTY\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin\;C:\Program Files\IVI Foundation\VISA\Win64\Bin\;C:\Program Files (x86)\IVI Foundation\IVI\bin;C:\Program Files\IVI Foundation\IVI\bin;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin;C:\Users\Thomas VERNOUX\AppData\Local\Microsoft\WindowsApps;C:\Users\Thomas VERNOUX\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Thomas VERNOUX\AppData\Local\GitHubDesktop\bin;A:\Bureau\Projet Robot Infirmier\STM32\STM32-F072RB]
+13:32:00 **** Clean-only build of configuration Default for project Projet_Robot_Infirmier_F072RB ****
+make clean 
+Cannot run program "make": Launching failed
+
+Error: Program "make" not found in PATH
+PATH=[C:/ST/STM32CubeIDE_1.6.1/STM32CubeIDE//plugins/com.st.stm32cube.ide.jre.win64_2.0.0.202105032045/jre/bin/client;C:/ST/STM32CubeIDE_1.6.1/STM32CubeIDE//plugins/com.st.stm32cube.ide.jre.win64_2.0.0.202105032045/jre/bin;A:\Python\Scripts\;A:\Python\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\PuTTY\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin\;C:\Program Files\IVI Foundation\VISA\Win64\Bin\;C:\Program Files (x86)\IVI Foundation\IVI\bin;C:\Program Files\IVI Foundation\IVI\bin;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin;C:\Users\Thomas VERNOUX\AppData\Local\Microsoft\WindowsApps;C:\Users\Thomas VERNOUX\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Thomas VERNOUX\AppData\Local\GitHubDesktop\bin;A:\Bureau\Projet Robot Infirmier\STM32\STM32-F072RB]
+13:32:00 **** Build of configuration Default for project Projet_Robot_Infirmier_F072RB ****
+make all 
+Cannot run program "make": Launching failed
+
+Error: Program "make" not found in PATH
+PATH=[C:/ST/STM32CubeIDE_1.6.1/STM32CubeIDE//plugins/com.st.stm32cube.ide.jre.win64_2.0.0.202105032045/jre/bin/client;C:/ST/STM32CubeIDE_1.6.1/STM32CubeIDE//plugins/com.st.stm32cube.ide.jre.win64_2.0.0.202105032045/jre/bin;A:\Python\Scripts\;A:\Python\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\PuTTY\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin\;C:\Program Files\IVI Foundation\VISA\Win64\Bin\;C:\Program Files (x86)\IVI Foundation\IVI\bin;C:\Program Files\IVI Foundation\IVI\bin;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin;C:\Users\Thomas VERNOUX\AppData\Local\Microsoft\WindowsApps;C:\Users\Thomas VERNOUX\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Thomas VERNOUX\AppData\Local\GitHubDesktop\bin;A:\Bureau\Projet Robot Infirmier\STM32\STM32-F072RB]
+13:32:06 **** Incremental Build of configuration Default for project Projet_Robot_Infirmier_F072RB ****
+make all 
+Cannot run program "make": Launching failed
+
+Error: Program "make" not found in PATH
+PATH=[C:/ST/STM32CubeIDE_1.6.1/STM32CubeIDE//plugins/com.st.stm32cube.ide.jre.win64_2.0.0.202105032045/jre/bin/client;C:/ST/STM32CubeIDE_1.6.1/STM32CubeIDE//plugins/com.st.stm32cube.ide.jre.win64_2.0.0.202105032045/jre/bin;A:\Python\Scripts\;A:\Python\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\PuTTY\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin\;C:\Program Files\IVI Foundation\VISA\Win64\Bin\;C:\Program Files (x86)\IVI Foundation\IVI\bin;C:\Program Files\IVI Foundation\IVI\bin;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin;C:\Users\Thomas VERNOUX\AppData\Local\Microsoft\WindowsApps;C:\Users\Thomas VERNOUX\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Thomas VERNOUX\AppData\Local\GitHubDesktop\bin;A:\Bureau\Projet Robot Infirmier\STM32\STM32-F072RB]
+13:34:30 **** Incremental Build of configuration Default for project Projet_Robot_Infirmier_F072RB ****
+make all 
+Cannot run program "make": Launching failed
+
+Error: Program "make" not found in PATH
+PATH=[C:/ST/STM32CubeIDE_1.6.1/STM32CubeIDE//plugins/com.st.stm32cube.ide.jre.win64_2.0.0.202105032045/jre/bin/client;C:/ST/STM32CubeIDE_1.6.1/STM32CubeIDE//plugins/com.st.stm32cube.ide.jre.win64_2.0.0.202105032045/jre/bin;A:\Python\Scripts\;A:\Python\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\PuTTY\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin\;C:\Program Files\IVI Foundation\VISA\Win64\Bin\;C:\Program Files (x86)\IVI Foundation\IVI\bin;C:\Program Files\IVI Foundation\IVI\bin;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin;C:\Users\Thomas VERNOUX\AppData\Local\Microsoft\WindowsApps;C:\Users\Thomas VERNOUX\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Thomas VERNOUX\AppData\Local\GitHubDesktop\bin;A:\Bureau\Projet Robot Infirmier\STM32\STM32-F072RB]
