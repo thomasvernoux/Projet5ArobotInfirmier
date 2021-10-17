@@ -104,7 +104,7 @@ int main(void)
   HAL_UART_Receive_IT(&huart3, UART3_rxBuffer, sizeof(UART3_rxBuffer));
 
 
-
+  lidar_setup();
 
   /* USER CODE END 2 */
 
@@ -113,8 +113,7 @@ int main(void)
   while (1)
   {
 
-	  lidar_setup();
-	  HAL_Delay(500);
+
 	  //char Data[] = "A520";
 	  //HAL_UART_Transmit(&huart2, Data, sizeof(Data), 1000);
 	  //HAL_UART_Transmit(&huart3, Data, sizeof(Data), 1000);

@@ -114,7 +114,6 @@ int main(void)
   {
 
 	  lidar_setup();
-	  HAL_Delay(500);
 	  //char Data[] = "A520";
 	  //HAL_UART_Transmit(&huart2, Data, sizeof(Data), 1000);
 	  //HAL_UART_Transmit(&huart3, Data, sizeof(Data), 1000);

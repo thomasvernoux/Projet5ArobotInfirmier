@@ -8140,3 +8140,902 @@ In file included from ../Core/Inc/stm32f4xx_hal_conf.h:406,
       |                                                                ~~~~~~~~~^~~~~
 make: *** [Core/Src/subdir.mk:43: Core/Src/lidar.o] Error 1
 "make -j4 all" terminated with exit code 2. Build might be incomplete.
+12:28:32 **** Incremental Build of configuration Debug for project Projet_Robot_I ****
+make -j4 all 
+arm-none-eabi-size   Projet_Robot_I.elf 
+   text	   data	    bss	    dec	    hex	filename
+  15712	     20	   1988	  17720	   4538	Projet_Robot_I.elf
+Finished building: default.size.stdout
+ 
+12:28:32 **** Incremental Build of configuration Debug for project Projet_Robot_Infirmier_F407G ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/lidar.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/lidar.d" -MT"Core/Src/lidar.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/lidar.o"
+../Core/Src/lidar.c: In function 'lidar_setup':
+../Core/Src/lidar.c:18:18: error: invalid suffix "b20" on integer constant
+   18 |  uint16_t Data = 0b20;
+      |                  ^~~~
+../Core/Src/lidar.c:19:21: error: 'huart3' undeclared (first use in this function)
+   19 |  HAL_UART_Transmit(&huart3, &Data, sizeof(Data), 1000);
+      |                     ^~~~~~
+../Core/Src/lidar.c:19:21: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/lidar.c:19:29: warning: passing argument 2 of 'HAL_UART_Transmit' from incompatible pointer type [-Wincompatible-pointer-types]
+   19 |  HAL_UART_Transmit(&huart3, &Data, sizeof(Data), 1000);
+      |                             ^~~~~
+      |                             |
+      |                             uint16_t * {aka short unsigned int *}
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:406,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Inc/gpio.h:28,
+                 from ../Core/Src/lidar.c:3:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:723:73: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
+  723 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~^~~~~
+make: *** [Core/Src/subdir.mk:43: Core/Src/lidar.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+12:28:35 **** Incremental Build of configuration Debug for project Projet_Robot_I ****
+make -j4 all 
+arm-none-eabi-size   Projet_Robot_I.elf 
+   text	   data	    bss	    dec	    hex	filename
+  15712	     20	   1988	  17720	   4538	Projet_Robot_I.elf
+Finished building: default.size.stdout
+ 
+12:28:35 **** Incremental Build of configuration Debug for project Projet_Robot_Infirmier_F407G ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/lidar.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/lidar.d" -MT"Core/Src/lidar.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/lidar.o"
+../Core/Src/lidar.c: In function 'lidar_setup':
+../Core/Src/lidar.c:19:21: error: 'huart3' undeclared (first use in this function)
+   19 |  HAL_UART_Transmit(&huart3, &Data, sizeof(Data), 1000);
+      |                     ^~~~~~
+../Core/Src/lidar.c:19:21: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/lidar.c:19:29: warning: passing argument 2 of 'HAL_UART_Transmit' from incompatible pointer type [-Wincompatible-pointer-types]
+   19 |  HAL_UART_Transmit(&huart3, &Data, sizeof(Data), 1000);
+      |                             ^~~~~
+      |                             |
+      |                             uint16_t * {aka short unsigned int *}
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:406,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Inc/gpio.h:28,
+                 from ../Core/Src/lidar.c:3:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:723:73: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
+  723 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~^~~~~
+make: *** [Core/Src/subdir.mk:43: Core/Src/lidar.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+12:28:43 **** Incremental Build of configuration Debug for project Projet_Robot_I ****
+make -j4 all 
+arm-none-eabi-size   Projet_Robot_I.elf 
+   text	   data	    bss	    dec	    hex	filename
+  15712	     20	   1988	  17720	   4538	Projet_Robot_I.elf
+Finished building: default.size.stdout
+ 
+12:28:43 **** Incremental Build of configuration Debug for project Projet_Robot_Infirmier_F407G ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/lidar.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/lidar.d" -MT"Core/Src/lidar.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/lidar.o"
+../Core/Src/lidar.c: In function 'lidar_setup':
+../Core/Src/lidar.c:19:21: error: 'huart3' undeclared (first use in this function)
+   19 |  HAL_UART_Transmit(&huart3, Data, sizeof(Data), 1000);
+      |                     ^~~~~~
+../Core/Src/lidar.c:19:21: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/lidar.c:19:29: warning: passing argument 2 of 'HAL_UART_Transmit' makes pointer from integer without a cast [-Wint-conversion]
+   19 |  HAL_UART_Transmit(&huart3, Data, sizeof(Data), 1000);
+      |                             ^~~~
+      |                             |
+      |                             uint16_t {aka short unsigned int}
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:406,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Inc/gpio.h:28,
+                 from ../Core/Src/lidar.c:3:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:723:73: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint16_t' {aka 'short unsigned int'}
+  723 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~^~~~~
+make: *** [Core/Src/subdir.mk:43: Core/Src/lidar.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+12:28:47 **** Incremental Build of configuration Debug for project Projet_Robot_I ****
+make -j4 all 
+arm-none-eabi-size   Projet_Robot_I.elf 
+   text	   data	    bss	    dec	    hex	filename
+  15712	     20	   1988	  17720	   4538	Projet_Robot_I.elf
+Finished building: default.size.stdout
+ 
+12:28:48 **** Incremental Build of configuration Debug for project Projet_Robot_Infirmier_F407G ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/lidar.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/lidar.d" -MT"Core/Src/lidar.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/lidar.o"
+../Core/Src/lidar.c: In function 'lidar_setup':
+../Core/Src/lidar.c:19:21: error: 'huart3' undeclared (first use in this function)
+   19 |  HAL_UART_Transmit(&huart3, Data, sizeof(Data), 1000);
+      |                     ^~~~~~
+../Core/Src/lidar.c:19:21: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/lidar.c:19:29: warning: passing argument 2 of 'HAL_UART_Transmit' makes pointer from integer without a cast [-Wint-conversion]
+   19 |  HAL_UART_Transmit(&huart3, Data, sizeof(Data), 1000);
+      |                             ^~~~
+      |                             |
+      |                             uint16_t {aka short unsigned int}
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:406,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Inc/gpio.h:28,
+                 from ../Core/Src/lidar.c:3:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:723:73: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint16_t' {aka 'short unsigned int'}
+  723 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~^~~~~
+make: *** [Core/Src/subdir.mk:43: Core/Src/lidar.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+12:29:26 **** Incremental Build of configuration Debug for project Projet_Robot_I ****
+make -j4 all 
+arm-none-eabi-size   Projet_Robot_I.elf 
+   text	   data	    bss	    dec	    hex	filename
+  15712	     20	   1988	  17720	   4538	Projet_Robot_I.elf
+Finished building: default.size.stdout
+ 
+12:29:26 **** Incremental Build of configuration Debug for project Projet_Robot_Infirmier_F407G ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/lidar.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/lidar.d" -MT"Core/Src/lidar.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/lidar.o"
+../Core/Src/lidar.c: In function 'lidar_setup':
+../Core/Src/lidar.c:20:21: error: 'huart3' undeclared (first use in this function)
+   20 |  HAL_UART_Transmit(&huart3, Data, sizeof(Data), 1000);
+      |                     ^~~~~~
+../Core/Src/lidar.c:20:21: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/lidar.c:20:29: warning: passing argument 2 of 'HAL_UART_Transmit' makes pointer from integer without a cast [-Wint-conversion]
+   20 |  HAL_UART_Transmit(&huart3, Data, sizeof(Data), 1000);
+      |                             ^~~~
+      |                             |
+      |                             uint16_t {aka short unsigned int}
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:406,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Inc/gpio.h:28,
+                 from ../Core/Src/lidar.c:3:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:723:73: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint16_t' {aka 'short unsigned int'}
+  723 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~^~~~~
+make: *** [Core/Src/subdir.mk:43: Core/Src/lidar.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+12:29:42 **** Incremental Build of configuration Debug for project Projet_Robot_I ****
+make -j4 all 
+arm-none-eabi-size   Projet_Robot_I.elf 
+   text	   data	    bss	    dec	    hex	filename
+  15712	     20	   1988	  17720	   4538	Projet_Robot_I.elf
+Finished building: default.size.stdout
+ 
+12:29:42 **** Incremental Build of configuration Debug for project Projet_Robot_Infirmier_F407G ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/lidar.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/lidar.d" -MT"Core/Src/lidar.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/lidar.o"
+../Core/Src/lidar.c: In function 'lidar_setup':
+../Core/Src/lidar.c:20:29: warning: passing argument 2 of 'HAL_UART_Transmit' makes pointer from integer without a cast [-Wint-conversion]
+   20 |  HAL_UART_Transmit(&huart3, Data, sizeof(Data), 1000);
+      |                             ^~~~
+      |                             |
+      |                             uint16_t {aka short unsigned int}
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:406,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Inc/gpio.h:28,
+                 from ../Core/Src/lidar.c:3:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:723:73: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint16_t' {aka 'short unsigned int'}
+  723 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~^~~~~
+arm-none-eabi-gcc -o "Projet_Robot_Infirmier_F407G.elf" @"objects.list"   -mcpu=cortex-m4 -T"A:\Bureau\Projet Robot Infirmier\STM32\STM32F407G-Disc1\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Projet_Robot_Infirmier_F407G.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Projet_Robot_Infirmier_F407G.elf
+ 
+arm-none-eabi-size   Projet_Robot_Infirmier_F407G.elf 
+arm-none-eabi-objdump -h -S  Projet_Robot_Infirmier_F407G.elf  > "Projet_Robot_Infirmier_F407G.list"
+arm-none-eabi-objcopy  -O binary  Projet_Robot_Infirmier_F407G.elf  "Projet_Robot_Infirmier_F407G.bin"
+   text	   data	    bss	    dec	    hex	filename
+  11480	     20	   1788	  13288	   33e8	Projet_Robot_Infirmier_F407G.elf
+Finished building: default.size.stdout
+ 
+Finished building: Projet_Robot_Infirmier_F407G.bin
+ 
+Finished building: Projet_Robot_Infirmier_F407G.list
+ 
+12:29:46 **** Incremental Build of configuration Debug for project Projet_Robot_I ****
+make -j4 all 
+arm-none-eabi-size   Projet_Robot_I.elf 
+   text	   data	    bss	    dec	    hex	filename
+  15712	     20	   1988	  17720	   4538	Projet_Robot_I.elf
+Finished building: default.size.stdout
+ 
+12:29:46 **** Incremental Build of configuration Debug for project Projet_Robot_Infirmier_F407G ****
+make -j4 all 
+arm-none-eabi-size   Projet_Robot_Infirmier_F407G.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11480	     20	   1788	  13288	   33e8	Projet_Robot_Infirmier_F407G.elf
+Finished building: default.size.stdout
+ 
+12:29:51 **** Incremental Build of configuration Debug for project Projet_Robot_Infirmier_F407G ****
+make -j4 all 
+arm-none-eabi-size   Projet_Robot_Infirmier_F407G.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11480	     20	   1788	  13288	   33e8	Projet_Robot_Infirmier_F407G.elf
+Finished building: default.size.stdout
+ 
+12:30:27 **** Incremental Build of configuration Debug for project Projet_Robot_I ****
+make -j4 all 
+arm-none-eabi-size   Projet_Robot_I.elf 
+   text	   data	    bss	    dec	    hex	filename
+  15712	     20	   1988	  17720	   4538	Projet_Robot_I.elf
+Finished building: default.size.stdout
+ 
+12:30:28 **** Incremental Build of configuration Debug for project Projet_Robot_Infirmier_F407G ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:103:32: warning: passing argument 2 of 'HAL_UART_Receive_IT' from incompatible pointer type [-Wincompatible-pointer-types]
+  103 |   HAL_UART_Receive_IT(&huart2, UART2_rxBuffer, sizeof(UART2_rxBuffer)); // initialisation des liaisons UART en mode non bloquantes
+      |                                ^~~~~~~~~~~~~~
+      |                                |
+      |                                uint16_t * {aka short unsigned int *}
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:406,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:726:75: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
+  726 | HAL_StatusTypeDef HAL_UART_Receive_IT(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size);
+      |                                                                  ~~~~~~~~~^~~~~
+../Core/Src/main.c:104:32: warning: passing argument 2 of 'HAL_UART_Receive_IT' from incompatible pointer type [-Wincompatible-pointer-types]
+  104 |   HAL_UART_Receive_IT(&huart3, UART3_rxBuffer, sizeof(UART3_rxBuffer));
+      |                                ^~~~~~~~~~~~~~
+      |                                |
+      |                                uint16_t * {aka short unsigned int *}
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:406,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:726:75: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
+  726 | HAL_StatusTypeDef HAL_UART_Receive_IT(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size);
+      |                                                                  ~~~~~~~~~^~~~~
+arm-none-eabi-gcc -o "Projet_Robot_Infirmier_F407G.elf" @"objects.list"   -mcpu=cortex-m4 -T"A:\Bureau\Projet Robot Infirmier\STM32\STM32F407G-Disc1\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Projet_Robot_Infirmier_F407G.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Projet_Robot_Infirmier_F407G.elf
+ 
+arm-none-eabi-size   Projet_Robot_Infirmier_F407G.elf 
+arm-none-eabi-objdump -h -S  Projet_Robot_Infirmier_F407G.elf  > "Projet_Robot_Infirmier_F407G.list"
+arm-none-eabi-objcopy  -O binary  Projet_Robot_Infirmier_F407G.elf  "Projet_Robot_Infirmier_F407G.bin"
+   text	   data	    bss	    dec	    hex	filename
+  11480	     20	   1788	  13288	   33e8	Projet_Robot_Infirmier_F407G.elf
+Finished building: default.size.stdout
+ 
+Finished building: Projet_Robot_Infirmier_F407G.bin
+ 
+Finished building: Projet_Robot_Infirmier_F407G.list
+ 
+12:30:33 **** Incremental Build of configuration Debug for project Projet_Robot_Infirmier_F407G ****
+make -j4 all 
+arm-none-eabi-size   Projet_Robot_Infirmier_F407G.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11480	     20	   1788	  13288	   33e8	Projet_Robot_Infirmier_F407G.elf
+Finished building: default.size.stdout
+ 
+12:31:13 **** Incremental Build of configuration Debug for project Projet_Robot_Infirmier_F407G ****
+make -j4 all 
+arm-none-eabi-size   Projet_Robot_Infirmier_F407G.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11480	     20	   1788	  13288	   33e8	Projet_Robot_Infirmier_F407G.elf
+Finished building: default.size.stdout
+ 
+12:31:28 **** Incremental Build of configuration Debug for project Projet_Robot_I ****
+make -j4 all 
+arm-none-eabi-size   Projet_Robot_I.elf 
+   text	   data	    bss	    dec	    hex	filename
+  15712	     20	   1988	  17720	   4538	Projet_Robot_I.elf
+Finished building: default.size.stdout
+ 
+12:31:29 **** Incremental Build of configuration Debug for project Projet_Robot_Infirmier_F407G ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:103:32: warning: passing argument 2 of 'HAL_UART_Receive_IT' from incompatible pointer type [-Wincompatible-pointer-types]
+  103 |   HAL_UART_Receive_IT(&huart2, UART2_rxBuffer, sizeof(UART2_rxBuffer)); // initialisation des liaisons UART en mode non bloquantes
+      |                                ^~~~~~~~~~~~~~
+      |                                |
+      |                                uint16_t * {aka short unsigned int *}
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:406,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:726:75: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
+  726 | HAL_StatusTypeDef HAL_UART_Receive_IT(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size);
+      |                                                                  ~~~~~~~~~^~~~~
+../Core/Src/main.c:104:32: warning: passing argument 2 of 'HAL_UART_Receive_IT' from incompatible pointer type [-Wincompatible-pointer-types]
+  104 |   HAL_UART_Receive_IT(&huart3, UART3_rxBuffer, sizeof(UART3_rxBuffer));
+      |                                ^~~~~~~~~~~~~~
+      |                                |
+      |                                uint16_t * {aka short unsigned int *}
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:406,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:726:75: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
+  726 | HAL_StatusTypeDef HAL_UART_Receive_IT(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size);
+      |                                                                  ~~~~~~~~~^~~~~
+../Core/Src/main.c:117:4: warning: implicit declaration of function 'HGAL_Delay'; did you mean 'HAL_Delay'? [-Wimplicit-function-declaration]
+  117 |    HGAL_Delay(50);
+      |    ^~~~~~~~~~
+      |    HAL_Delay
+arm-none-eabi-gcc -o "Projet_Robot_Infirmier_F407G.elf" @"objects.list"   -mcpu=cortex-m4 -T"A:\Bureau\Projet Robot Infirmier\STM32\STM32F407G-Disc1\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Projet_Robot_Infirmier_F407G.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+c:\st\stm32cubeide_1.6.1\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\bin\ld.exe: ./Core/Src/main.o: in function `main':
+A:/Bureau/Projet Robot Infirmier/STM32/STM32F407G-Disc1/Debug/../Core/Src/main.c:117: undefined reference to `HGAL_Delay'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:65: Projet_Robot_Infirmier_F407G.elf] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+12:31:36 **** Incremental Build of configuration Debug for project Projet_Robot_Infirmier_F407G ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:103:32: warning: passing argument 2 of 'HAL_UART_Receive_IT' from incompatible pointer type [-Wincompatible-pointer-types]
+  103 |   HAL_UART_Receive_IT(&huart2, UART2_rxBuffer, sizeof(UART2_rxBuffer)); // initialisation des liaisons UART en mode non bloquantes
+      |                                ^~~~~~~~~~~~~~
+      |                                |
+      |                                uint16_t * {aka short unsigned int *}
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:406,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:726:75: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
+  726 | HAL_StatusTypeDef HAL_UART_Receive_IT(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size);
+      |                                                                  ~~~~~~~~~^~~~~
+../Core/Src/main.c:104:32: warning: passing argument 2 of 'HAL_UART_Receive_IT' from incompatible pointer type [-Wincompatible-pointer-types]
+  104 |   HAL_UART_Receive_IT(&huart3, UART3_rxBuffer, sizeof(UART3_rxBuffer));
+      |                                ^~~~~~~~~~~~~~
+      |                                |
+      |                                uint16_t * {aka short unsigned int *}
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:406,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:726:75: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
+  726 | HAL_StatusTypeDef HAL_UART_Receive_IT(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size);
+      |                                                                  ~~~~~~~~~^~~~~
+arm-none-eabi-gcc -o "Projet_Robot_Infirmier_F407G.elf" @"objects.list"   -mcpu=cortex-m4 -T"A:\Bureau\Projet Robot Infirmier\STM32\STM32F407G-Disc1\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Projet_Robot_Infirmier_F407G.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Projet_Robot_Infirmier_F407G.elf
+ 
+arm-none-eabi-size   Projet_Robot_Infirmier_F407G.elf 
+arm-none-eabi-objdump -h -S  Projet_Robot_Infirmier_F407G.elf  > "Projet_Robot_Infirmier_F407G.list"
+arm-none-eabi-objcopy  -O binary  Projet_Robot_Infirmier_F407G.elf  "Projet_Robot_Infirmier_F407G.bin"
+   text	   data	    bss	    dec	    hex	filename
+  11556	     20	   1788	  13364	   3434	Projet_Robot_Infirmier_F407G.elf
+Finished building: default.size.stdout
+ 
+Finished building: Projet_Robot_Infirmier_F407G.bin
+Finished building: Projet_Robot_Infirmier_F407G.list
+ 
+ 
+12:33:30 **** Incremental Build of configuration Debug for project Projet_Robot_I ****
+make -j4 all 
+arm-none-eabi-size   Projet_Robot_I.elf 
+   text	   data	    bss	    dec	    hex	filename
+  15712	     20	   1988	  17720	   4538	Projet_Robot_I.elf
+Finished building: default.size.stdout
+ 
+12:33:30 **** Incremental Build of configuration Debug for project Projet_Robot_Infirmier_F407G ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/lidar.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/lidar.d" -MT"Core/Src/lidar.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/lidar.o"
+../Core/Src/lidar.c: In function 'lidar_setup':
+../Core/Src/lidar.c:19:20: error: invalid initializer
+   19 |  uint16_t Data[] = 0x20;
+      |                    ^~~~
+../Core/Src/lidar.c:20:29: warning: passing argument 2 of 'HAL_UART_Transmit' from incompatible pointer type [-Wincompatible-pointer-types]
+   20 |  HAL_UART_Transmit(&huart3, Data, sizeof(Data), 1000);
+      |                             ^~~~
+      |                             |
+      |                             uint16_t * {aka short unsigned int *}
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:406,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Inc/gpio.h:28,
+                 from ../Core/Src/lidar.c:3:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:723:73: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
+  723 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~^~~~~
+make: *** [Core/Src/subdir.mk:43: Core/Src/lidar.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+12:33:48 **** Incremental Build of configuration Debug for project Projet_Robot_I ****
+make -j4 all 
+arm-none-eabi-size   Projet_Robot_I.elf 
+   text	   data	    bss	    dec	    hex	filename
+  15712	     20	   1988	  17720	   4538	Projet_Robot_I.elf
+Finished building: default.size.stdout
+ 
+12:33:49 **** Incremental Build of configuration Debug for project Projet_Robot_Infirmier_F407G ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/lidar.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/lidar.d" -MT"Core/Src/lidar.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/lidar.o"
+../Core/Src/lidar.c: In function 'lidar_setup':
+../Core/Src/lidar.c:19:20: error: cannot initialize array of 'short unsigned int' from a string literal with type array of 'char'
+   19 |  uint16_t Data[] = "0x2"0;
+      |                    ^~~~~
+../Core/Src/lidar.c:19:25: error: expected ',' or ';' before numeric constant
+   19 |  uint16_t Data[] = "0x2"0;
+      |                         ^
+../Core/Src/lidar.c:20:29: warning: passing argument 2 of 'HAL_UART_Transmit' from incompatible pointer type [-Wincompatible-pointer-types]
+   20 |  HAL_UART_Transmit(&huart3, Data, sizeof(Data), 1000);
+      |                             ^~~~
+      |                             |
+      |                             uint16_t * {aka short unsigned int *}
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:406,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Inc/gpio.h:28,
+                 from ../Core/Src/lidar.c:3:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:723:73: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
+  723 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~^~~~~
+make: *** [Core/Src/subdir.mk:43: Core/Src/lidar.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+12:33:54 **** Incremental Build of configuration Debug for project Projet_Robot_I ****
+make -j4 all 
+arm-none-eabi-size   Projet_Robot_I.elf 
+   text	   data	    bss	    dec	    hex	filename
+  15712	     20	   1988	  17720	   4538	Projet_Robot_I.elf
+Finished building: default.size.stdout
+ 
+12:33:55 **** Incremental Build of configuration Debug for project Projet_Robot_Infirmier_F407G ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/lidar.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/lidar.d" -MT"Core/Src/lidar.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/lidar.o"
+../Core/Src/lidar.c: In function 'lidar_setup':
+../Core/Src/lidar.c:19:20: error: cannot initialize array of 'short unsigned int' from a string literal with type array of 'char'
+   19 |  uint16_t Data[] = "0x20";
+      |                    ^~~~~~
+../Core/Src/lidar.c:20:29: warning: passing argument 2 of 'HAL_UART_Transmit' from incompatible pointer type [-Wincompatible-pointer-types]
+   20 |  HAL_UART_Transmit(&huart3, Data, sizeof(Data), 1000);
+      |                             ^~~~
+      |                             |
+      |                             uint16_t * {aka short unsigned int *}
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:406,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Inc/gpio.h:28,
+                 from ../Core/Src/lidar.c:3:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:723:73: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
+  723 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~^~~~~
+make: *** [Core/Src/subdir.mk:43: Core/Src/lidar.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+12:34:01 **** Incremental Build of configuration Debug for project Projet_Robot_Infirmier_F407G ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/lidar.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/lidar.d" -MT"Core/Src/lidar.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/lidar.o"
+../Core/Src/lidar.c: In function 'lidar_setup':
+../Core/Src/lidar.c:19:20: error: cannot initialize array of 'short unsigned int' from a string literal with type array of 'char'
+   19 |  uint16_t Data[] = "0x20";
+      |                    ^~~~~~
+../Core/Src/lidar.c:20:29: warning: passing argument 2 of 'HAL_UART_Transmit' from incompatible pointer type [-Wincompatible-pointer-types]
+   20 |  HAL_UART_Transmit(&huart3, Data, sizeof(Data), 1000);
+      |                             ^~~~
+      |                             |
+      |                             uint16_t * {aka short unsigned int *}
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:406,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Inc/gpio.h:28,
+                 from ../Core/Src/lidar.c:3:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:723:73: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
+  723 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~^~~~~
+make: *** [Core/Src/subdir.mk:43: Core/Src/lidar.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+12:34:11 **** Incremental Build of configuration Debug for project Projet_Robot_Infirmier_F407G ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/lidar.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/lidar.d" -MT"Core/Src/lidar.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/lidar.o"
+../Core/Src/lidar.c: In function 'lidar_setup':
+../Core/Src/lidar.c:19:20: error: cannot initialize array of 'short unsigned int' from a string literal with type array of 'char'
+   19 |  uint16_t Data[] = "0x20";
+      |                    ^~~~~~
+../Core/Src/lidar.c:20:29: warning: passing argument 2 of 'HAL_UART_Transmit' from incompatible pointer type [-Wincompatible-pointer-types]
+   20 |  HAL_UART_Transmit(&huart3, Data, sizeof(Data), 1000);
+      |                             ^~~~
+      |                             |
+      |                             uint16_t * {aka short unsigned int *}
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:406,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Inc/gpio.h:28,
+                 from ../Core/Src/lidar.c:3:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:723:73: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
+  723 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~^~~~~
+make: *** [Core/Src/subdir.mk:43: Core/Src/lidar.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+12:34:29 **** Incremental Build of configuration Debug for project Projet_Robot_I ****
+make -j4 all 
+arm-none-eabi-size   Projet_Robot_I.elf 
+   text	   data	    bss	    dec	    hex	filename
+  15712	     20	   1988	  17720	   4538	Projet_Robot_I.elf
+Finished building: default.size.stdout
+ 
+12:34:30 **** Incremental Build of configuration Debug for project Projet_Robot_Infirmier_F407G ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/lidar.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/lidar.d" -MT"Core/Src/lidar.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/lidar.o"
+../Core/Src/lidar.c: In function 'lidar_setup':
+../Core/Src/lidar.c:20:29: warning: passing argument 2 of 'HAL_UART_Transmit' makes pointer from integer without a cast [-Wint-conversion]
+   20 |  HAL_UART_Transmit(&huart3, Data, sizeof(Data), 1000);
+      |                             ^~~~
+      |                             |
+      |                             uint16_t {aka short unsigned int}
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:406,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Inc/gpio.h:28,
+                 from ../Core/Src/lidar.c:3:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:723:73: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint16_t' {aka 'short unsigned int'}
+  723 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~^~~~~
+arm-none-eabi-gcc -o "Projet_Robot_Infirmier_F407G.elf" @"objects.list"   -mcpu=cortex-m4 -T"A:\Bureau\Projet Robot Infirmier\STM32\STM32F407G-Disc1\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Projet_Robot_Infirmier_F407G.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Projet_Robot_Infirmier_F407G.elf
+ 
+arm-none-eabi-size   Projet_Robot_Infirmier_F407G.elf 
+arm-none-eabi-objdump -h -S  Projet_Robot_Infirmier_F407G.elf  > "Projet_Robot_Infirmier_F407G.list"
+arm-none-eabi-objcopy  -O binary  Projet_Robot_Infirmier_F407G.elf  "Projet_Robot_Infirmier_F407G.bin"
+   text	   data	    bss	    dec	    hex	filename
+  11556	     20	   1788	  13364	   3434	Projet_Robot_Infirmier_F407G.elf
+Finished building: default.size.stdout
+ 
+Finished building: Projet_Robot_Infirmier_F407G.bin
+ 
+Finished building: Projet_Robot_Infirmier_F407G.list
+ 
+12:34:34 **** Incremental Build of configuration Debug for project Projet_Robot_Infirmier_F407G ****
+make -j4 all 
+arm-none-eabi-size   Projet_Robot_Infirmier_F407G.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11556	     20	   1788	  13364	   3434	Projet_Robot_Infirmier_F407G.elf
+Finished building: default.size.stdout
+ 
+12:35:57 **** Incremental Build of configuration Debug for project Projet_Robot_I ****
+make -j4 all 
+arm-none-eabi-size   Projet_Robot_I.elf 
+   text	   data	    bss	    dec	    hex	filename
+  15712	     20	   1988	  17720	   4538	Projet_Robot_I.elf
+Finished building: default.size.stdout
+ 
+12:35:58 **** Incremental Build of configuration Debug for project Projet_Robot_Infirmier_F407G ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/lidar.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/lidar.d" -MT"Core/Src/lidar.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/lidar.o"
+../Core/Src/lidar.c: In function 'lidar_setup':
+../Core/Src/lidar.c:19:20: error: expected expression before '[' token
+   19 |  uint16_t Data[] = [0x20];
+      |                    ^
+../Core/Src/lidar.c:20:29: warning: passing argument 2 of 'HAL_UART_Transmit' from incompatible pointer type [-Wincompatible-pointer-types]
+   20 |  HAL_UART_Transmit(&huart3, Data, sizeof(Data), 1000);
+      |                             ^~~~
+      |                             |
+      |                             uint16_t * {aka short unsigned int *}
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:406,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Inc/gpio.h:28,
+                 from ../Core/Src/lidar.c:3:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:723:73: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
+  723 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~^~~~~
+make: *** [Core/Src/subdir.mk:43: Core/Src/lidar.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+12:36:06 **** Incremental Build of configuration Debug for project Projet_Robot_I ****
+make -j4 all 
+arm-none-eabi-size   Projet_Robot_I.elf 
+   text	   data	    bss	    dec	    hex	filename
+  15712	     20	   1988	  17720	   4538	Projet_Robot_I.elf
+Finished building: default.size.stdout
+ 
+12:36:06 **** Incremental Build of configuration Debug for project Projet_Robot_Infirmier_F407G ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/lidar.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/lidar.d" -MT"Core/Src/lidar.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/lidar.o"
+../Core/Src/lidar.c: In function 'lidar_setup':
+../Core/Src/lidar.c:20:29: warning: passing argument 2 of 'HAL_UART_Transmit' makes pointer from integer without a cast [-Wint-conversion]
+   20 |  HAL_UART_Transmit(&huart3, Data, sizeof(Data), 1000);
+      |                             ^~~~
+      |                             |
+      |                             uint16_t {aka short unsigned int}
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:406,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Inc/gpio.h:28,
+                 from ../Core/Src/lidar.c:3:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:723:73: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint16_t' {aka 'short unsigned int'}
+  723 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~^~~~~
+arm-none-eabi-gcc -o "Projet_Robot_Infirmier_F407G.elf" @"objects.list"   -mcpu=cortex-m4 -T"A:\Bureau\Projet Robot Infirmier\STM32\STM32F407G-Disc1\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Projet_Robot_Infirmier_F407G.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Projet_Robot_Infirmier_F407G.elf
+ 
+arm-none-eabi-size   Projet_Robot_Infirmier_F407G.elf 
+arm-none-eabi-objdump -h -S  Projet_Robot_Infirmier_F407G.elf  > "Projet_Robot_Infirmier_F407G.list"
+arm-none-eabi-objcopy  -O binary  Projet_Robot_Infirmier_F407G.elf  "Projet_Robot_Infirmier_F407G.bin"
+   text	   data	    bss	    dec	    hex	filename
+  11556	     20	   1788	  13364	   3434	Projet_Robot_Infirmier_F407G.elf
+Finished building: default.size.stdout
+ 
+Finished building: Projet_Robot_Infirmier_F407G.bin
+ 
+Finished building: Projet_Robot_Infirmier_F407G.list
+ 
+12:42:08 **** Incremental Build of configuration Debug for project Projet_Robot_I ****
+make -j4 all 
+arm-none-eabi-size   Projet_Robot_I.elf 
+   text	   data	    bss	    dec	    hex	filename
+  15712	     20	   1988	  17720	   4538	Projet_Robot_I.elf
+Finished building: default.size.stdout
+ 
+12:42:09 **** Incremental Build of configuration Debug for project Projet_Robot_Infirmier_F407G ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/lidar.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/lidar.d" -MT"Core/Src/lidar.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/lidar.o"
+../Core/Src/lidar.c: In function 'lidar_setup':
+../Core/Src/lidar.c:19:11: error: array size missing in 'Data'
+   19 |  uint16_t Data[];
+      |           ^~~~
+../Core/Src/lidar.c:22:29: warning: passing argument 2 of 'HAL_UART_Transmit' from incompatible pointer type [-Wincompatible-pointer-types]
+   22 |  HAL_UART_Transmit(&huart3, Data, sizeof(Data), 1000);
+      |                             ^~~~
+      |                             |
+      |                             uint16_t * {aka short unsigned int *}
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:406,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Inc/gpio.h:28,
+                 from ../Core/Src/lidar.c:3:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:723:73: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
+  723 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~^~~~~
+make: *** [Core/Src/subdir.mk:43: Core/Src/lidar.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+12:42:22 **** Incremental Build of configuration Debug for project Projet_Robot_I ****
+make -j4 all 
+arm-none-eabi-size   Projet_Robot_I.elf 
+   text	   data	    bss	    dec	    hex	filename
+  15712	     20	   1988	  17720	   4538	Projet_Robot_I.elf
+Finished building: default.size.stdout
+ 
+12:42:22 **** Incremental Build of configuration Debug for project Projet_Robot_Infirmier_F407G ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/lidar.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/lidar.d" -MT"Core/Src/lidar.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/lidar.o"
+../Core/Src/lidar.c: In function 'lidar_setup':
+../Core/Src/lidar.c:22:29: warning: passing argument 2 of 'HAL_UART_Transmit' from incompatible pointer type [-Wincompatible-pointer-types]
+   22 |  HAL_UART_Transmit(&huart3, Data, sizeof(Data), 1000);
+      |                             ^~~~
+      |                             |
+      |                             uint16_t * {aka short unsigned int *}
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:406,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Inc/gpio.h:28,
+                 from ../Core/Src/lidar.c:3:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:723:73: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
+  723 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~^~~~~
+arm-none-eabi-gcc -o "Projet_Robot_Infirmier_F407G.elf" @"objects.list"   -mcpu=cortex-m4 -T"A:\Bureau\Projet Robot Infirmier\STM32\STM32F407G-Disc1\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Projet_Robot_Infirmier_F407G.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Projet_Robot_Infirmier_F407G.elf
+ 
+arm-none-eabi-size   Projet_Robot_Infirmier_F407G.elf 
+arm-none-eabi-objdump -h -S  Projet_Robot_Infirmier_F407G.elf  > "Projet_Robot_Infirmier_F407G.list"
+arm-none-eabi-objcopy  -O binary  Projet_Robot_Infirmier_F407G.elf  "Projet_Robot_Infirmier_F407G.bin"
+   text	   data	    bss	    dec	    hex	filename
+  11556	     20	   1788	  13364	   3434	Projet_Robot_Infirmier_F407G.elf
+Finished building: default.size.stdout
+ 
+Finished building: Projet_Robot_Infirmier_F407G.bin
+ 
+Finished building: Projet_Robot_Infirmier_F407G.list
+ 
+12:42:29 **** Incremental Build of configuration Debug for project Projet_Robot_Infirmier_F407G ****
+make -j4 all 
+arm-none-eabi-size   Projet_Robot_Infirmier_F407G.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11556	     20	   1788	  13364	   3434	Projet_Robot_Infirmier_F407G.elf
+Finished building: default.size.stdout
+ 
+12:43:30 **** Incremental Build of configuration Debug for project Projet_Robot_Infirmier_F407G ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:103:32: warning: passing argument 2 of 'HAL_UART_Receive_IT' from incompatible pointer type [-Wincompatible-pointer-types]
+  103 |   HAL_UART_Receive_IT(&huart2, UART2_rxBuffer, sizeof(UART2_rxBuffer)); // initialisation des liaisons UART en mode non bloquantes
+      |                                ^~~~~~~~~~~~~~
+      |                                |
+      |                                uint16_t * {aka short unsigned int *}
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:406,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:726:75: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
+  726 | HAL_StatusTypeDef HAL_UART_Receive_IT(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size);
+      |                                                                  ~~~~~~~~~^~~~~
+../Core/Src/main.c:104:32: warning: passing argument 2 of 'HAL_UART_Receive_IT' from incompatible pointer type [-Wincompatible-pointer-types]
+  104 |   HAL_UART_Receive_IT(&huart3, UART3_rxBuffer, sizeof(UART3_rxBuffer));
+      |                                ^~~~~~~~~~~~~~
+      |                                |
+      |                                uint16_t * {aka short unsigned int *}
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:406,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:726:75: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
+  726 | HAL_StatusTypeDef HAL_UART_Receive_IT(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size);
+      |                                                                  ~~~~~~~~~^~~~~
+arm-none-eabi-gcc -o "Projet_Robot_Infirmier_F407G.elf" @"objects.list"   -mcpu=cortex-m4 -T"A:\Bureau\Projet Robot Infirmier\STM32\STM32F407G-Disc1\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Projet_Robot_Infirmier_F407G.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Projet_Robot_Infirmier_F407G.elf
+ 
+arm-none-eabi-size   Projet_Robot_Infirmier_F407G.elf 
+arm-none-eabi-objdump -h -S  Projet_Robot_Infirmier_F407G.elf  > "Projet_Robot_Infirmier_F407G.list"
+arm-none-eabi-objcopy  -O binary  Projet_Robot_Infirmier_F407G.elf  "Projet_Robot_Infirmier_F407G.bin"
+   text	   data	    bss	    dec	    hex	filename
+  11560	     20	   1788	  13368	   3438	Projet_Robot_Infirmier_F407G.elf
+Finished building: default.size.stdout
+ 
+Finished building: Projet_Robot_Infirmier_F407G.bin
+ 
+Finished building: Projet_Robot_Infirmier_F407G.list
+ 
+12:48:15 **** Incremental Build of configuration Debug for project Projet_Robot_Infirmier_F407G ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/lidar.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/lidar.d" -MT"Core/Src/lidar.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/lidar.o"
+../Core/Src/lidar.c: In function 'lidar_setup':
+../Core/Src/lidar.c:23:29: warning: passing argument 2 of 'HAL_UART_Transmit' from incompatible pointer type [-Wincompatible-pointer-types]
+   23 |  HAL_UART_Transmit(&huart3, Data, sizeof(Data), 1000);
+      |                             ^~~~
+      |                             |
+      |                             uint16_t * {aka short unsigned int *}
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:406,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Inc/gpio.h:28,
+                 from ../Core/Src/lidar.c:3:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:723:73: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
+  723 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~^~~~~
+arm-none-eabi-gcc -o "Projet_Robot_Infirmier_F407G.elf" @"objects.list"   -mcpu=cortex-m4 -T"A:\Bureau\Projet Robot Infirmier\STM32\STM32F407G-Disc1\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Projet_Robot_Infirmier_F407G.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Projet_Robot_Infirmier_F407G.elf
+ 
+arm-none-eabi-size   Projet_Robot_Infirmier_F407G.elf 
+arm-none-eabi-objdump -h -S  Projet_Robot_Infirmier_F407G.elf  > "Projet_Robot_Infirmier_F407G.list"
+arm-none-eabi-objcopy  -O binary  Projet_Robot_Infirmier_F407G.elf  "Projet_Robot_Infirmier_F407G.bin"
+   text	   data	    bss	    dec	    hex	filename
+  11564	     20	   1788	  13372	   343c	Projet_Robot_Infirmier_F407G.elf
+Finished building: default.size.stdout
+ 
+Finished building: Projet_Robot_Infirmier_F407G.bin
+ 
+Finished building: Projet_Robot_Infirmier_F407G.list
+ 
+12:49:55 **** Incremental Build of configuration Debug for project Projet_Robot_I ****
+make -j4 all 
+arm-none-eabi-size   Projet_Robot_I.elf 
+   text	   data	    bss	    dec	    hex	filename
+  15712	     20	   1988	  17720	   4538	Projet_Robot_I.elf
+Finished building: default.size.stdout
+ 
+12:49:56 **** Incremental Build of configuration Debug for project Projet_Robot_Infirmier_F407G ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/lidar.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/lidar.d" -MT"Core/Src/lidar.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/lidar.o"
+../Core/Src/lidar.c: In function 'lidar_setup':
+../Core/Src/lidar.c:22:29: warning: passing argument 2 of 'HAL_UART_Transmit' from incompatible pointer type [-Wincompatible-pointer-types]
+   22 |  HAL_UART_Transmit(&huart3, Data, sizeof(Data), 1000);
+      |                             ^~~~
+      |                             |
+      |                             uint16_t * {aka short unsigned int *}
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:406,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Inc/gpio.h:28,
+                 from ../Core/Src/lidar.c:3:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:723:73: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
+  723 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~^~~~~
+arm-none-eabi-gcc -o "Projet_Robot_Infirmier_F407G.elf" @"objects.list"   -mcpu=cortex-m4 -T"A:\Bureau\Projet Robot Infirmier\STM32\STM32F407G-Disc1\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Projet_Robot_Infirmier_F407G.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Projet_Robot_Infirmier_F407G.elf
+ 
+arm-none-eabi-size   Projet_Robot_Infirmier_F407G.elf 
+arm-none-eabi-objdump -h -S  Projet_Robot_Infirmier_F407G.elf  > "Projet_Robot_Infirmier_F407G.list"
+arm-none-eabi-objcopy  -O binary  Projet_Robot_Infirmier_F407G.elf  "Projet_Robot_Infirmier_F407G.bin"
+   text	   data	    bss	    dec	    hex	filename
+  11560	     20	   1788	  13368	   3438	Projet_Robot_Infirmier_F407G.elf
+Finished building: default.size.stdout
+ 
+Finished building: Projet_Robot_Infirmier_F407G.bin
+ 
+Finished building: Projet_Robot_Infirmier_F407G.list
+ 
+12:50:10 **** Incremental Build of configuration Debug for project Projet_Robot_Infirmier_F407G ****
+make -j4 all 
+arm-none-eabi-size   Projet_Robot_Infirmier_F407G.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11560	     20	   1788	  13368	   3438	Projet_Robot_Infirmier_F407G.elf
+Finished building: default.size.stdout
+ 
+12:50:52 **** Incremental Build of configuration Debug for project Projet_Robot_I ****
+make -j4 all 
+arm-none-eabi-size   Projet_Robot_I.elf 
+   text	   data	    bss	    dec	    hex	filename
+  15712	     20	   1988	  17720	   4538	Projet_Robot_I.elf
+Finished building: default.size.stdout
+ 
+12:50:52 **** Incremental Build of configuration Debug for project Projet_Robot_Infirmier_F407G ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/lidar.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/lidar.d" -MT"Core/Src/lidar.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/lidar.o"
+../Core/Src/lidar.c: In function 'lidar_setup':
+../Core/Src/lidar.c:22:29: warning: passing argument 2 of 'HAL_UART_Transmit' from incompatible pointer type [-Wincompatible-pointer-types]
+   22 |  HAL_UART_Transmit(&huart3, Data, sizeof(Data), 1000);
+      |                             ^~~~
+      |                             |
+      |                             uint16_t * {aka short unsigned int *}
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:406,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Inc/gpio.h:28,
+                 from ../Core/Src/lidar.c:3:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:723:73: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
+  723 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~^~~~~
+arm-none-eabi-gcc -o "Projet_Robot_Infirmier_F407G.elf" @"objects.list"   -mcpu=cortex-m4 -T"A:\Bureau\Projet Robot Infirmier\STM32\STM32F407G-Disc1\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Projet_Robot_Infirmier_F407G.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Projet_Robot_Infirmier_F407G.elf
+ 
+arm-none-eabi-size   Projet_Robot_Infirmier_F407G.elf 
+arm-none-eabi-objdump -h -S  Projet_Robot_Infirmier_F407G.elf  > "Projet_Robot_Infirmier_F407G.list"
+arm-none-eabi-objcopy  -O binary  Projet_Robot_Infirmier_F407G.elf  "Projet_Robot_Infirmier_F407G.bin"
+   text	   data	    bss	    dec	    hex	filename
+  11560	     20	   1788	  13368	   3438	Projet_Robot_Infirmier_F407G.elf
+Finished building: default.size.stdout
+ 
+Finished building: Projet_Robot_Infirmier_F407G.bin
+ 
+Finished building: Projet_Robot_Infirmier_F407G.list
+ 
+12:51:30 **** Incremental Build of configuration Debug for project Projet_Robot_Infirmier_F407G ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/lidar.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/lidar.d" -MT"Core/Src/lidar.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/lidar.o"
+../Core/Src/lidar.c: In function 'lidar_setup':
+../Core/Src/lidar.c:20:12: error: 'A5' undeclared (first use in this function)
+   20 |  Data[0] = A5;
+      |            ^~
+../Core/Src/lidar.c:20:12: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/lidar.c:21:29: warning: passing argument 2 of 'HAL_UART_Transmit' from incompatible pointer type [-Wincompatible-pointer-types]
+   21 |  HAL_UART_Transmit(&huart3, Data, sizeof(Data), 1000);
+      |                             ^~~~
+      |                             |
+      |                             uint16_t * {aka short unsigned int *}
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:406,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Inc/gpio.h:28,
+                 from ../Core/Src/lidar.c:3:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:723:73: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
+  723 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~^~~~~
+make: *** [Core/Src/subdir.mk:43: Core/Src/lidar.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+12:52:05 **** Incremental Build of configuration Debug for project Projet_Robot_I ****
+make -j4 all 
+arm-none-eabi-size   Projet_Robot_I.elf 
+   text	   data	    bss	    dec	    hex	filename
+  15712	     20	   1988	  17720	   4538	Projet_Robot_I.elf
+Finished building: default.size.stdout
+ 
+12:52:06 **** Incremental Build of configuration Debug for project Projet_Robot_Infirmier_F407G ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/lidar.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/lidar.d" -MT"Core/Src/lidar.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/lidar.o"
+../Core/Src/lidar.c: In function 'lidar_setup':
+../Core/Src/lidar.c:22:29: warning: passing argument 2 of 'HAL_UART_Transmit' from incompatible pointer type [-Wincompatible-pointer-types]
+   22 |  HAL_UART_Transmit(&huart3, Data, sizeof(Data), 1000);
+      |                             ^~~~
+      |                             |
+      |                             uint16_t * {aka short unsigned int *}
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:406,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Inc/gpio.h:28,
+                 from ../Core/Src/lidar.c:3:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:723:73: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
+  723 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~^~~~~
+arm-none-eabi-gcc -o "Projet_Robot_Infirmier_F407G.elf" @"objects.list"   -mcpu=cortex-m4 -T"A:\Bureau\Projet Robot Infirmier\STM32\STM32F407G-Disc1\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Projet_Robot_Infirmier_F407G.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Projet_Robot_Infirmier_F407G.elf
+ 
+arm-none-eabi-size   Projet_Robot_Infirmier_F407G.elf 
+arm-none-eabi-objdump -h -S  Projet_Robot_Infirmier_F407G.elf  > "Projet_Robot_Infirmier_F407G.list"
+arm-none-eabi-objcopy  -O binary  Projet_Robot_Infirmier_F407G.elf  "Projet_Robot_Infirmier_F407G.bin"
+   text	   data	    bss	    dec	    hex	filename
+  11560	     20	   1788	  13368	   3438	Projet_Robot_Infirmier_F407G.elf
+Finished building: default.size.stdout
+ 
+Finished building: Projet_Robot_Infirmier_F407G.bin
+ 
+Finished building: Projet_Robot_Infirmier_F407G.list
+ 

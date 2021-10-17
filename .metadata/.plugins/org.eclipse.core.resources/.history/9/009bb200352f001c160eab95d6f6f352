@@ -1,0 +1,25 @@
+
+#include "lidar.h"
+#include "gpio.h"
+
+
+
+
+
+
+
+
+
+
+
+
+
+void lidar_setup(){
+	uint16_t Data = 0x20;
+	HAL_UART_Transmit(&huart3, &Data, sizeof(Data), 1000);
+
+
+
+	return;
+}
+
