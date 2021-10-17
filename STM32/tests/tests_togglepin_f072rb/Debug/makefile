@@ -35,34 +35,34 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := tests_togglepin_f072rb
+BUILD_ARTIFACT_NAME := Projet_Robot_Infirmier
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-tests_togglepin_f072rb.elf \
+Projet_Robot_Infirmier.elf \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-tests_togglepin_f072rb.list \
+Projet_Robot_Infirmier.list \
 
 OBJCOPY_BIN += \
-tests_togglepin_f072rb.bin \
+Projet_Robot_Infirmier.bin \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: tests_togglepin_f072rb.elf secondary-outputs
+main-build: Projet_Robot_Infirmier.elf secondary-outputs
 
 # Tool invocations
-tests_togglepin_f072rb.elf: $(OBJS) $(USER_OBJS) A:\Bureau\Projet\ Robot\ Infirmier\STM32\tests\tests_togglepin_f072rb\STM32F072RBTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "tests_togglepin_f072rb.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m0 -T"A:\Bureau\Projet Robot Infirmier\STM32\tests\tests_togglepin_f072rb\STM32F072RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="tests_togglepin_f072rb.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Projet_Robot_Infirmier.elf: $(OBJS) $(USER_OBJS) A:\Bureau\Projet\ Robot\ Infirmier\STM32\tests\tests_togglepin_f072rb\STM32F072RBTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "Projet_Robot_Infirmier.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m0 -T"A:\Bureau\Projet Robot Infirmier\STM32\tests\tests_togglepin_f072rb\STM32F072RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Projet_Robot_Infirmier.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -71,19 +71,19 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-tests_togglepin_f072rb.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "tests_togglepin_f072rb.list"
+Projet_Robot_Infirmier.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "Projet_Robot_Infirmier.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-tests_togglepin_f072rb.bin: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "tests_togglepin_f072rb.bin"
+Projet_Robot_Infirmier.bin: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "Projet_Robot_Infirmier.bin"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(SIZE_OUTPUT)$(OBJDUMP_LIST)$(EXECUTABLES)$(OBJS)$(S_DEPS)$(S_UPPER_DEPS)$(C_DEPS)$(OBJCOPY_BIN) tests_togglepin_f072rb.elf
+	-$(RM) $(SIZE_OUTPUT)$(OBJDUMP_LIST)$(EXECUTABLES)$(OBJS)$(S_DEPS)$(S_UPPER_DEPS)$(C_DEPS)$(OBJCOPY_BIN) Projet_Robot_Infirmier.elf
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_BIN)

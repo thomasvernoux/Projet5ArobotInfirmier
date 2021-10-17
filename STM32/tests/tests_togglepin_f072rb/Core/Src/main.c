@@ -93,12 +93,23 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-
-
-	  HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_9);
-	  HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_8);
-	  HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_10);
 	  HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_0);
+	  HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_1);
+	  HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_2);
+	  HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_3);
+	  HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_4);
+	  HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
+	  HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_6);
+	  HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_7);
+	  HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_8);
+	  HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_9);
+	  HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_10);
+	  HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_11);
+	  HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_12);
+	  HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_13);
+	  HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_14);
+	  HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_15);
+
 
 	  HAL_Delay(10);
 

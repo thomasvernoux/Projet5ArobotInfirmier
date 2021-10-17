@@ -1,0 +1,23 @@
+
+#include "lidar.h"
+#include "gpio.h"
+
+
+
+
+
+
+
+
+
+
+
+
+
+void lidar_setup(){
+
+
+
+	return;
+}
+
