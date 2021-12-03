@@ -1,0 +1,19 @@
+!SESSION 2021-12-03 11:30:38.959 -----------------------------------------------
+eclipse.buildId=Version 1.7.0
+java.version=11.0.10
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=fr_FR
+Framework arguments:  C:\Users\thoma\Documents\GitHub\Projet5ArobotInfirmier\STM32\STM32_Carte_principale\stm32f4_disc\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 C:\Users\thoma\Documents\GitHub\Projet5ArobotInfirmier\STM32\STM32_Carte_principale\stm32f4_disc\.project
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2021-12-03 11:31:13.209
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2021-12-03 11:31:13.283
+!MESSAGE Log4j initialized with config file C:\Users\thoma\Documents\GitHub\Projet5ArobotInfirmier\STM32\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2021-12-03 11:31:17.364
+!MESSAGE Started RMI Server, listening on port 41338
+
+!ENTRY org.eclipse.cdt.core 1 0 2021-12-03 11:31:24.573
+!MESSAGE Indexed 'stm32f4_disc' (36 sources, 117 headers) in 4,95 sec: 11 088 declarations; 54 488 references; 6 unresolved inclusions; 323 syntax errors; 1 616 unresolved names (2,4 %)
