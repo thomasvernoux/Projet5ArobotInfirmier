@@ -45,15 +45,12 @@
 
 /* USER CODE BEGIN PV */
 
-uint8_t UART1_rxBuffer [50];
-uint8_t UART2_rxBuffer [10];
-uint8_t UART3_rxBuffer [10];
-uint8_t UART4_rxBuffer [10];
 
-uint8_t UART1_txBuffer [50];
-uint8_t UART2_txBuffer [10];
-uint8_t UART3_txBuffer [10];
-uint8_t UART4_txBuffer [10];
+uint8_t UART2_rxBuffer [50];
+
+
+uint8_t UART2_txBuffer [50];
+
 
 /* USER CODE END PV */
 
@@ -102,10 +99,8 @@ int main(void)
 
 
 
-  HAL_UART_Receive_IT(&huart2, UART1_rxBuffer, sizeof(UART1_rxBuffer));
-  //HAL_UART_Receive_IT(&huart2, UART2_rxBuffer, sizeof(UART2_rxBuffer));
-  //HAL_UART_Receive_IT(&huart3, UART3_rxBuffer, sizeof(UART3_rxBuffer));
-  //HAL_UART_Receive_IT(&huart4, UART4_rxBuffer, sizeof(UART4_rxBuffer));
+  HAL_UART_Receive_IT(&huart2, UART2_rxBuffer, sizeof(UART2_rxBuffer));
+
 
   /* USER CODE END 2 */
 

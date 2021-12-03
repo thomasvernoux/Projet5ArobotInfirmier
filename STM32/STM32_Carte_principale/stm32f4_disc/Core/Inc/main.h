@@ -42,15 +42,11 @@ extern "C" {
 
 /* Exported constants --------------------------------------------------------*/
 /* USER CODE BEGIN EC */
-extern uint8_t UART1_rxBuffer [50];
-/*extern uint8_t UART2_rxBuffer [10];
-extern uint8_t UART3_rxBuffer [10];
-extern uint8_t UART4_rxBuffer [10];*/
+extern uint8_t UART2_rxBuffer [50];
 
-extern uint8_t UART1_txBuffer [50];
-/*extern uint8_t UART2_txBuffer [10];
-extern uint8_t UART3_txBuffer [10];
-extern uint8_t UART4_txBuffer [10];*/
+
+extern uint8_t UART2_txBuffer [50];
+
 
 /* USER CODE END EC */
 

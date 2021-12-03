@@ -26,7 +26,7 @@ int envoyer_message_pc (char message[50]){
  */
 void recevoir_message_pc(){
 
-	strcpy(UART1_rxBuffer,message_recu_PC);
+	strcpy(UART2_rxBuffer,message_recu_PC);
 
 	if (strcmp(&message_recu_PC,"test")){
 		envoyer_message_pc("test recu");
