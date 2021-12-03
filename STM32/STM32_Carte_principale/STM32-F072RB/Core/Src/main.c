@@ -26,6 +26,8 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
+#include "com_pc.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -97,10 +99,14 @@ int main(void)
   MX_USART1_UART_Init();
   MX_TIM1_Init();
   MX_USART3_UART_Init();
+  MX_USART2_UART_Init();
+  MX_USART4_UART_Init();
   /* USER CODE BEGIN 2 */
 
   HAL_UART_Receive_IT(&huart1, UART1_rxBuffer, sizeof(UART1_rxBuffer));
-  HAL_UART_Receive_IT(&huart3, UART2_rxBuffer, sizeof(UART2_rxBuffer));
+  HAL_UART_Receive_IT(&huart2, UART2_rxBuffer, sizeof(UART2_rxBuffer));
+  HAL_UART_Receive_IT(&huart3, UART3_rxBuffer, sizeof(UART3_rxBuffer));
+  HAL_UART_Receive_IT(&huart4, UART4_rxBuffer, sizeof(UART4_rxBuffer));
 
 
 
@@ -114,6 +120,9 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+
+
+
 	  char Data[] = "coucou";
 	  HAL_UART_Transmit(&huart1, Data, 10, 100);
 	  HAL_UART_Transmit(&huart3, Data, 10, 100);
@@ -166,8 +175,9 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
-  PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_USART1;
+  PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_USART1|RCC_PERIPHCLK_USART2;
   PeriphClkInit.Usart1ClockSelection = RCC_USART1CLKSOURCE_PCLK1;
+  PeriphClkInit.Usart2ClockSelection = RCC_USART2CLKSOURCE_PCLK1;
   if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK)
   {
     Error_Handler();

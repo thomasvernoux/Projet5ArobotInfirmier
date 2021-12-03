@@ -25,14 +25,6 @@ void tests_lidar(){
 
 	reset_lidar();
 
-
-
-
-
-
-
-
-
 	return;
 }
 
