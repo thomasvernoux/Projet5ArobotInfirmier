@@ -1,0 +1,10 @@
+15:39:20 **** Incremental Build of configuration Debug for project stm32f4_disc ****
+make -j8 all 
+arm-none-eabi-size   stm32f4_disc.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11728	     20	   1860	  13608	   3528	stm32f4_disc.elf
+Finished building: default.size.stdout
+ 
+
+15:39:20 Build Finished. 0 errors, 0 warnings. (took 443ms)
+
