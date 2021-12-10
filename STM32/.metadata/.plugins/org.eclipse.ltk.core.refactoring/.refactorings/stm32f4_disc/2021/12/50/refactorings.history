@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;stm32f4_disc/Core/Inc/smi_moteur.h&apos; to &apos;spi_moteur.h&apos;" description="Rename resource &apos;smi_moteur.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Core/Inc/smi_moteur.h" name="spi_moteur.h" stamp="1639123768479" updateReferences="true"/>
+</session>

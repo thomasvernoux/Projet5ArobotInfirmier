@@ -7,7 +7,9 @@
 C_SRCS += \
 ../Core/Src/com_pc.c \
 ../Core/Src/gpio.c \
+../Core/Src/lidar.c \
 ../Core/Src/main.c \
+../Core/Src/spi_moteur.c \
 ../Core/Src/stm32f4xx_hal_msp.c \
 ../Core/Src/stm32f4xx_it.c \
 ../Core/Src/syscalls.c \
@@ -18,7 +20,9 @@ C_SRCS += \
 OBJS += \
 ./Core/Src/com_pc.o \
 ./Core/Src/gpio.o \
+./Core/Src/lidar.o \
 ./Core/Src/main.o \
+./Core/Src/spi_moteur.o \
 ./Core/Src/stm32f4xx_hal_msp.o \
 ./Core/Src/stm32f4xx_it.o \
 ./Core/Src/syscalls.o \
@@ -29,7 +33,9 @@ OBJS += \
 C_DEPS += \
 ./Core/Src/com_pc.d \
 ./Core/Src/gpio.d \
+./Core/Src/lidar.d \
 ./Core/Src/main.d \
+./Core/Src/spi_moteur.d \
 ./Core/Src/stm32f4xx_hal_msp.d \
 ./Core/Src/stm32f4xx_it.d \
 ./Core/Src/syscalls.d \

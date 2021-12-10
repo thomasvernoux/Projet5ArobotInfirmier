@@ -36,12 +36,39 @@ extern UART_HandleTypeDef huart3;
 
 /* USER CODE BEGIN Private defines */
 
+
+
+
+extern uint8_t UART2_rxBuffer;
+extern uint8_t UART3_rxBuffer;
+
+
+extern uint8_t UART2_txBuffer [50];
+extern uint8_t UART3_txBuffer [50];
+
+
+
+
+
+extern uint8_t lidar_message_recu_index;
+
+
+extern uint8_t lidar_message_recu [100];
+
+
+
+
+
+
+
 /* USER CODE END Private defines */
 
 void MX_USART2_UART_Init(void);
 void MX_USART3_UART_Init(void);
 
 /* USER CODE BEGIN Prototypes */
+
+void uart_lidar_recieve();
 
 /* USER CODE END Prototypes */
 

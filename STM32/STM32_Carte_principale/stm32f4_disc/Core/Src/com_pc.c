@@ -37,16 +37,6 @@ void recevoir_message_pc(){
 		envoyer_message_pc("test recu");
 		return;
 	}
-
-
-
-
-
-
-
-
-
-
 }
 
 

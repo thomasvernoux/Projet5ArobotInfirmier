@@ -25,6 +25,9 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
+#include "lidar.h"
+#include "com_pc.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -46,10 +49,6 @@
 /* USER CODE BEGIN PV */
 
 
-uint8_t UART2_rxBuffer [50];
-
-
-uint8_t UART2_txBuffer [50];
 
 
 /* USER CODE END PV */
@@ -99,7 +98,8 @@ int main(void)
 
 
 
-  HAL_UART_Receive_IT(&huart2, UART2_rxBuffer, sizeof(UART2_rxBuffer));
+  HAL_UART_Receive_IT(&huart2, &UART2_rxBuffer, 1);
+  HAL_UART_Receive_IT(&huart3, &UART3_rxBuffer, 1);
 
 
   /* USER CODE END 2 */
@@ -110,7 +110,18 @@ int main(void)
   {
 
 	  HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_13);
-	  HAL_Delay(500);
+	  HAL_Delay(2000);
+
+
+
+
+	  //char message[50] = "coucou\n";
+	  //envoyer_message_pc (&message);
+
+
+
+	  tests_lidar();
+
 
 
     /* USER CODE END WHILE */
