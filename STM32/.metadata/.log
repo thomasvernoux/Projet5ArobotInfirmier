@@ -1972,3 +1972,637 @@ org.eclipse.core.runtime.CoreException: attempt to set description for a project
 
 !ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2021-12-14 08:33:09.237
 !MESSAGE Existing sessions are:
+
+!ENTRY org.eclipse.ui 4 4 2021-12-14 08:44:19.782
+!MESSAGE To avoid deadlock while executing Display.syncExec() with argument: org.eclipse.debug.internal.ui.sourcelookup.Prompter$$Lambda$1121/0x00000000575e7158@5713ee4c, thread Worker-74: Launching stm32f4_disc Debug will interrupt UI thread.
+!SUBENTRY 1 org.eclipse.ui 4 4 2021-12-14 08:44:19.782
+!MESSAGE Worker-74: Launching stm32f4_disc Debug thread is an instance of Worker or owns an ILock
+!STACK 0
+java.lang.IllegalStateException: Call stack for thread Worker-74: Launching stm32f4_disc Debug
+	at java.management@11.0.10/sun.management.ThreadImpl.dumpThreads0(Native Method)
+	at java.management@11.0.10/sun.management.ThreadImpl.getThreadInfo(ThreadImpl.java:485)
+	at org.eclipse.ui.internal.UILockListener.reportInterruption(UILockListener.java:209)
+	at org.eclipse.ui.internal.UILockListener.interruptUI(UILockListener.java:179)
+	at org.eclipse.ui.internal.PendingSyncExec.waitUntilExecuted(PendingSyncExec.java:92)
+	at org.eclipse.ui.internal.UISynchronizer.syncExec(UISynchronizer.java:142)
+	at org.eclipse.swt.widgets.Display.syncExec(Display.java:4742)
+	at org.eclipse.debug.internal.ui.sourcelookup.Prompter.handleStatus(Prompter.java:81)
+	at org.eclipse.debug.core.model.LaunchConfigurationDelegate.saveBeforeLaunch(LaunchConfigurationDelegate.java:245)
+	at org.eclipse.debug.core.model.LaunchConfigurationDelegate.preLaunchCheck(LaunchConfigurationDelegate.java:197)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.preLaunchCheck(GdbLaunchDelegate.java:370)
+	at com.st.stm32cube.ide.mcu.debug.launch.DSFDelegate.preLaunchCheck(DSFDelegate.java:184)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:766)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:716)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1021)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$2.run(DebugUIPlugin.java:1224)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 org.eclipse.ui 4 4 2021-12-14 08:44:19.782
+!MESSAGE UI thread waiting on a job or lock.
+!STACK 0
+java.lang.IllegalStateException: Call stack for thread main
+	at java.base@11.0.10/java.lang.Object.hashCode(Native Method)
+	at java.base@11.0.10/java.util.concurrent.ConcurrentHashMap.get(ConcurrentHashMap.java:936)
+	at java.base@11.0.10/java.util.concurrent.ConcurrentHashMap.containsKey(ConcurrentHashMap.java:964)
+	at java.base@11.0.10/java.util.concurrent.ConcurrentHashMap$KeySetView.contains(ConcurrentHashMap.java:4607)
+	at org.eclipse.ui.internal.progress.ProgressManager$1.updateFor(ProgressManager.java:497)
+	at org.eclipse.ui.internal.progress.ProgressManager$1.scheduled(ProgressManager.java:472)
+	at org.eclipse.core.internal.jobs.JobListeners$$Lambda$81/0x00000000582a5840.notify(Unknown Source)
+	at org.eclipse.core.internal.jobs.JobListeners.doNotify(JobListeners.java:73)
+	at org.eclipse.core.internal.jobs.JobListeners.scheduled(JobListeners.java:128)
+	at org.eclipse.core.internal.jobs.JobManager.schedule(JobManager.java:1263)
+	at org.eclipse.core.internal.jobs.InternalJob.schedule(InternalJob.java:385)
+	at org.eclipse.core.runtime.jobs.Job.schedule(Job.java:673)
+	at org.eclipse.cdt.internal.core.model.BinaryRunner.start(BinaryRunner.java:146)
+	at org.eclipse.cdt.internal.core.model.CModelManager.getBinaryRunner(CModelManager.java:824)
+	at org.eclipse.cdt.internal.core.model.BinaryContainer.buildStructure(BinaryContainer.java:85)
+	at org.eclipse.cdt.internal.core.model.Openable.generateInfos(Openable.java:264)
+	at org.eclipse.cdt.internal.core.model.CElement.openWhenClosed(CElement.java:428)
+	at org.eclipse.cdt.internal.core.model.BinaryContainer.getElementInfo(BinaryContainer.java:71)
+	at org.eclipse.cdt.internal.core.model.CElement.getElementInfo(CElement.java:296)
+	at org.eclipse.cdt.internal.core.model.Parent.getChildren(Parent.java:57)
+	at org.eclipse.cdt.internal.ui.BaseCElementContentProvider.getBinaries(BaseCElementContentProvider.java:747)
+	at org.eclipse.cdt.internal.ui.cview.CViewContentProvider.hasChildren(CViewContentProvider.java:225)
+	at org.eclipse.cdt.internal.ui.navigator.CNavigatorContentProvider.hasChildren(CNavigatorContentProvider.java:247)
+	at org.eclipse.ui.internal.navigator.extensions.SafeDelegateTreeContentProvider.hasChildren(SafeDelegateTreeContentProvider.java:113)
+	at org.eclipse.ui.internal.navigator.NavigatorContentServiceContentProvider.callNormalHasChildren(NavigatorContentServiceContentProvider.java:445)
+	at org.eclipse.ui.internal.navigator.NavigatorContentServiceContentProvider$3.run(NavigatorContentServiceContentProvider.java:408)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.internal.navigator.NavigatorContentServiceContentProvider.hasChildren(NavigatorContentServiceContentProvider.java:393)
+	at org.eclipse.ui.internal.navigator.NavigatorContentServiceContentProvider.hasChildren(NavigatorContentServiceContentProvider.java:437)
+	at org.eclipse.jface.viewers.AbstractTreeViewer.isExpandable(AbstractTreeViewer.java:2165)
+	at org.eclipse.jface.viewers.TreeViewer.isExpandable(TreeViewer.java:546)
+	at org.eclipse.jface.viewers.AbstractTreeViewer.isExpandable(AbstractTreeViewer.java:2203)
+	at org.eclipse.jface.viewers.AbstractTreeViewer.optionallyPruneChildren(AbstractTreeViewer.java:2837)
+	at org.eclipse.jface.viewers.AbstractTreeViewer.updateChildren(AbstractTreeViewer.java:2636)
+	at org.eclipse.jface.viewers.AbstractTreeViewer.internalRefreshStruct(AbstractTreeViewer.java:1960)
+	at org.eclipse.jface.viewers.TreeViewer.internalRefreshStruct(TreeViewer.java:677)
+	at org.eclipse.jface.viewers.AbstractTreeViewer.internalRefreshStruct(AbstractTreeViewer.java:1966)
+	at org.eclipse.jface.viewers.TreeViewer.internalRefreshStruct(TreeViewer.java:677)
+	at org.eclipse.jface.viewers.AbstractTreeViewer.internalRefresh(AbstractTreeViewer.java:1936)
+	at org.eclipse.jface.viewers.AbstractTreeViewer.internalRefresh(AbstractTreeViewer.java:1893)
+	at org.eclipse.ui.navigator.CommonViewer.internalRefresh(CommonViewer.java:532)
+	at org.eclipse.jface.viewers.StructuredViewer.lambda$3(StructuredViewer.java:1484)
+	at org.eclipse.jface.viewers.StructuredViewer$$Lambda$418/0x000000005df83ca8.run(Unknown Source)
+	at org.eclipse.jface.viewers.StructuredViewer.preservingSelection(StructuredViewer.java:1400)
+	at org.eclipse.jface.viewers.TreeViewer.preservingSelection(TreeViewer.java:363)
+	at org.eclipse.jface.viewers.StructuredViewer.preservingSelection(StructuredViewer.java:1361)
+	at org.eclipse.jface.viewers.StructuredViewer.refresh(StructuredViewer.java:1484)
+	at org.eclipse.jface.viewers.ColumnViewer.refresh(ColumnViewer.java:538)
+	at org.eclipse.ui.navigator.CommonViewer.refresh(CommonViewer.java:349)
+	at org.eclipse.ui.navigator.CommonViewer.refresh(CommonViewer.java:495)
+	at org.eclipse.cdt.ui.CElementContentProvider$RefreshElement.refresh(CElementContentProvider.java:367)
+	at org.eclipse.cdt.ui.CElementContentProvider.lambda$0(CElementContentProvider.java:450)
+	at org.eclipse.cdt.ui.CElementContentProvider$$Lambda$855/0x000000006447c8a8.run(Unknown Source)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4001)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3629)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.block(ModalContext.java:166)
+	at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:368)
+	at org.eclipse.jface.dialogs.ProgressMonitorDialog.run(ProgressMonitorDialog.java:468)
+	at com.st.stm32cube.common.mx.editor.CubeMxEditor.update(CubeMxEditor.java:2335)
+	at com.st.stm32cube.common.mx.editor.CubeMxEditor._doSave(CubeMxEditor.java:664)
+	at com.st.stm32cube.common.mx.editor.CubeMxEditor.doSave(CubeMxEditor.java:639)
+	at org.eclipse.ui.internal.DefaultSaveable.doSave(DefaultSaveable.java:53)
+	at org.eclipse.ui.Saveable.doSave(Saveable.java:213)
+	at org.eclipse.ui.internal.SaveableHelper.doSaveModel(SaveableHelper.java:333)
+	at org.eclipse.ui.internal.SaveablesList.lambda$2(SaveablesList.java:848)
+	at org.eclipse.ui.internal.SaveablesList$$Lambda$1287/0x000000006eb4fd00.run(Unknown Source)
+	at org.eclipse.ui.internal.SaveableHelper.lambda$3(SaveableHelper.java:271)
+	at org.eclipse.ui.internal.SaveableHelper$$Lambda$1190/0x00000000636744a8.run(Unknown Source)
+	at org.eclipse.jface.operation.ModalContext.runInCurrentThread(ModalContext.java:436)
+	at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:352)
+	at org.eclipse.ui.internal.WorkbenchWindow.lambda$7(WorkbenchWindow.java:2345)
+	at org.eclipse.ui.internal.WorkbenchWindow$$Lambda$972/0x0000000063c9d558.run(Unknown Source)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:74)
+	at org.eclipse.ui.internal.WorkbenchWindow.run(WorkbenchWindow.java:2343)
+	at org.eclipse.ui.internal.SaveableHelper.runProgressMonitorOperation(SaveableHelper.java:278)
+	at org.eclipse.ui.internal.SaveablesList.saveModels(SaveablesList.java:856)
+	at org.eclipse.ui.internal.SaveablesList.saveModels(SaveablesList.java:820)
+	at org.eclipse.ui.internal.Workbench.saveAll(Workbench.java:3426)
+	at org.eclipse.ui.ide.IDE$1.run(IDE.java:1494)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.ide.IDE.saveAllEditors(IDE.java:1482)
+	at org.eclipse.debug.internal.ui.launchConfigurations.SaveScopeResourcesHandler.doSave(SaveScopeResourcesHandler.java:228)
+	at org.eclipse.debug.internal.ui.launchConfigurations.SaveScopeResourcesHandler.handleStatus(SaveScopeResourcesHandler.java:182)
+	at org.eclipse.debug.internal.ui.sourcelookup.Prompter.lambda$0(Prompter.java:73)
+	at org.eclipse.debug.internal.ui.sourcelookup.Prompter$$Lambda$1121/0x00000000575e7158.run(Unknown Source)
+	at org.eclipse.ui.internal.PendingSyncExec.run(PendingSyncExec.java:68)
+	at org.eclipse.ui.internal.UILockListener.doPendingWork(UILockListener.java:171)
+	at org.eclipse.ui.internal.UISynchronizer$$Lambda$885/0x0000000064ed0440.run(Unknown Source)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4001)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3629)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1157)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.ui.internal.Workbench$$Lambda$105/0x0000000059732ca8.run(Unknown Source)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base@11.0.10/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@11.0.10/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base@11.0.10/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@11.0.10/java.lang.reflect.Method.invoke(Method.java:566)
+	at app//org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
+	at app//org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
+	at app//org.eclipse.equinox.launcher.Main.run(Main.java:1461)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2021-12-14 08:44:30.038
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 14 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2021-12-14 08:44:30.038
+!MESSAGE Existing sessions are:
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2021-12-14 08:44:30.038
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 14 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2021-12-14 08:44:30.038
+!MESSAGE Existing sessions are:
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.stlink 4 4 2021-12-14 09:00:55.440
+!MESSAGE ST-LINK GDB server failed to start (exit code = 1)
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 5012 2021-12-14 09:00:55.490
+!MESSAGE Error in final launch sequence:
+
+Failed to start GDB server
+!STACK 1
+org.eclipse.core.runtime.CoreException: Failed to start GDB server
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:112)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugSession(GdbLaunchDelegate.java:251)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugger(GdbLaunchDelegate.java:108)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launch(GdbLaunchDelegate.java:96)
+	at com.st.stm32cube.ide.mcu.debug.launch.DSFDelegate.launch(DSFDelegate.java:305)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:803)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:716)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1021)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$2.run(DebugUIPlugin.java:1224)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: org.eclipse.core.runtime.CoreException: Error in initializing ST-LINK device.
+Reason: (1) Failed to connect to device. Please check power and cabling to target.
+	at com.st.stm32cube.ide.mcu.debug.stlink.StLinkDebugHardware.verifyServer(StLinkDebugHardware.java:1687)
+	at com.st.stm32cube.ide.mcu.debug.launch.export.HardwareDebugUtil.startServer(HardwareDebugUtil.java:183)
+	at com.st.stm32cube.ide.mcu.debug.launch.export.HardwareDebugUtil.startServer(HardwareDebugUtil.java:91)
+	at com.st.stm32cube.ide.mcu.debug.launch.LaunchSequenceUtil.stepStartGDBServer(LaunchSequenceUtil.java:230)
+	at com.st.stm32cube.ide.mcu.debug.launch.GDBExtendedJtagDSFFinalLaunchSequence_7_12.stepStartGDBServer(GDBExtendedJtagDSFFinalLaunchSequence_7_12.java:100)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.cdt.dsf.concurrent.ReflectionSequence$ReflectionStep.execute(ReflectionSequence.java:160)
+	at org.eclipse.cdt.dsf.concurrent.Sequence.executeStep(Sequence.java:475)
+	at org.eclipse.cdt.dsf.concurrent.Sequence$2.handleSuccess(Sequence.java:437)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor.handleCompleted(RequestMonitor.java:391)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor$2.run(RequestMonitor.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+!SUBENTRY 1 com.st.stm32cube.ide.mcu.debug.launch 4 0 2021-12-14 09:00:55.490
+!MESSAGE Failed to start GDB server
+!STACK 1
+org.eclipse.core.runtime.CoreException: Error in initializing ST-LINK device.
+Reason: (1) Failed to connect to device. Please check power and cabling to target.
+	at com.st.stm32cube.ide.mcu.debug.stlink.StLinkDebugHardware.verifyServer(StLinkDebugHardware.java:1687)
+	at com.st.stm32cube.ide.mcu.debug.launch.export.HardwareDebugUtil.startServer(HardwareDebugUtil.java:183)
+	at com.st.stm32cube.ide.mcu.debug.launch.export.HardwareDebugUtil.startServer(HardwareDebugUtil.java:91)
+	at com.st.stm32cube.ide.mcu.debug.launch.LaunchSequenceUtil.stepStartGDBServer(LaunchSequenceUtil.java:230)
+	at com.st.stm32cube.ide.mcu.debug.launch.GDBExtendedJtagDSFFinalLaunchSequence_7_12.stepStartGDBServer(GDBExtendedJtagDSFFinalLaunchSequence_7_12.java:100)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.cdt.dsf.concurrent.ReflectionSequence$ReflectionStep.execute(ReflectionSequence.java:160)
+	at org.eclipse.cdt.dsf.concurrent.Sequence.executeStep(Sequence.java:475)
+	at org.eclipse.cdt.dsf.concurrent.Sequence$2.handleSuccess(Sequence.java:437)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor.handleCompleted(RequestMonitor.java:391)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor$2.run(RequestMonitor.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+!SUBENTRY 2 com.st.stm32cube.ide.mcu.debug.stlink 4 0 2021-12-14 09:00:55.490
+!MESSAGE Error in initializing ST-LINK device.
+Reason: (1) Failed to connect to device. Please check power and cabling to target.
+
+!ENTRY org.eclipse.debug.ui 4 2 2021-12-14 09:45:40.653
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.debug.ui".
+!STACK 0
+java.lang.NullPointerException
+	at com.st.stm32cube.ide.mcu.debug.ui.views.DebugContextManager.handleDebugContextChanged(DebugContextManager.java:201)
+	at com.st.stm32cube.ide.mcu.debug.ui.views.DebugContextManager.debugContextChanged(DebugContextManager.java:184)
+	at org.eclipse.debug.internal.ui.contexts.DebugWindowContextService$1.run(DebugWindowContextService.java:228)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.debug.internal.ui.contexts.DebugWindowContextService.notify(DebugWindowContextService.java:225)
+	at org.eclipse.debug.internal.ui.contexts.DebugWindowContextService.notify(DebugWindowContextService.java:201)
+	at org.eclipse.debug.internal.ui.contexts.DebugWindowContextService.debugContextChanged(DebugWindowContextService.java:410)
+	at org.eclipse.debug.ui.contexts.AbstractDebugContextProvider$1.run(AbstractDebugContextProvider.java:76)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.debug.ui.contexts.AbstractDebugContextProvider.fire(AbstractDebugContextProvider.java:73)
+	at org.eclipse.debug.internal.ui.views.launch.LaunchView$ContextProviderProxy.debugContextChanged(LaunchView.java:509)
+	at org.eclipse.debug.ui.contexts.AbstractDebugContextProvider$1.run(AbstractDebugContextProvider.java:76)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.debug.ui.contexts.AbstractDebugContextProvider.fire(AbstractDebugContextProvider.java:73)
+	at org.eclipse.debug.internal.ui.views.launch.LaunchView$TreeViewerContextProvider.possibleChange(LaunchView.java:403)
+	at org.eclipse.debug.internal.ui.views.launch.LaunchView$TreeViewerContextProvider$Visitor.visit(LaunchView.java:329)
+	at org.eclipse.cdt.dsf.ui.viewmodel.VMDelta.doAccept(VMDelta.java:368)
+	at org.eclipse.cdt.dsf.ui.viewmodel.VMDelta.doAccept(VMDelta.java:371)
+	at org.eclipse.cdt.dsf.ui.viewmodel.VMDelta.accept(VMDelta.java:363)
+	at org.eclipse.debug.internal.ui.views.launch.LaunchView$TreeViewerContextProvider.modelChanged(LaunchView.java:430)
+	at org.eclipse.debug.internal.ui.viewers.model.TreeModelContentProvider.doModelChanged(TreeModelContentProvider.java:537)
+	at org.eclipse.debug.internal.ui.viewers.model.TreeModelContentProvider.modelChanged(TreeModelContentProvider.java:506)
+	at org.eclipse.cdt.dsf.ui.viewmodel.DefaultVMModelProxyStrategy$1.run(DefaultVMModelProxyStrategy.java:153)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.cdt.dsf.ui.viewmodel.DefaultVMModelProxyStrategy.fireModelChanged(DefaultVMModelProxyStrategy.java:157)
+	at org.eclipse.cdt.dsf.ui.viewmodel.update.AbstractCachingVMProvider$6.handleSuccess(AbstractCachingVMProvider.java:941)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor.handleCompleted(RequestMonitor.java:391)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor$2.run(RequestMonitor.java:317)
+	at org.eclipse.cdt.dsf.ui.concurrent.SimpleDisplayExecutor.runInSwtThread(SimpleDisplayExecutor.java:116)
+	at org.eclipse.cdt.dsf.ui.concurrent.SimpleDisplayExecutor.lambda$0(SimpleDisplayExecutor.java:81)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4001)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3629)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1157)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1461)
+
+!ENTRY org.eclipse.debug.ui 4 120 2021-12-14 09:45:40.653
+!MESSAGE Error logged from Debug UI: 
+!STACK 0
+java.lang.NullPointerException
+	at com.st.stm32cube.ide.mcu.debug.ui.views.DebugContextManager.handleDebugContextChanged(DebugContextManager.java:201)
+	at com.st.stm32cube.ide.mcu.debug.ui.views.DebugContextManager.debugContextChanged(DebugContextManager.java:184)
+	at org.eclipse.debug.internal.ui.contexts.DebugWindowContextService$1.run(DebugWindowContextService.java:228)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.debug.internal.ui.contexts.DebugWindowContextService.notify(DebugWindowContextService.java:225)
+	at org.eclipse.debug.internal.ui.contexts.DebugWindowContextService.notify(DebugWindowContextService.java:201)
+	at org.eclipse.debug.internal.ui.contexts.DebugWindowContextService.debugContextChanged(DebugWindowContextService.java:410)
+	at org.eclipse.debug.ui.contexts.AbstractDebugContextProvider$1.run(AbstractDebugContextProvider.java:76)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.debug.ui.contexts.AbstractDebugContextProvider.fire(AbstractDebugContextProvider.java:73)
+	at org.eclipse.debug.internal.ui.views.launch.LaunchView$ContextProviderProxy.debugContextChanged(LaunchView.java:509)
+	at org.eclipse.debug.ui.contexts.AbstractDebugContextProvider$1.run(AbstractDebugContextProvider.java:76)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.debug.ui.contexts.AbstractDebugContextProvider.fire(AbstractDebugContextProvider.java:73)
+	at org.eclipse.debug.internal.ui.views.launch.LaunchView$TreeViewerContextProvider.possibleChange(LaunchView.java:403)
+	at org.eclipse.debug.internal.ui.views.launch.LaunchView$TreeViewerContextProvider$Visitor.visit(LaunchView.java:329)
+	at org.eclipse.cdt.dsf.ui.viewmodel.VMDelta.doAccept(VMDelta.java:368)
+	at org.eclipse.cdt.dsf.ui.viewmodel.VMDelta.doAccept(VMDelta.java:371)
+	at org.eclipse.cdt.dsf.ui.viewmodel.VMDelta.accept(VMDelta.java:363)
+	at org.eclipse.debug.internal.ui.views.launch.LaunchView$TreeViewerContextProvider.modelChanged(LaunchView.java:430)
+	at org.eclipse.debug.internal.ui.viewers.model.TreeModelContentProvider.doModelChanged(TreeModelContentProvider.java:537)
+	at org.eclipse.debug.internal.ui.viewers.model.TreeModelContentProvider.modelChanged(TreeModelContentProvider.java:506)
+	at org.eclipse.cdt.dsf.ui.viewmodel.DefaultVMModelProxyStrategy$1.run(DefaultVMModelProxyStrategy.java:153)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.cdt.dsf.ui.viewmodel.DefaultVMModelProxyStrategy.fireModelChanged(DefaultVMModelProxyStrategy.java:157)
+	at org.eclipse.cdt.dsf.ui.viewmodel.update.AbstractCachingVMProvider$6.handleSuccess(AbstractCachingVMProvider.java:941)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor.handleCompleted(RequestMonitor.java:391)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor$2.run(RequestMonitor.java:317)
+	at org.eclipse.cdt.dsf.ui.concurrent.SimpleDisplayExecutor.runInSwtThread(SimpleDisplayExecutor.java:116)
+	at org.eclipse.cdt.dsf.ui.concurrent.SimpleDisplayExecutor.lambda$0(SimpleDisplayExecutor.java:81)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4001)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3629)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1157)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1461)
+
+!ENTRY org.eclipse.debug.ui 4 2 2021-12-14 09:45:40.653
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.debug.ui".
+!STACK 0
+java.lang.NullPointerException
+	at com.st.stm32cube.ide.mcu.debug.ui.views.DebugContextManager.handleDebugContextChanged(DebugContextManager.java:201)
+	at com.st.stm32cube.ide.mcu.debug.ui.views.DebugContextManager.debugContextChanged(DebugContextManager.java:184)
+	at org.eclipse.debug.internal.ui.contexts.DebugWindowContextService$1.run(DebugWindowContextService.java:228)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.debug.internal.ui.contexts.DebugWindowContextService.notify(DebugWindowContextService.java:225)
+	at org.eclipse.debug.internal.ui.contexts.DebugWindowContextService.notify(DebugWindowContextService.java:201)
+	at org.eclipse.debug.internal.ui.contexts.DebugWindowContextService.debugContextChanged(DebugWindowContextService.java:410)
+	at org.eclipse.debug.ui.contexts.AbstractDebugContextProvider$1.run(AbstractDebugContextProvider.java:76)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.debug.ui.contexts.AbstractDebugContextProvider.fire(AbstractDebugContextProvider.java:73)
+	at org.eclipse.debug.internal.ui.views.launch.LaunchView$ContextProviderProxy.debugContextChanged(LaunchView.java:509)
+	at org.eclipse.debug.ui.contexts.AbstractDebugContextProvider$1.run(AbstractDebugContextProvider.java:76)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.debug.ui.contexts.AbstractDebugContextProvider.fire(AbstractDebugContextProvider.java:73)
+	at org.eclipse.debug.internal.ui.views.launch.LaunchView$TreeViewerContextProvider.possibleChange(LaunchView.java:403)
+	at org.eclipse.debug.internal.ui.views.launch.LaunchView$TreeViewerContextProvider$Visitor.visit(LaunchView.java:329)
+	at org.eclipse.cdt.dsf.ui.viewmodel.VMDelta.doAccept(VMDelta.java:368)
+	at org.eclipse.cdt.dsf.ui.viewmodel.VMDelta.doAccept(VMDelta.java:371)
+	at org.eclipse.cdt.dsf.ui.viewmodel.VMDelta.accept(VMDelta.java:363)
+	at org.eclipse.debug.internal.ui.views.launch.LaunchView$TreeViewerContextProvider.modelChanged(LaunchView.java:430)
+	at org.eclipse.debug.internal.ui.viewers.model.TreeModelContentProvider.doModelChanged(TreeModelContentProvider.java:537)
+	at org.eclipse.debug.internal.ui.viewers.model.TreeModelContentProvider.modelChanged(TreeModelContentProvider.java:506)
+	at org.eclipse.cdt.dsf.ui.viewmodel.DefaultVMModelProxyStrategy$1.run(DefaultVMModelProxyStrategy.java:153)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.cdt.dsf.ui.viewmodel.DefaultVMModelProxyStrategy.fireModelChanged(DefaultVMModelProxyStrategy.java:157)
+	at org.eclipse.cdt.dsf.ui.viewmodel.update.AbstractCachingVMProvider$6.handleSuccess(AbstractCachingVMProvider.java:941)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor.handleCompleted(RequestMonitor.java:391)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor$2.run(RequestMonitor.java:317)
+	at org.eclipse.cdt.dsf.ui.concurrent.SimpleDisplayExecutor.runInSwtThread(SimpleDisplayExecutor.java:116)
+	at org.eclipse.cdt.dsf.ui.concurrent.SimpleDisplayExecutor.lambda$0(SimpleDisplayExecutor.java:81)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4001)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3629)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1157)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1461)
+
+!ENTRY org.eclipse.debug.ui 4 120 2021-12-14 09:45:40.653
+!MESSAGE Error logged from Debug UI: 
+!STACK 0
+java.lang.NullPointerException
+	at com.st.stm32cube.ide.mcu.debug.ui.views.DebugContextManager.handleDebugContextChanged(DebugContextManager.java:201)
+	at com.st.stm32cube.ide.mcu.debug.ui.views.DebugContextManager.debugContextChanged(DebugContextManager.java:184)
+	at org.eclipse.debug.internal.ui.contexts.DebugWindowContextService$1.run(DebugWindowContextService.java:228)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.debug.internal.ui.contexts.DebugWindowContextService.notify(DebugWindowContextService.java:225)
+	at org.eclipse.debug.internal.ui.contexts.DebugWindowContextService.notify(DebugWindowContextService.java:201)
+	at org.eclipse.debug.internal.ui.contexts.DebugWindowContextService.debugContextChanged(DebugWindowContextService.java:410)
+	at org.eclipse.debug.ui.contexts.AbstractDebugContextProvider$1.run(AbstractDebugContextProvider.java:76)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.debug.ui.contexts.AbstractDebugContextProvider.fire(AbstractDebugContextProvider.java:73)
+	at org.eclipse.debug.internal.ui.views.launch.LaunchView$ContextProviderProxy.debugContextChanged(LaunchView.java:509)
+	at org.eclipse.debug.ui.contexts.AbstractDebugContextProvider$1.run(AbstractDebugContextProvider.java:76)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.debug.ui.contexts.AbstractDebugContextProvider.fire(AbstractDebugContextProvider.java:73)
+	at org.eclipse.debug.internal.ui.views.launch.LaunchView$TreeViewerContextProvider.possibleChange(LaunchView.java:403)
+	at org.eclipse.debug.internal.ui.views.launch.LaunchView$TreeViewerContextProvider$Visitor.visit(LaunchView.java:329)
+	at org.eclipse.cdt.dsf.ui.viewmodel.VMDelta.doAccept(VMDelta.java:368)
+	at org.eclipse.cdt.dsf.ui.viewmodel.VMDelta.doAccept(VMDelta.java:371)
+	at org.eclipse.cdt.dsf.ui.viewmodel.VMDelta.accept(VMDelta.java:363)
+	at org.eclipse.debug.internal.ui.views.launch.LaunchView$TreeViewerContextProvider.modelChanged(LaunchView.java:430)
+	at org.eclipse.debug.internal.ui.viewers.model.TreeModelContentProvider.doModelChanged(TreeModelContentProvider.java:537)
+	at org.eclipse.debug.internal.ui.viewers.model.TreeModelContentProvider.modelChanged(TreeModelContentProvider.java:506)
+	at org.eclipse.cdt.dsf.ui.viewmodel.DefaultVMModelProxyStrategy$1.run(DefaultVMModelProxyStrategy.java:153)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.cdt.dsf.ui.viewmodel.DefaultVMModelProxyStrategy.fireModelChanged(DefaultVMModelProxyStrategy.java:157)
+	at org.eclipse.cdt.dsf.ui.viewmodel.update.AbstractCachingVMProvider$6.handleSuccess(AbstractCachingVMProvider.java:941)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor.handleCompleted(RequestMonitor.java:391)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor$2.run(RequestMonitor.java:317)
+	at org.eclipse.cdt.dsf.ui.concurrent.SimpleDisplayExecutor.runInSwtThread(SimpleDisplayExecutor.java:116)
+	at org.eclipse.cdt.dsf.ui.concurrent.SimpleDisplayExecutor.lambda$0(SimpleDisplayExecutor.java:81)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4001)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3629)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1157)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1461)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2021-12-14 09:47:05.615
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 42 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2021-12-14 09:47:05.615
+!MESSAGE Existing sessions are:
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2021-12-14 09:47:05.615
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 42 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2021-12-14 09:47:05.615
+!MESSAGE Existing sessions are:
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2021-12-14 09:51:47.154
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 44 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2021-12-14 09:51:47.154
+!MESSAGE Existing sessions are:
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2021-12-14 09:51:47.154
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 44 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2021-12-14 09:51:47.154
+!MESSAGE Existing sessions are:
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2021-12-14 09:52:14.860
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 45 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2021-12-14 09:52:14.860
+!MESSAGE Existing sessions are:
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2021-12-14 09:52:14.860
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 45 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2021-12-14 09:52:14.860
+!MESSAGE Existing sessions are:
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2021-12-14 10:03:23.974
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 49 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2021-12-14 10:03:23.974
+!MESSAGE Existing sessions are:
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2021-12-14 10:03:23.974
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 49 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2021-12-14 10:03:23.974
+!MESSAGE Existing sessions are:
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2021-12-14 10:16:21.564
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 54 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2021-12-14 10:16:21.564
+!MESSAGE Existing sessions are:
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2021-12-14 10:16:21.564
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 54 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2021-12-14 10:16:21.564
+!MESSAGE Existing sessions are:
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2021-12-14 10:17:54.719
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 55 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2021-12-14 10:17:54.719
+!MESSAGE Existing sessions are:
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2021-12-14 10:17:54.719
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 55 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2021-12-14 10:17:54.719
+!MESSAGE Existing sessions are:
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2021-12-14 10:20:39.311
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 59 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2021-12-14 10:20:39.311
+!MESSAGE Existing sessions are:
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2021-12-14 10:20:39.311
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 59 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2021-12-14 10:20:39.311
+!MESSAGE Existing sessions are:
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2021-12-14 10:21:32.203
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 61 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2021-12-14 10:21:32.203
+!MESSAGE Existing sessions are:
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2021-12-14 10:21:32.203
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 61 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2021-12-14 10:21:32.203
+!MESSAGE Existing sessions are:
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2021-12-14 10:22:10.845
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 62 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2021-12-14 10:22:10.845
+!MESSAGE Existing sessions are:
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2021-12-14 10:22:10.845
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 62 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2021-12-14 10:22:10.845
+!MESSAGE Existing sessions are:
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2021-12-14 10:30:22.538
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 63 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2021-12-14 10:30:22.538
+!MESSAGE Existing sessions are:
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2021-12-14 10:30:22.538
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 63 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2021-12-14 10:30:22.538
+!MESSAGE Existing sessions are:
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2021-12-14 10:34:06.863
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 69 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2021-12-14 10:34:06.864
+!MESSAGE Existing sessions are:
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2021-12-14 10:34:06.864
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 69 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2021-12-14 10:34:06.864
+!MESSAGE Existing sessions are:
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2021-12-14 10:34:46.007
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 70 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2021-12-14 10:34:46.007
+!MESSAGE Existing sessions are:
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2021-12-14 10:34:46.007
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 70 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2021-12-14 10:34:46.007
+!MESSAGE Existing sessions are:
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2021-12-14 10:36:06.229
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 72 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2021-12-14 10:36:06.229
+!MESSAGE Existing sessions are:
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2021-12-14 10:36:06.229
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 72 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2021-12-14 10:36:06.229
+!MESSAGE Existing sessions are:
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2021-12-14 10:36:32.516
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 73 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2021-12-14 10:36:32.516
+!MESSAGE Existing sessions are:
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2021-12-14 10:36:32.516
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 73 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2021-12-14 10:36:32.516
+!MESSAGE Existing sessions are:

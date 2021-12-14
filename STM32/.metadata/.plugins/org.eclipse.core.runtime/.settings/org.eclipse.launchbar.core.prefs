@@ -5,5 +5,5 @@ configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:tp1_analyser Deb
 eclipse.preferences.version=1
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Generateur/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Generateur/activeLaunchTarget=null\:---
-org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:stm32f4_disc\ Debug/activeLaunchMode=run
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:stm32f4_disc\ Debug/activeLaunchMode=debug
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:stm32f4_disc\ Debug/activeLaunchTarget=null\:---

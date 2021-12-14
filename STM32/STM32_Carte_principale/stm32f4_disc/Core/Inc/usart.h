@@ -69,6 +69,7 @@ void MX_USART3_UART_Init(void);
 /* USER CODE BEGIN Prototypes */
 
 void uart_lidar_recieve();
+void deplacer_buffer_to_message_recu();
 
 /* USER CODE END Prototypes */
 

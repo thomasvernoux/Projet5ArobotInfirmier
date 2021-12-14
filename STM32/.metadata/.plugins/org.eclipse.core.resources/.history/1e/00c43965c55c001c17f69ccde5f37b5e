@@ -1,0 +1,64 @@
+#include "com_FPGA_spi.h"
+
+
+uint8_t txData [2] = {0b10111010, 0b10101010};
+
+void test_spi(){
+	moteur1();
+	spi_transmit();
+	return;
+}
+
+
+
+void spi_transmit(){
+	HAL_SPI_Transmit (&hspi1,txData,2,100);
+	return;
+}
+
+
+
+
+/// CONGIG COMMANDE
+
+void moteur1(){
+	txData[1] &=  0b 0111 1111;
+}
+
+void moteur2(){
+	txData[1] |= 0b 1000 0000;
+}
+
+void cmd_marche_arret(){
+
+	txData[1] &=  0b 1111 1001;
+	txData[1] |=  0b 0000 0001;
+}
+
+void sens_rotation(){
+	txData[1] &=  0b 1111 1010;
+	txData[1] |=  0b 0000 0010;
+}
+
+void config_freq_PWM(){
+	txData[1] &=  0b 1111 1100;
+	txData[1] |=  0b 0000 0100;
+}
+
+void vit_rap_cyc(){
+	txData[1] &=  0b 1111 1111;
+	txData[1] |=  0b 0000 0111;
+}
+
+
+
+void fct_vierge(){
+	txData[1] &=  0b 1111 1111;
+	txData[1] |=  0b 0000 0000;
+}
+
+
+/// CONFIG VALUE
+
+
+

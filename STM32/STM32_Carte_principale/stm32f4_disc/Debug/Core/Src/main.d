@@ -30,7 +30,7 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
  ../Core/Inc/spi.h ../Core/Inc/main.h ../Core/Inc/tim.h \
  ../Core/Inc/usart.h ../Core/Inc/gpio.h ../Core/Inc/lidar.h \
- ../Core/Inc/com_pc.h
+ ../Core/Inc/com_pc.h ../Core/Inc/com_FPGA_spi.h ../Core/Inc/spi.h
 
 ../Core/Inc/main.h:
 
@@ -105,3 +105,7 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Core/Inc/lidar.h:
 
 ../Core/Inc/com_pc.h:
+
+../Core/Inc/com_FPGA_spi.h:
+
+../Core/Inc/spi.h:

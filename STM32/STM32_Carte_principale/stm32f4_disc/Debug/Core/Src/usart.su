@@ -2,4 +2,5 @@ usart.c:67:6:MX_USART2_UART_Init	8	static
 usart.c:96:6:MX_USART3_UART_Init	8	static
 usart.c:124:6:HAL_UART_MspInit	56	static
 usart.c:192:6:HAL_UART_MspDeInit	16	static
-usart.c:243:6:uart_lidar_recieve	4	static
+usart.c:243:6:uart_lidar_recieve	8	static
+usart.c:256:6:deplacer_buffer_to_message_recu	4	static

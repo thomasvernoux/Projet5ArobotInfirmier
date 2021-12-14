@@ -1,0 +1,13 @@
+#include "main.h"
+#include "spi.h"
+
+
+
+void test_spi();
+
+void spi_transmit();
+
+
+
+void moteur1();
+void moteur2();

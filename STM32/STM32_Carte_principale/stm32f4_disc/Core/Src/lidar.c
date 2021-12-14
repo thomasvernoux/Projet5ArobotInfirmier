@@ -18,7 +18,7 @@
 
 void demarrer_pwm_lidar(){
 
-  TIM1->CCR1 = 20000;
+  TIM1->CCR1 = 30000;
   HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
   return;
 
@@ -55,7 +55,7 @@ void reset_lidar(){
 
 
 void send_lidar(char Data[]){
-	//HAL_UART_Transmit(&huart2, Data, sizeof(Data), 100);
+
 
 
 	return;
@@ -64,7 +64,7 @@ void send_lidar(char Data[]){
 
 void send_lidar_request(){
 	char Data = "A520";
-	//HAL_UART_Transmit(&huart2, Data, sizeof(Data), 100);
+
 	return;
 
 
