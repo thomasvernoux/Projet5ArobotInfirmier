@@ -61,8 +61,8 @@ all: main-build
 main-build: Projet_Robot_I.elf secondary-outputs
 
 # Tool invocations
-Projet_Robot_I.elf: $(OBJS) $(USER_OBJS) C:\Users\thoma\Documents\GitHub\Projet5ArobotInfirmier\STM32\STM32_Carte_principale\STM32-F072RB\STM32F072RBTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "Projet_Robot_I.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m0 -T"C:\Users\thoma\Documents\GitHub\Projet5ArobotInfirmier\STM32\STM32_Carte_principale\STM32-F072RB\STM32F072RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Projet_Robot_I.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Projet_Robot_I.elf: $(OBJS) $(USER_OBJS) C:\Users\thoma\Documents\GitHub\Projet5ArobotInfirmier\STM32\old\STM32-F072RB\STM32F072RBTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "Projet_Robot_I.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m0 -T"C:\Users\thoma\Documents\GitHub\Projet5ArobotInfirmier\STM32\old\STM32-F072RB\STM32F072RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Projet_Robot_I.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

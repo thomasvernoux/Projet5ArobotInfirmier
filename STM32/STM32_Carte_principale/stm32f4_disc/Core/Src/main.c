@@ -19,6 +19,8 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "spi.h"
+#include "tim.h"
 #include "usart.h"
 #include "gpio.h"
 
@@ -94,12 +96,23 @@ int main(void)
   MX_GPIO_Init();
   MX_USART2_UART_Init();
   MX_USART3_UART_Init();
+  MX_SPI1_Init();
+  MX_TIM1_Init();
   /* USER CODE BEGIN 2 */
 
 
 
   HAL_UART_Receive_IT(&huart2, &UART2_rxBuffer, 1);
   HAL_UART_Receive_IT(&huart3, &UART3_rxBuffer, 1);
+
+  demarrer_pwm_lidar();
+
+
+
+
+
+
+
 
 
   /* USER CODE END 2 */
@@ -110,7 +123,7 @@ int main(void)
   {
 
 	  HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_13);
-	  HAL_Delay(2000);
+	  HAL_Delay(500);
 
 
 

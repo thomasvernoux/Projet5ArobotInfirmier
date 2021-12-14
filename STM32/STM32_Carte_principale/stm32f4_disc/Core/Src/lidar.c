@@ -10,8 +10,20 @@
 #include "usart.h"
 #include "gpio.h"
 #include "main.h"
-//#include "tim.h"
+#include "tim.h"
 
+
+
+
+
+void demarrer_pwm_lidar(){
+
+  TIM1->CCR1 = 20000;
+  HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
+  return;
+
+
+  }
 
 /*
  * Test

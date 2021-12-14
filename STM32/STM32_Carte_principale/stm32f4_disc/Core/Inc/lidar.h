@@ -10,6 +10,8 @@ void send_lidar_request();
 void lidar_reception();
 
 
+void demarrer_pwm_lidar();
+
 
 
 
