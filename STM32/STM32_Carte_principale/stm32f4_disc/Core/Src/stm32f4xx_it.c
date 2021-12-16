@@ -212,8 +212,14 @@ void USART2_IRQHandler(void)
   HAL_UART_IRQHandler(&huart2);
   /* USER CODE BEGIN USART2_IRQn 1 */
 
+
+  /*
   recevoir_message_pc();
   HAL_UART_Receive_IT(&huart2, UART2_rxBuffer, 1);
+  */
+
+  //uart_pc_recieve();
+  recevoir_message_pc2();
 
   /* USER CODE END USART2_IRQn 1 */
 }
@@ -229,8 +235,13 @@ void USART3_IRQHandler(void)
   HAL_UART_IRQHandler(&huart3);
   /* USER CODE BEGIN USART3_IRQn 1 */
 
+
+
   uart_lidar_recieve();
   HAL_UART_Receive_IT(&huart3, UART3_rxBuffer, 1);
+
+
+
 
   /* USER CODE END USART3_IRQn 1 */
 }

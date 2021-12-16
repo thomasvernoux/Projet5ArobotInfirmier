@@ -46,6 +46,12 @@ extern uint8_t UART3_rxBuffer;
 extern uint8_t UART2_txBuffer [50];
 extern uint8_t UART3_txBuffer [50];
 
+extern uint8_t UART2_rxBuffer_2 [100];
+
+extern uint8_t pc_message_recu [100];
+extern uint8_t pc_message_recu_index;
+extern uint8_t pc_message_recu_taille;
+
 
 
 
@@ -70,6 +76,14 @@ void MX_USART3_UART_Init(void);
 
 void uart_lidar_recieve();
 void deplacer_buffer_to_message_recu();
+
+
+void deplacer_buffer_to_message_recu();
+void uart_pc_recieve();
+
+
+
+
 
 /* USER CODE END Prototypes */
 

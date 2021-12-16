@@ -31,6 +31,7 @@
 
 uint8_t UART2_rxBuffer;
 uint8_t UART3_rxBuffer;
+uint8_t UART2_rxBuffer_2 [100];
 
 
 uint8_t UART2_txBuffer [50];
@@ -39,6 +40,13 @@ uint8_t UART3_txBuffer [50];
 uint8_t lidar_message_recu [100];
 uint8_t lidar_message_recu_index = 0;
 uint8_t lidar_message_recu_taille = 0;
+
+
+uint8_t pc_message_recu [100];
+uint8_t pc_message_recu_index = 0;
+uint8_t pc_message_recu_taille = 0;
+
+
 
 
 
@@ -259,6 +267,47 @@ void deplacer_buffer_to_message_recu(){
 
 	return;
 
+}
+
+
+
+void uart_lidar_recieve2(){
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+void uart_pc_recieve(){
+
+	deplacer_buffer_to_message_pc();
+	pc_message_recu_index ++;
+	if (pc_message_recu_index == 3){
+		pc_message_recu_taille = (int)UART2_rxBuffer;
+	}
+
+	return;
+}
+
+void deplacer_buffer_to_message_pc(){
+	pc_message_recu[pc_message_recu_index] = UART2_rxBuffer;
+	return;
 }
 
 
