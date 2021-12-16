@@ -8,6 +8,8 @@
 // variable globale
 char message_recu_PC [100];
 
+int pwm = 0;
+
 
 
 
@@ -60,39 +62,33 @@ void traiter_message_pc(){
 
 	int a = 3;
 
-	if ((message_recu_PC[0] == 0) && (message_recu_PC[1] == 13)){
-		// stop
+	switch(message_recu_PC[0]){
+	case 0:   // stop
 		a = 5;
-	}
+		break;
 
-	if ((message_recu_PC[0] == 1) && (message_recu_PC[1] == 13)){
-		// avancer
+	case 1:   // avancer
 		a = 5;
-	}
+		break;
 
-	if ((message_recu_PC[0] == 2) && (message_recu_PC[1] == 13)){
-		// reculer
+	case 2:   // reculer
 		a = 5;
-	}
+		break;
 
-	if ((message_recu_PC[0] == 3) && (message_recu_PC[1] == 13)){
-		// droite
+	case 3:   // droite
 		a = 5;
-	}
+		break;
 
-	if ((message_recu_PC[0] == 4) && (message_recu_PC[1] == 13)){
-		// gauche
+	case 4:   // gauche
 		a = 5;
-	}
+		break;
 
-	if ((message_recu_PC[0] == 5) && (message_recu_PC[2] == 13)){
-		// controle PWM
+	case 5:   // controle PWM
 		a = 5;
+		pwm = UART2_rxBuffer_2[1];
+		break;
+
 	}
-
-
-
-
 
 }
 
