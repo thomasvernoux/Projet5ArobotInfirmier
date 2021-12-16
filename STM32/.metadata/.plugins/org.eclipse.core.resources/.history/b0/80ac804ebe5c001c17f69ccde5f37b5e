@@ -1,0 +1,13 @@
+#include "com_FPGA_spi.h"
+
+
+
+uint16_t txData= 0x1111000011110000;
+
+
+void test_spi(){
+	HAL_SPI_Transmit (&hspi1,txData,2,100);
+	return;
+}
+
+

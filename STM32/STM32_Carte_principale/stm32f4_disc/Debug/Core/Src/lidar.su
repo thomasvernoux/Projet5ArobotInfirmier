@@ -1,0 +1,8 @@
+lidar.c:19:6:demarrer_pwm_lidar	8	static
+lidar.c:31:6:tests_lidar	8	static
+lidar.c:45:6:mouvement_moteur	16	static
+lidar.c:49:6:reset_lidar	16	static
+lidar.c:57:6:send_lidar	16	static
+lidar.c:65:6:send_lidar_request	16	static
+lidar.c:73:6:lidar_get_info	16	static
+lidar.c:78:6:lidar_reception	16	static

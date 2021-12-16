@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="ExternalProjectImportWizard">
+		<item key="WizardProjectsImportPage.STORE_NESTED_PROJECTS" value="true"/>
+	</section>
+	<section name="NewWizardAction">
+	</section>
+	<section name="org.eclipse.ui.internal.ide.dialogs.ProjectContentsLocationArea">
+		<item key="OUTSIDE_LOCATION" value="C:\Users\thoma\Mon Drive\5A\iot\TP_Objects_connectes\analyseur_CAN"/>
+	</section>
+</section>
