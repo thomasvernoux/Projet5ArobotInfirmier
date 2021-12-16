@@ -1,0 +1,11 @@
+stm32g0c1e_eval.c:279:10:BSP_GetVersion	8	static
+stm32g0c1e_eval.c:314:6:BSP_LED_Init	56	static
+stm32g0c1e_eval.c:341:6:BSP_LED_DeInit	56	static
+stm32g0c1e_eval.c:363:6:BSP_LED_On	16	static
+stm32g0c1e_eval.c:378:6:BSP_LED_Off	16	static
+stm32g0c1e_eval.c:393:6:BSP_LED_Toggle	16	static
+stm32g0c1e_eval.c:410:6:BSP_PB_Init	40	static
+stm32g0c1e_eval.c:448:10:BSP_PB_GetState	16	static
+stm32g0c1e_eval.c:462:9:BSP_JOY_Init	72	static
+stm32g0c1e_eval.c:503:6:BSP_JOY_DeInit	40	static
+stm32g0c1e_eval.c:528:18:BSP_JOY_GetState	16	static

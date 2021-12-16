@@ -5,4 +5,7 @@
 	</section>
 	<section name="NewWizardAction">
 	</section>
+	<section name="org.eclipse.ui.internal.ide.dialogs.ProjectContentsLocationArea">
+		<item key="OUTSIDE_LOCATION" value="C:\Users\thoma\Mon Drive\5A\iot\TP_Objects_connectes\analyseur_CAN"/>
+	</section>
 </section>
