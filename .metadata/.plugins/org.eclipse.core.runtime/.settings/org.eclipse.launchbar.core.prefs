@@ -1,10 +1,11 @@
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
-configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Projet_Robot_I Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Projet_Robot_Infirmier_F407G Debug
+configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Projet_Robot_I Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Projet_Robot_Infirmier_F407G Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:pendule_echecs Debug
 eclipse.preferences.version=1
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Projet_Robot_I\ Debug/activeLaunchMode=debug
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Projet_Robot_I\ Debug/activeLaunchTarget=null\:---
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Projet_Robot_Infirmier_F072RB\ Debug/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Projet_Robot_Infirmier_F072RB\ Debug/activeLaunchTarget=null\:---
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Projet_Robot_Infirmier_F407G\ Debug/activeLaunchMode=run
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:pendule_echecs\ Debug/activeLaunchMode=run

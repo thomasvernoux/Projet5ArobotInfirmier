@@ -1,0 +1,10 @@
+18:57:25 **** Incremental Build of configuration Debug for project projet_capteurs_l010r_ ****
+make -j4 all 
+arm-none-eabi-size   projet_capteurs_l010r_.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6060	     20	   1572	   7652	   1de4	projet_capteurs_l010r_.elf
+Finished building: default.size.stdout
+ 
+
+18:57:26 Build Finished. 0 errors, 0 warnings. (took 302ms)
+

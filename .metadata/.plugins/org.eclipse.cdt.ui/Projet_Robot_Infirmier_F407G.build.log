@@ -1,34 +1,10 @@
-12:52:06 **** Incremental Build of configuration Debug for project Projet_Robot_Infirmier_F407G ****
+18:57:24 **** Incremental Build of configuration Debug for project Projet_Robot_Infirmier_F407G ****
 make -j4 all 
-arm-none-eabi-gcc "../Core/Src/lidar.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/lidar.d" -MT"Core/Src/lidar.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/lidar.o"
-../Core/Src/lidar.c: In function 'lidar_setup':
-../Core/Src/lidar.c:22:29: warning: passing argument 2 of 'HAL_UART_Transmit' from incompatible pointer type [-Wincompatible-pointer-types]
-   22 |  HAL_UART_Transmit(&huart3, Data, sizeof(Data), 1000);
-      |                             ^~~~
-      |                             |
-      |                             uint16_t * {aka short unsigned int *}
-In file included from ../Core/Inc/stm32f4xx_hal_conf.h:406,
-                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
-                 from ../Core/Inc/main.h:31,
-                 from ../Core/Inc/gpio.h:28,
-                 from ../Core/Src/lidar.c:3:
-../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:723:73: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
-  723 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size, uint32_t Timeout);
-      |                                                                ~~~~~~~~~^~~~~
-arm-none-eabi-gcc -o "Projet_Robot_Infirmier_F407G.elf" @"objects.list"   -mcpu=cortex-m4 -T"A:\Bureau\Projet Robot Infirmier\STM32\STM32F407G-Disc1\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Projet_Robot_Infirmier_F407G.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Projet_Robot_Infirmier_F407G.elf
- 
 arm-none-eabi-size   Projet_Robot_Infirmier_F407G.elf 
-arm-none-eabi-objdump -h -S  Projet_Robot_Infirmier_F407G.elf  > "Projet_Robot_Infirmier_F407G.list"
-arm-none-eabi-objcopy  -O binary  Projet_Robot_Infirmier_F407G.elf  "Projet_Robot_Infirmier_F407G.bin"
    text	   data	    bss	    dec	    hex	filename
   11560	     20	   1788	  13368	   3438	Projet_Robot_Infirmier_F407G.elf
 Finished building: default.size.stdout
  
-Finished building: Projet_Robot_Infirmier_F407G.bin
- 
-Finished building: Projet_Robot_Infirmier_F407G.list
- 
 
-12:52:07 Build Finished. 0 errors, 1 warnings. (took 1s.539ms)
+18:57:24 Build Finished. 0 errors, 0 warnings. (took 303ms)
 

@@ -1,0 +1,10 @@
+18:57:24 **** Incremental Build of configuration Debug for project STM32L01 Capteurs ****
+make -j4 all 
+arm-none-eabi-size   STM32L01\ Capteurs.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7268	     20	   1660	   8948	   22f4	STM32L01 Capteurs.elf
+Finished building: default.size.stdout
+ 
+
+18:57:25 Build Finished. 0 errors, 0 warnings. (took 296ms)
+
