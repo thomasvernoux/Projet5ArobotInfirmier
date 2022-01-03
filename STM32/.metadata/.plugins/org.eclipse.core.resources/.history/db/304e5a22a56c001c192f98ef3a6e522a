@@ -1,0 +1,41 @@
+#include "com_M0.h"
+#include "main.h"
+#include "spi.h"
+
+
+extern uint8_t pTxData_spi[100];
+extern uint8_t pRxData_spi[100];
+
+
+
+void test_spi_(){
+
+	strcpy(pTxData_spi, "hello");
+
+	HAL_SPI_TransmitReceive (SPI1, pTxData_spi, pRxData_spi, 5, 100);
+
+	return;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

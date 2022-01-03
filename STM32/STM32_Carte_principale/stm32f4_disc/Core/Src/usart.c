@@ -6,7 +6,7 @@
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
+  * <h2><center>&copy; Copyright (c) 2022 STMicroelectronics.
   * All rights reserved.</center></h2>
   *
   * This software component is licensed by ST under BSD 3-Clause license,
@@ -248,34 +248,6 @@ void HAL_UART_MspDeInit(UART_HandleTypeDef* uartHandle)
 
 
 
-void uart_lidar_recieve(){
-
-	deplacer_buffer_to_message_recu();
-	lidar_message_recu_index ++;
-	if (lidar_message_recu_index == 10){
-		lidar_message_recu_taille = (int)UART3_rxBuffer;
-	}
-	UART3_rxBuffer = 'A';
-	return;
-
-}
-
-
-void deplacer_buffer_to_message_recu(){
-	lidar_message_recu[lidar_message_recu_index] = UART3_rxBuffer;
-
-
-	return;
-
-}
-
-
-
-void uart_lidar_recieve2(){
-
-
-
-}
 
 
 
@@ -283,32 +255,6 @@ void uart_lidar_recieve2(){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-void uart_pc_recieve(){
-
-	deplacer_buffer_to_message_pc();
-	pc_message_recu_index ++;
-	if (pc_message_recu_index == 3){
-		pc_message_recu_taille = (int)UART2_rxBuffer;
-	}
-
-	return;
-}
-
-void deplacer_buffer_to_message_pc(){
-	pc_message_recu[pc_message_recu_index] = UART2_rxBuffer;
-	return;
-}
 
 
 

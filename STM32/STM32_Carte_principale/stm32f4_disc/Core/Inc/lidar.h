@@ -1,7 +1,7 @@
 
 
 
-
+void lidar_get_info();
 void tests_lidar();
 void mouvement_moteur(int vitesse);
 void reset_lidar();
@@ -11,6 +11,8 @@ void lidar_reception();
 
 
 void demarrer_pwm_lidar();
+
+void uart_lidar_recieve();
 
 
 

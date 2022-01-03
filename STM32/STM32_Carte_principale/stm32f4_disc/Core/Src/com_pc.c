@@ -13,11 +13,15 @@ int pwm = 0;
 
 
 
+
 /*
  * Envoyer un message depuis le PC
  */
 int envoyer_message_pc (char message[50]){
-	HAL_UART_Transmit(&huart2, &message, 50, 100);
+
+	uint8_t constantes[4] = {1, 2, 50, 100};
+
+	HAL_UART_Transmit(&huart2, constantes, sizeof(constantes), 100);
 
 	return 1;
 }
@@ -27,7 +31,7 @@ int envoyer_message_pc (char message[50]){
  * Elle permet de traiter l'information.
  */
 void recevoir_message_pc(){
-
+/*
 	strcpy(UART2_rxBuffer,message_recu_PC);
 
 	if (strcmp(&message_recu_PC,"test")){
@@ -39,13 +43,14 @@ void recevoir_message_pc(){
 		envoyer_message_pc("test recu");
 		return;
 	}
+	*/
 }
 
 
 void recevoir_message_pc2(){
 
 	if (UART2_rxBuffer_2[pc_message_recu_index] == '\r'){ // on est a la fin du message
-		strcpy(message_recu_PC,UART2_rxBuffer_2);
+		strcpy((char *)message_recu_PC,(char *)UART2_rxBuffer_2);
 		pc_message_recu_index = 0;
 		traiter_message_pc();
 
@@ -60,34 +65,33 @@ void recevoir_message_pc2(){
 
 void traiter_message_pc(){
 
-	int a = 3;
+
 
 	switch(message_recu_PC[0]){
 	case 0:   // stop
-		a = 5;
+
 		break;
 
 	case 1:   // avancer
-		a = 5;
+
 		break;
 
 	case 2:   // reculer
-		a = 5;
+
 		break;
 
 	case 3:   // droite
-		a = 5;
+
 		break;
 
 	case 4:   // gauche
-		a = 5;
+
 		break;
 
 	case 5:   // controle PWM
-		a = 5;
-		pwm = UART2_rxBuffer_2[1];
-		break;
 
+		pwm = 2 * UART2_rxBuffer_2[1]; // on a un rapport *2
+		break;
 	}
 
 }

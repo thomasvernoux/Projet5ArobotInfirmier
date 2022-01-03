@@ -1,4 +1,4 @@
-com_pc.c:17:5:envoyer_message_pc	16	static
-com_pc.c:27:6:recevoir_message_pc	8	static
-com_pc.c:43:6:recevoir_message_pc2	8	static
-com_pc.c:59:6:traiter_message_pc	16	static
+com_pc.c:20:5:envoyer_message_pc	24	static
+com_pc.c:33:6:recevoir_message_pc	4	static
+com_pc.c:50:6:recevoir_message_pc2	8	static
+com_pc.c:66:6:traiter_message_pc	4	static

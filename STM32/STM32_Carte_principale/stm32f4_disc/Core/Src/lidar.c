@@ -47,8 +47,8 @@ void mouvement_moteur(int vitesse){
 }
 
 void reset_lidar(){
-	int Data = 0x40;
-	HAL_UART_Transmit(&huart3, Data, sizeof(Data), 100);
+	uint8_t Data = 0x40;
+	HAL_UART_Transmit(&huart3, &Data, sizeof(Data), 100);
 	return;
 }
 
@@ -63,7 +63,7 @@ void send_lidar(char Data[]){
 
 
 void send_lidar_request(){
-	char Data = "A520";
+	//char Data[8] = "A520";
 
 	return;
 
@@ -73,13 +73,21 @@ void send_lidar_request(){
 void lidar_get_info(){
 	uint8_t Data[2] = {0xA5, 0x50};
 	HAL_UART_Transmit(&huart3, Data, 2, 100);
+	return;
 }
 
 void lidar_reception(){
 
-		int a = 3;
 
 
+
+}
+
+
+void uart_lidar_recieve(){
+
+
+	return;
 }
 
 

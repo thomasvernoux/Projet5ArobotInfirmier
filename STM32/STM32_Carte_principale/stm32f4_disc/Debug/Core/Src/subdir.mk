@@ -6,6 +6,7 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../Core/Src/com_FPGA_spi.c \
+../Core/Src/com_M0.c \
 ../Core/Src/com_pc.c \
 ../Core/Src/gpio.c \
 ../Core/Src/lidar.c \
@@ -21,6 +22,7 @@ C_SRCS += \
 
 OBJS += \
 ./Core/Src/com_FPGA_spi.o \
+./Core/Src/com_M0.o \
 ./Core/Src/com_pc.o \
 ./Core/Src/gpio.o \
 ./Core/Src/lidar.o \
@@ -36,6 +38,7 @@ OBJS += \
 
 C_DEPS += \
 ./Core/Src/com_FPGA_spi.d \
+./Core/Src/com_M0.d \
 ./Core/Src/com_pc.d \
 ./Core/Src/gpio.d \
 ./Core/Src/lidar.d \

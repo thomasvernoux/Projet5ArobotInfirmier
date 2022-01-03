@@ -30,6 +30,8 @@
 #include "lidar.h"
 #include "com_pc.h"
 #include "com_FPGA_spi.h"
+#include "com_M0.h"
+#include "spi.h"
 
 /* USER CODE END Includes */
 
@@ -99,11 +101,12 @@ int main(void)
   MX_USART3_UART_Init();
   MX_SPI1_Init();
   MX_TIM1_Init();
+  MX_SPI2_Init();
   /* USER CODE BEGIN 2 */
 
 
 
-  HAL_UART_Receive_IT(&huart2, &UART2_rxBuffer_2, sizeof(UART2_rxBuffer_2));
+  HAL_UART_Receive_IT(&huart2, UART2_rxBuffer_2, sizeof(&UART2_rxBuffer_2));
   HAL_UART_Receive_IT(&huart3, &UART3_rxBuffer, 1);
 
   demarrer_pwm_lidar();
@@ -129,8 +132,13 @@ int main(void)
 
 
 
-	  tests_lidar();
+	  //tests_lidar();
 	  //test_spi();
+
+	  char message [50] = "coucou";
+	  envoyer_message_pc(message);
+
+	  test_spi_();
 
 
 
