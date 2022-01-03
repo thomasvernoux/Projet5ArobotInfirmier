@@ -12,6 +12,7 @@ uint8_t pRxData_spi[100];
 void test_spi_(){
 
 
+	pTxData_spi[0] = 1;
 
 	HAL_SPI_Transmit(&hspi1, pTxData_spi, sizeof(pTxData_spi), 100);
 
