@@ -56,13 +56,6 @@ extern uint8_t pc_message_recu_taille;
 
 
 
-extern uint8_t lidar_message_recu_index;
-
-
-extern uint8_t lidar_message_recu [100];
-
-
-
 
 
 

@@ -37,9 +37,7 @@ uint8_t UART2_rxBuffer_2 [100];
 uint8_t UART2_txBuffer [50];
 uint8_t UART3_txBuffer [50];
 
-uint8_t lidar_message_recu [100];
-uint8_t lidar_message_recu_index = 0;
-uint8_t lidar_message_recu_taille = 0;
+
 
 
 uint8_t pc_message_recu [100];

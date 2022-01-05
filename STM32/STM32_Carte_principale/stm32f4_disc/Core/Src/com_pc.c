@@ -19,7 +19,7 @@ int pwm = 0;
  */
 int envoyer_message_pc (char message[50]){
 
-	uint8_t constantes[4] = {1, 2, 50, 100};
+	uint8_t constantes[4] = {0x08, 0x09, 0xa, 0xB};
 
 	HAL_UART_Transmit(&huart2, constantes, sizeof(constantes), 100);
 
