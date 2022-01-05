@@ -89,8 +89,21 @@ def refresh(Ox_Sanguin_info, Temp_info, Rythme_Card_info, Intensite_info):
     print(ser.inWaiting())
     
     # print(ser.read(ser.inWaiting()))
-    x = str(ser.read(ser.inWaiting()))
+    x = ser.read(ser.inWaiting())
+    
+    
+    
+    print("test test test ", x)
+    
+    print(type(x))
+    
+    for i in x:
+        print(i)
+    
+    
+    
 
+    
     txt2 = str(x)
     
     print(txt2)
@@ -105,8 +118,9 @@ def refresh(Ox_Sanguin_info, Temp_info, Rythme_Card_info, Intensite_info):
     print(txt2)
 
     for i in range(0,4) : 
-        txt2[i] = str(0) + txt2[i]
-        txt2[i] = int(int(txt2[i], 16))
+        # xt2[i] = str(0) + txt2[i]
+        # txt2[i] = int(int(txt2[i], 16))
+        a = 3
 
     Ox_Sanguin_info.config(text = txt2[0])
     Temp_info.config(text = txt2[1])
@@ -121,7 +135,7 @@ def main():
     
     window = Tk()
     window.title("IHM Projet Robot Infirmier")
-    window.iconbitmap('C:/Users/paula/Desktop/IHMprojet/robot.ico')
+
     
     menu = Canvas(window,width=2000, height=2000) 
     menu.pack_propagate(False)
