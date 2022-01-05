@@ -37,18 +37,24 @@ void demarrer_pwm_lidar(){
 
   }
 
+
+
+
 /*
  * Test
  */
 void tests_lidar(){
 
-	//reset_lidar();
-	//HAL_Delay(1000);
-
-
 	memset(lidar_message_recu,0,sizeof(lidar_message_recu));
-	lidar_get_info();
 
+
+
+	//reset_lidar();
+	//HAL_Delay(100);
+
+	//lidar_get_info();
+
+	lidar_scan();
 
 	return;
 }
@@ -60,29 +66,13 @@ void mouvement_moteur(int vitesse){
 }
 
 void reset_lidar(){
-	uint8_t Data = 0x40;
-	HAL_UART_Transmit(&huart3, &Data, sizeof(Data), 100);
+	uint8_t Data[2] = {0xA5, 0x40};
+	HAL_UART_Transmit(&huart3, Data, 2, 100);
 	memset(lidar_message_recu,0,sizeof(lidar_message_recu));
 	return;
 }
 
 
-
-void send_lidar(char Data[]){
-
-
-
-	return;
-}
-
-
-void send_lidar_request(){
-	//char Data[8] = "A520";
-
-	return;
-
-
-}
 
 void lidar_get_info(){
 	uint8_t Data[2] = {0xA5, 0x50};
@@ -90,12 +80,13 @@ void lidar_get_info(){
 	return;
 }
 
-void lidar_reception(){
 
-
-
-
+void lidar_scan(){
+	uint8_t Data[2] = {0xA5, 0x20};
+	HAL_UART_Transmit(&huart3, Data, 2, 100);
+	return;
 }
+
 
 
 void uart_lidar_recieve(){
