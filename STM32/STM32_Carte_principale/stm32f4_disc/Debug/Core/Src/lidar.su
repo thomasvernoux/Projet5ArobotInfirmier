@@ -1,8 +1,9 @@
-lidar.c:31:6:demarrer_pwm_lidar	8	static
-lidar.c:46:6:tests_lidar	8	static
-lidar.c:64:6:mouvement_moteur	16	static
-lidar.c:68:6:reset_lidar	16	static
-lidar.c:77:6:lidar_get_info	16	static
-lidar.c:84:6:lidar_scan	16	static
-lidar.c:92:6:uart_lidar_recieve	8	static
-lidar.c:125:6:reception_octet_data	4	static
+lidar.c:32:6:demarrer_pwm_lidar	8	static
+lidar.c:47:6:tests_lidar	8	static
+lidar.c:65:6:mouvement_moteur	16	static
+lidar.c:69:6:reset_lidar	16	static
+lidar.c:78:6:lidar_get_info	16	static
+lidar.c:85:6:lidar_scan	16	static
+lidar.c:93:6:uart_lidar_recieve	8	static
+lidar.c:126:6:reception_octet_data	8	static
+lidar.c:139:6:lidar_fin_du_message_recu	8	static

@@ -31,6 +31,9 @@ import serial
 from tkinter import messagebox
 from openpyxl import load_workbook
 import serial
+import threading
+
+
 # -------------------------Classes and Functions-------------------------------
 
 def send_left():
@@ -87,45 +90,21 @@ def send_database(Nom,Prenom,Adresse,Num):
 def refresh(Ox_Sanguin_info, Temp_info, Rythme_Card_info, Intensite_info):
     
     print(ser.inWaiting())
-    
-    # print(ser.read(ser.inWaiting()))
+
     x = ser.read(ser.inWaiting())
-    
-    
-    
-    print("test test test ", x)
-    
+
     print(type(x))
-    
-    for i in x:
-        print(i)
-    
-    
-    
+    print(x)
 
+    Ox_Sanguin_info.config(text = x[0])
+    Temp_info.config(text = x[1])
+    Rythme_Card_info.config(text = x[2])
+    Intensite_info.config(text = x[3])
     
-    txt2 = str(x)
     
-    print(txt2)
-
-    txt2 = txt2.replace("b", "")
-    txt2 = txt2.replace("'", "")
-    txt2 = txt2.replace("\\", " ")
-    txt2 = txt2.replace("-", "")
-    txt2 = txt2[1:]
-    txt2 = txt2.split()
-    
-    print(txt2)
-
-    for i in range(0,4) : 
-        # xt2[i] = str(0) + txt2[i]
-        # txt2[i] = int(int(txt2[i], 16))
-        a = 3
-
-    Ox_Sanguin_info.config(text = txt2[0])
-    Temp_info.config(text = txt2[1])
-    Rythme_Card_info.config(text = txt2[2])
-    Intensite_info.config(text = txt2[3])
+def serialEvent():
+    print ("aie aie aie")
+    return
 
 # ---------------------------------Main----------------------------------------
 
@@ -257,12 +236,7 @@ def main():
     Button_PWM.place(relx=0.75, rely=0.75, anchor=CENTER)
     Button_PWM['bg']='white'
     
-    #data = ser.read()
-    
     data = [0,0,0,0]
-    
-    # my_var = StringVar()
-    # my_var.set(str(data[0]))
     
     Ox_Sanguin_info = Label(text=data[0], foreground="white")
     Ox_Sanguin_info.configure(font=("Ubuntu Light", 18, "roman"))
@@ -296,6 +270,40 @@ def main():
     Button_Acq.place(relx=0.75, rely=0.85, anchor=CENTER)
     Button_Acq['bg']='white'        
     
+    
+    
+    
+    
+    t = threading.Thread(target=serialEvent)
+    t.start()
+    t.join()
+    
+    
+    
     window.mainloop()
 
 main()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

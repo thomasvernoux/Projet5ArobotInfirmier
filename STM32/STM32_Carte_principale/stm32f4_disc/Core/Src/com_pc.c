@@ -19,7 +19,7 @@ int pwm = 0;
  */
 int envoyer_message_pc (char message[50]){
 
-	uint8_t constantes[4] = {0x08, 0x09, 0xa, 0xB};
+	uint8_t constantes[4] = {1, 5, 9, 4};
 
 	HAL_UART_Transmit(&huart2, constantes, sizeof(constantes), 100);
 
@@ -65,30 +65,40 @@ void recevoir_message_pc2(){
 
 void traiter_message_pc(){
 
+	int a;
+
 
 
 	switch(message_recu_PC[0]){
-	case 0:   // stop
 
+
+
+	case 0:   // stop
+		a = 0;
 		break;
 
 	case 1:   // avancer
+		a = 1;
 
 		break;
 
 	case 2:   // reculer
+		a = 2;
 
 		break;
 
 	case 3:   // droite
-
+		a = 3;
 		break;
 
 	case 4:   // gauche
+		a = 4;
 
 		break;
 
 	case 5:   // controle PWM
+
+		a = 5;
 
 		pwm = 2 * UART2_rxBuffer_2[1]; // on a un rapport *2
 		break;

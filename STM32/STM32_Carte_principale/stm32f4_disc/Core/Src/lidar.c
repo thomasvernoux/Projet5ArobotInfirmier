@@ -12,6 +12,7 @@
 #include "main.h"
 #include "tim.h"
 #include <string.h>
+#include <stdio.h>
 
 enum BIT_STATE {start1, start2, size, data, end}; // structure pour le prochain bit qu'on va recevoir du lidar
 enum BIT_STATE last_bit_state = end;
@@ -110,7 +111,7 @@ void uart_lidar_recieve(){
 		taille_message_recu = octet_recu;
 	}
 
-	else{                                     // on a une data
+	else{                                    // on a une data
 		reception_octet_data();
 		bit_state = data;
 	}
@@ -127,12 +128,25 @@ void reception_octet_data(){
 		index_ecriture_message_recu ++;
 		if (index_ecriture_message_recu == taille_message_recu){
 			bit_state = end;
+			lidar_fin_du_message_recu();
 		}
 
 
 	return;
 }
 
+
+void lidar_fin_du_message_recu(){      // on transmet le message au PC
+
+
+
+	HAL_UART_Transmit(&huart2, lidar_message_recu, taille_message_recu, 100);
+
+	return;
+
+
+
+}
 
 
 

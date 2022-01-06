@@ -17,6 +17,8 @@ void demarrer_pwm_lidar();
 void uart_lidar_recieve();
 
 
+void lidar_fin_du_message_recu();
+
 
 
 

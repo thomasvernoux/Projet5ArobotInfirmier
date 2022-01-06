@@ -109,8 +109,10 @@ int main(void)
   HAL_UART_Receive_IT(&huart2, UART2_rxBuffer_2, sizeof(&UART2_rxBuffer_2));
   HAL_UART_Receive_IT(&huart3, &UART3_rxBuffer, 1);
 
-  demarrer_pwm_lidar();
 
+
+  demarrer_pwm_lidar();
+  lidar_scan();
 
 
 
@@ -122,7 +124,7 @@ int main(void)
   {
 
 	  HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_13);
-	  HAL_Delay(500);
+	  HAL_Delay(100);
 
 
 
@@ -135,11 +137,14 @@ int main(void)
 	  //tests_lidar();
 	  //test_spi();
 
-	  char message [50] = "coucou";
-	  envoyer_message_pc(message);
+	  //char message [50] = "coucou";
+	  //envoyer_message_pc(message);
 
 	  //test_spi_();
-	  tests_lidar();
+
+	  //HAL_Delay(100);
+
+	  //tests_lidar();
 
 
 
