@@ -18,12 +18,18 @@ enum BIT_STATE {start1, start2, size, data, end}; // structure pour le prochain 
 enum BIT_STATE last_bit_state = end;
 enum BIT_STATE bit_state;
 
+enum LIDAR_STATE {stop, scan};
+enum LIDAR_STATE lidar_state = stop;
+
 
 uint8_t taille_message_recu;
 uint8_t lidar_message_recu [100];
 int index_ecriture_message_recu;
 
 uint8_t octet_recu;
+
+/// variables du mode scan
+int compteur = 0;
 
 
 
@@ -45,6 +51,8 @@ void demarrer_pwm_lidar(){
  * Test
  */
 void tests_lidar(){
+
+	reset_lidar();
 
 	memset(lidar_message_recu,0,sizeof(lidar_message_recu));
 
@@ -94,31 +102,57 @@ void uart_lidar_recieve(){
 
 	octet_recu = UART3_rxBuffer;
 
+	switch (lidar_state){
 
-	if ((octet_recu == 0xA5) && (last_bit_state == end) ){  // on recoit l'octet de start
-		bit_state = start1;
-		taille_message_recu = 0; // on remet a zero la taille du message recu
-		index_ecriture_message_recu = 0;
-		memset(lidar_message_recu,0,sizeof(lidar_message_recu)); // on efface le buffer
+		case stop: // le lidar n'est pas en scan
+
+			if ((octet_recu == 0xA5) && (last_bit_state == end) ){  // on recoit l'octet de start
+				bit_state = start1;
+				taille_message_recu = 0; // on remet a zero la taille du message recu
+				index_ecriture_message_recu = 0;
+				memset(lidar_message_recu,0,sizeof(lidar_message_recu)); // on efface le buffer
+				}
+
+			else if ((last_bit_state == start1) && (octet_recu == 0x5A)){ // on recoit le deuxième octet de start
+				bit_state = start2;
+			}
+
+			else if (last_bit_state == start2){   // on a l'octet qui donne la taille de la communication
+				bit_state = size;
+				taille_message_recu = octet_recu;
+			}
+
+			else if ((last_bit_state == size) || (last_bit_state == data)){     // on a une data
+				bit_state = data;
+				reception_octet_data();
+
+			}
+
+
+
+			last_bit_state = bit_state; // machine d'état
+
+			break;
+
+		case scan :
+
+			if (compteur == 4){
+				// on transmet
+				HAL_UART_Transmit(&huart2, lidar_message_recu, 5, 100);
+				compteur = 0;
+			}
+
+			lidar_message_recu[compteur] = octet_recu;
+
+			compteur ++;
+
+
+			break;
+
+
+
+
 		}
-
-	else if ((last_bit_state == start1) && (octet_recu == 0x5A)){ // on recoit le deuxième octet de start
-		bit_state = start2;
-	}
-
-	else if (last_bit_state == start2){   // on a l'octet qui donne la taille de la communication
-		bit_state = size;
-		taille_message_recu = octet_recu;
-	}
-
-	else{                                    // on a une data
-		reception_octet_data();
-		bit_state = data;
-	}
-
-
-
-	last_bit_state = bit_state; // machine d'état
 
 	return;
 }
@@ -138,9 +172,21 @@ void reception_octet_data(){
 
 void lidar_fin_du_message_recu(){      // on transmet le message au PC
 
+	uint8_t angle = 3;
+	uint8_t distance = 5;
+
+	uint8_t test [3] = {1, angle, distance};
 
 
-	HAL_UART_Transmit(&huart2, lidar_message_recu, taille_message_recu, 100);
+	//HAL_UART_Transmit(&huart2, test, sizeof(test), 100);
+
+
+	if((lidar_message_recu[0] == 0x0) && (lidar_message_recu[1] == 0x0) && (lidar_message_recu[2] == 0x40) && (lidar_message_recu[3] == 0x81)){
+		lidar_state = scan;
+
+	}
+
+
 
 	return;
 
