@@ -138,8 +138,25 @@ void uart_lidar_recieve(){
 
 			if (compteur == 4){
 				// on transmet
-				HAL_UART_Transmit(&huart2, lidar_message_recu, 5, 100);
+
 				compteur = 0;
+
+				float angle = 256 * (float)lidar_message_recu[2] + (float)lidar_message_recu[1];
+				angle = angle / 1.41;
+				float distance = 256 * (float)lidar_message_recu[4] + (float)lidar_message_recu[3];
+
+
+				uint8_t angle_8 = (uint8_t) angle;
+				uint8_t distance_8 = (uint8_t) distance;
+
+				uint8_t message_a_transmettre[3] = {1,angle_8,distance_8};
+
+
+				HAL_UART_Transmit(&huart2, message_a_transmettre, 3, 100);
+
+
+
+
 			}
 
 			lidar_message_recu[compteur] = octet_recu;

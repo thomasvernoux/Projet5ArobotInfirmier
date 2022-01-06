@@ -14977,3 +14977,54 @@
 2022-01-06 09:04:38,937 [INFO] ProjectBuilder:3789 - Time for Generating toolchain IDE Files: 3650mS.
 2022-01-06 09:04:38,937 [INFO] ProjectBuilder:2457 - Time for Copy CMSIS : 0mS.
 2022-01-06 09:04:38,947 [INFO] ProjectBuilder:2457 - Time for Copy CMSIS : 0mS.
+2022-01-06 10:37:23,317 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 485928704 Bytes (737148928)
+2022-01-06 10:37:23,417 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 513313968 Bytes (737148928)
+2022-01-06 10:37:24,089 [INFO] UtilMem:74 - End SaveConfig() Used Memory: 401455008 Bytes (737148928)
+2022-01-06 10:37:24,454 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: SPI
+2022-01-06 10:37:24,454 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: SPI
+2022-01-06 10:37:24,454 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: TIM1_8
+2022-01-06 10:37:24,454 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: SYS
+2022-01-06 10:37:24,454 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: RCC
+2022-01-06 10:37:24,454 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: NVIC
+2022-01-06 10:37:24,454 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: USART
+2022-01-06 10:37:24,454 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: USART
+2022-01-06 10:37:24,454 [INFO] BlockDiagram:2740 - set Specific Code input for plugin: GPIO
+2022-01-06 10:37:24,454 [INFO] CodeGenerator:663 - code generatio: config db path: C:\Program Files (x86)\STM32CubeIDE_1.7.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.3.0.202107141111\\db\
+2022-01-06 10:37:25,294 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\thoma\Documents\GitHub\Projet5ArobotInfirmier\STM32\STM32_Carte_principale\stm32f4_disc\MXTmpFiles\license.tmp_save
+2022-01-06 10:37:25,374 [INFO] CodeEngine:257 - Generated code: C:\Users\thoma\Documents\GitHub\Projet5ArobotInfirmier\STM32\STM32_Carte_principale\stm32f4_disc\MXTmpFiles\license.tmp
+2022-01-06 10:37:25,454 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\thoma\Documents\GitHub\Projet5ArobotInfirmier\STM32\STM32_Carte_principale\stm32f4_disc\Core\Src\gpio.c_save
+2022-01-06 10:37:25,544 [INFO] CodeEngine:257 - Generated code: C:\Users\thoma\Documents\GitHub\Projet5ArobotInfirmier\STM32\STM32_Carte_principale\stm32f4_disc\Core\Src\gpio.c
+2022-01-06 10:37:25,554 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\thoma\Documents\GitHub\Projet5ArobotInfirmier\STM32\STM32_Carte_principale\stm32f4_disc\Core\Inc\gpio.h_save
+2022-01-06 10:37:25,604 [INFO] CodeEngine:257 - Generated code: C:\Users\thoma\Documents\GitHub\Projet5ArobotInfirmier\STM32\STM32_Carte_principale\stm32f4_disc\Core\Inc\gpio.h
+2022-01-06 10:37:26,164 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\thoma\Documents\GitHub\Projet5ArobotInfirmier\STM32\STM32_Carte_principale\stm32f4_disc\Core\Src\spi.c_save
+2022-01-06 10:37:26,272 [INFO] CodeEngine:257 - Generated code: C:\Users\thoma\Documents\GitHub\Projet5ArobotInfirmier\STM32\STM32_Carte_principale\stm32f4_disc\Core\Src\spi.c
+2022-01-06 10:37:26,272 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\thoma\Documents\GitHub\Projet5ArobotInfirmier\STM32\STM32_Carte_principale\stm32f4_disc\Core\Inc\spi.h_save
+2022-01-06 10:37:26,352 [INFO] CodeEngine:257 - Generated code: C:\Users\thoma\Documents\GitHub\Projet5ArobotInfirmier\STM32\STM32_Carte_principale\stm32f4_disc\Core\Inc\spi.h
+2022-01-06 10:37:26,372 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\thoma\Documents\GitHub\Projet5ArobotInfirmier\STM32\STM32_Carte_principale\stm32f4_disc\Core\Src\tim.c_save
+2022-01-06 10:37:26,482 [INFO] CodeEngine:257 - Generated code: C:\Users\thoma\Documents\GitHub\Projet5ArobotInfirmier\STM32\STM32_Carte_principale\stm32f4_disc\Core\Src\tim.c
+2022-01-06 10:37:26,482 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\thoma\Documents\GitHub\Projet5ArobotInfirmier\STM32\STM32_Carte_principale\stm32f4_disc\Core\Inc\tim.h_save
+2022-01-06 10:37:26,542 [INFO] CodeEngine:257 - Generated code: C:\Users\thoma\Documents\GitHub\Projet5ArobotInfirmier\STM32\STM32_Carte_principale\stm32f4_disc\Core\Inc\tim.h
+2022-01-06 10:37:26,562 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\thoma\Documents\GitHub\Projet5ArobotInfirmier\STM32\STM32_Carte_principale\stm32f4_disc\Core\Src\usart.c_save
+2022-01-06 10:37:26,652 [INFO] CodeEngine:257 - Generated code: C:\Users\thoma\Documents\GitHub\Projet5ArobotInfirmier\STM32\STM32_Carte_principale\stm32f4_disc\Core\Src\usart.c
+2022-01-06 10:37:26,662 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\thoma\Documents\GitHub\Projet5ArobotInfirmier\STM32\STM32_Carte_principale\stm32f4_disc\Core\Inc\usart.h_save
+2022-01-06 10:37:26,742 [INFO] CodeEngine:257 - Generated code: C:\Users\thoma\Documents\GitHub\Projet5ArobotInfirmier\STM32\STM32_Carte_principale\stm32f4_disc\Core\Inc\usart.h
+2022-01-06 10:37:26,762 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\thoma\Documents\GitHub\Projet5ArobotInfirmier\STM32\STM32_Carte_principale\stm32f4_disc\Core\Src\stm32f4xx_it.c_save
+2022-01-06 10:37:26,842 [INFO] CodeEngine:257 - Generated code: C:\Users\thoma\Documents\GitHub\Projet5ArobotInfirmier\STM32\STM32_Carte_principale\stm32f4_disc\Core\Src\stm32f4xx_it.c
+2022-01-06 10:37:26,852 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\thoma\Documents\GitHub\Projet5ArobotInfirmier\STM32\STM32_Carte_principale\stm32f4_disc\Core\Inc\stm32f4xx_it.h_save
+2022-01-06 10:37:26,922 [INFO] CodeEngine:257 - Generated code: C:\Users\thoma\Documents\GitHub\Projet5ArobotInfirmier\STM32\STM32_Carte_principale\stm32f4_disc\Core\Inc\stm32f4xx_it.h
+2022-01-06 10:37:26,932 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\thoma\Documents\GitHub\Projet5ArobotInfirmier\STM32\STM32_Carte_principale\stm32f4_disc\Core\Src\stm32f4xx_hal_msp.c_save
+2022-01-06 10:37:27,022 [INFO] CodeEngine:257 - Generated code: C:\Users\thoma\Documents\GitHub\Projet5ArobotInfirmier\STM32\STM32_Carte_principale\stm32f4_disc\Core\Src\stm32f4xx_hal_msp.c
+2022-01-06 10:37:27,032 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\thoma\Documents\GitHub\Projet5ArobotInfirmier\STM32\STM32_Carte_principale\stm32f4_disc\MXTmpFiles\system.tmp_save
+2022-01-06 10:37:27,092 [INFO] CodeEngine:257 - Generated code: C:\Users\thoma\Documents\GitHub\Projet5ArobotInfirmier\STM32\STM32_Carte_principale\stm32f4_disc\MXTmpFiles\system.tmp
+2022-01-06 10:37:27,112 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\thoma\Documents\GitHub\Projet5ArobotInfirmier\STM32\STM32_Carte_principale\stm32f4_disc\Core\Inc\stm32f4xx_hal_conf.h_save
+2022-01-06 10:37:27,192 [INFO] CodeEngine:257 - Generated code: C:\Users\thoma\Documents\GitHub\Projet5ArobotInfirmier\STM32\STM32_Carte_principale\stm32f4_disc\Core\Inc\stm32f4xx_hal_conf.h
+2022-01-06 10:37:27,252 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\thoma\Documents\GitHub\Projet5ArobotInfirmier\STM32\STM32_Carte_principale\stm32f4_disc\Core\Inc\main.h_save
+2022-01-06 10:37:27,322 [INFO] CodeEngine:257 - Generated code: C:\Users\thoma\Documents\GitHub\Projet5ArobotInfirmier\STM32\STM32_Carte_principale\stm32f4_disc\Core\Inc\main.h
+2022-01-06 10:37:27,332 [INFO] CodeEngine:239 - oldGeneratedFile, C:\Users\thoma\Documents\GitHub\Projet5ArobotInfirmier\STM32\STM32_Carte_principale\stm32f4_disc\Core\Src\main.c_save
+2022-01-06 10:37:27,422 [INFO] CodeEngine:257 - Generated code: C:\Users\thoma\Documents\GitHub\Projet5ArobotInfirmier\STM32\STM32_Carte_principale\stm32f4_disc\Core\Src\main.c
+2022-01-06 10:37:28,232 [INFO] ProjectBuilder:2578 - Time for Copy HAL[1] : 170mS.
+2022-01-06 10:37:28,242 [INFO] ProjectBuilder:3622 - Project Generator version: 3.14.1
+2022-01-06 10:37:28,842 [INFO] ConfigFileManager:1271 - The Die is : DIE413
+2022-01-06 10:37:30,656 [INFO] ProjectBuilder:3789 - Time for Generating toolchain IDE Files: 2414mS.
+2022-01-06 10:37:30,656 [INFO] ProjectBuilder:2457 - Time for Copy CMSIS : 0mS.
+2022-01-06 10:37:30,667 [INFO] ProjectBuilder:2457 - Time for Copy CMSIS : 0mS.

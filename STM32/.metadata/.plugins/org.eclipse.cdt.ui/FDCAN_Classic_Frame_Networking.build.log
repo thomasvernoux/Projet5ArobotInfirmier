@@ -1,4 +1,4 @@
-11:30:31 **** Incremental Build of configuration Debug for project FDCAN_Classic_Frame_Networking ****
+11:50:53 **** Incremental Build of configuration Debug for project FDCAN_Classic_Frame_Networking ****
 make -j8 all 
 arm-none-eabi-size   FDCAN_Classic_Frame_Networking.elf 
    text	   data	    bss	    dec	    hex	filename
@@ -6,5 +6,5 @@ arm-none-eabi-size   FDCAN_Classic_Frame_Networking.elf
 Finished building: default.size.stdout
  
 
-11:30:31 Build Finished. 0 errors, 0 warnings. (took 373ms)
+11:50:53 Build Finished. 0 errors, 0 warnings. (took 377ms)
 

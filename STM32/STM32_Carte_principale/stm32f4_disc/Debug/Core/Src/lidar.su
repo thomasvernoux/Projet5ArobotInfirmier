@@ -4,6 +4,6 @@ lidar.c:73:6:mouvement_moteur	16	static
 lidar.c:77:6:reset_lidar	16	static
 lidar.c:86:6:lidar_get_info	16	static
 lidar.c:93:6:lidar_scan	16	static
-lidar.c:101:6:uart_lidar_recieve	8	static
-lidar.c:160:6:reception_octet_data	8	static
-lidar.c:173:6:lidar_fin_du_message_recu	16	static
+lidar.c:101:6:uart_lidar_recieve	32	static
+lidar.c:177:6:reception_octet_data	8	static
+lidar.c:190:6:lidar_fin_du_message_recu	16	static
