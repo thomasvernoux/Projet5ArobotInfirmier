@@ -32,6 +32,10 @@ uint8_t octet_recu;
 int compteur = 0;
 
 
+// reducteur de trames
+int NUMtrame = 0;
+
+
 
 
 
@@ -63,7 +67,10 @@ void tests_lidar(){
 
 	//lidar_get_info();
 
-	lidar_scan();
+	//lidar_scan();
+
+
+
 
 	return;
 }
@@ -139,24 +146,28 @@ void uart_lidar_recieve(){
 			if (compteur == 4){
 				// on transmet
 
+
+				////// a reprendreeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+
 				compteur = 0;
 
-				float angle = 256 * (float)lidar_message_recu[2] + (float)lidar_message_recu[1];
-				angle = angle / 1.41;
-				float distance = 256 * (float)lidar_message_recu[4] + (float)lidar_message_recu[3];
+				float angle = (float)(lidar_message_recu[1] >> 1) + (float)lidar_message_recu[2] * 256;
+				angle = angle / 1.41 / 64;
+				float distance = (float)lidar_message_recu[4];
 
 
 				uint8_t angle_8 = (uint8_t) angle;
 				uint8_t distance_8 = (uint8_t) distance;
 
-				uint8_t message_a_transmettre[3] = {1,angle_8,distance_8};
+				uint8_t message_a_transmettre[3] = {1,distance_8,angle_8};
 
 
-				HAL_UART_Transmit(&huart2, message_a_transmettre, 3, 100);
-
-
-
-
+				// on reduit le nombre de trames qu'on envoit
+				if (NUMtrame == 100){
+					HAL_UART_Transmit(&huart2, message_a_transmettre, 3, 100);
+					NUMtrame = 0;
+				}
+				NUMtrame ++;
 			}
 
 			lidar_message_recu[compteur] = octet_recu;
@@ -189,15 +200,9 @@ void reception_octet_data(){
 
 void lidar_fin_du_message_recu(){      // on transmet le message au PC
 
-	uint8_t angle = 3;
-	uint8_t distance = 5;
-
-	uint8_t test [3] = {1, angle, distance};
 
 
-	//HAL_UART_Transmit(&huart2, test, sizeof(test), 100);
-
-
+	// on est en mode scan
 	if((lidar_message_recu[0] == 0x0) && (lidar_message_recu[1] == 0x0) && (lidar_message_recu[2] == 0x40) && (lidar_message_recu[3] == 0x81)){
 		lidar_state = scan;
 

@@ -31,7 +31,7 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Core/Inc/spi.h ../Core/Inc/main.h ../Core/Inc/tim.h \
  ../Core/Inc/usart.h ../Core/Inc/gpio.h ../Core/Inc/lidar.h \
  ../Core/Inc/com_pc.h ../Core/Inc/com_FPGA_spi.h ../Core/Inc/spi.h \
- ../Core/Inc/com_M0.h
+ ../Core/Inc/com_M0.h ../Core/Inc/moteur.h
 
 ../Core/Inc/main.h:
 
@@ -112,3 +112,5 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Core/Inc/spi.h:
 
 ../Core/Inc/com_M0.h:
+
+../Core/Inc/moteur.h:

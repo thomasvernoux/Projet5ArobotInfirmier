@@ -1,9 +1,9 @@
 com_FPGA_spi.c:6:6:test_spi	8	static
-com_FPGA_spi.c:17:6:spi_transmit	8	static
-com_FPGA_spi.c:27:6:moteur1	4	static
-com_FPGA_spi.c:31:6:moteur2	4	static
-com_FPGA_spi.c:35:6:cmd_marche_arret	4	static
-com_FPGA_spi.c:41:6:sens_rotation	4	static
-com_FPGA_spi.c:46:6:config_freq_PWM	4	static
-com_FPGA_spi.c:51:6:vit_rap_cyc	4	static
-com_FPGA_spi.c:58:6:fct_vierge	4	static
+com_FPGA_spi.c:25:6:spi_transmit	8	static
+com_FPGA_spi.c:35:6:moteur1	4	static
+com_FPGA_spi.c:39:6:moteur2	4	static
+com_FPGA_spi.c:43:6:cmd_marche_arret	4	static
+com_FPGA_spi.c:49:6:sens_rotation	4	static
+com_FPGA_spi.c:54:6:config_freq_PWM	4	static
+com_FPGA_spi.c:59:6:vit_rap_cyc	4	static
+com_FPGA_spi.c:66:6:fct_vierge	4	static

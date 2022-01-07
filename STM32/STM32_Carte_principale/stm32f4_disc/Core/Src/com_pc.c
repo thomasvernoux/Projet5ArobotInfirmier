@@ -2,6 +2,7 @@
 #include "usart.h"
 #include "main.h"
 #include <String.h>
+#include "moteur.h"
 
 
 
@@ -10,6 +11,8 @@ char message_recu_PC [100];
 
 int pwm = 0;
 
+//MOTOR_STATE_SPEED motor_state_speed;
+
 
 
 
@@ -17,7 +20,7 @@ int pwm = 0;
 /*
  * Envoyer un message depuis le PC
  */
-int envoyer_message_pc (char message[50]){
+int envoyer_message_pc (){
 
 	uint8_t constantes[4] = {1, 5, 9, 4};
 
@@ -78,7 +81,7 @@ void traiter_message_pc(){
 		break;
 
 	case 1:   // avancer
-		a = 1;
+
 
 		break;
 

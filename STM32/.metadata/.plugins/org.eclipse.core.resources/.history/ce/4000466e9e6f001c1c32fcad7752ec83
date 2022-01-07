@@ -1,0 +1,13 @@
+#include "moteur.h"
+
+
+
+
+
+extern enum MOTOR_STATE_SPEED motor_state_speed = stop;
+
+
+
+
+
+

@@ -32,6 +32,7 @@
 #include "com_FPGA_spi.h"
 #include "com_M0.h"
 #include "spi.h"
+#include "moteur.h"
 
 /* USER CODE END Includes */
 
@@ -101,7 +102,7 @@ int main(void)
   MX_USART3_UART_Init();
   MX_SPI1_Init();
   MX_TIM1_Init();
-  MX_SPI2_Init();
+  MX_USART6_UART_Init();
   /* USER CODE BEGIN 2 */
 
 
@@ -123,28 +124,10 @@ int main(void)
   while (1)
   {
 
-	  //HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_13);
-	  //HAL_Delay(100);
+	  HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_13);
 
-
-
-
-	  //char message[50] = "coucou\n";
-	  //envoyer_message_pc (&message);
-
-
-
-	  //tests_lidar();
 	  //test_spi();
 
-	  //char message [50] = "coucou";
-	  //envoyer_message_pc(message);
-
-	  //test_spi_();
-
-	  //HAL_Delay(100);
-
-	  //tests_lidar();
 
 
 
