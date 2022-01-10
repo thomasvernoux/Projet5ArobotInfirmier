@@ -115,6 +115,8 @@ int main(void)
   demarrer_pwm_lidar();
   lidar_scan();
 
+  setup_com_M0();
+
 
 
   /* USER CODE END 2 */
@@ -126,7 +128,8 @@ int main(void)
 
 	  HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_13);
 
-	  //test_spi();
+	  test_spi();
+	  //test_spi_inverse();
 
 
 

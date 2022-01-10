@@ -1,10 +1,10 @@
-10:56:48 **** Incremental Build of configuration Debug for project tp1_analyser ****
+11:24:07 **** Incremental Build of configuration Debug for project tp1_analyser ****
 make -j8 all 
 arm-none-eabi-size   tp1_analyser.elf 
    text	   data	    bss	    dec	    hex	filename
-   6420	     24	   1984	   8428	   20ec	tp1_analyser.elf
+   9488	     28	   2060	  11576	   2d38	tp1_analyser.elf
 Finished building: default.size.stdout
  
 
-10:56:48 Build Finished. 0 errors, 0 warnings. (took 340ms)
+11:24:07 Build Finished. 0 errors, 0 warnings. (took 351ms)
 

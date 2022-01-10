@@ -1,25 +1,31 @@
 #include "com_FPGA_spi.h"
 
 
-uint8_t txData [2] = {0b00000000, 0b11111111};
+uint8_t txData [2] = {0b00000000, 0b00000000};
+
+
 
 void test_spi(){
-	//moteur1();
+
+	fct_vierge();
+	moteur2();
 	//cmd_marche_arret();
 
-	//txData[1] = 0b00000000;
-
-	//txData [0] = 0b0;
-	//txData [1] = 0b0;
-
-	spi_transmit();
 
 
 
+
+	HAL_SPI_Transmit (&hspi1, txData, 2, 100);
 
 	return;
 }
 
+void test_spi_inverse(){
+	uint8_t txData_i [2] = {0b01000000, 0b10000010};
+	HAL_SPI_Transmit (&hspi1,txData_i,2,100);
+
+
+}
 
 
 void spi_transmit(){
@@ -33,11 +39,11 @@ void spi_transmit(){
 /// CONGIG COMMANDE
 
 void moteur1(){
-	txData[0] &=  0b01111111;
+	txData[0] &=  0b11110111;
 }
 
 void moteur2(){
-	txData[0] |= 0b10000000;
+	txData[0] |=  0b00001000;
 }
 
 void cmd_marche_arret(){
@@ -64,9 +70,10 @@ void vit_rap_cyc(){
 
 
 void fct_vierge(){
-	txData[0] &=  0b11111111;
-	txData[0] |=  0b00000000;
+	txData[0] &=  0b00000000;
+	txData[1] &=  0b00000000;
 }
+
 
 
 /// CONFIG VALUE

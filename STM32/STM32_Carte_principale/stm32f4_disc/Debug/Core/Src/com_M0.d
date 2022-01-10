@@ -28,7 +28,7 @@ Core/Src/com_M0.o: ../Core/Src/com_M0.c ../Core/Inc/com_M0.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
- ../Core/Inc/spi.h ../Core/Inc/main.h
+ ../Core/Inc/spi.h ../Core/Inc/main.h ../Core/Inc/usart.h
 
 ../Core/Inc/com_M0.h:
 
@@ -95,3 +95,5 @@ Core/Src/com_M0.o: ../Core/Src/com_M0.c ../Core/Inc/com_M0.h \
 ../Core/Inc/spi.h:
 
 ../Core/Inc/main.h:
+
+../Core/Inc/usart.h:

@@ -4,6 +4,7 @@
 
 
 void test_spi();
+void test_spi_inverse();
 
 void spi_transmit();
 
