@@ -31,9 +31,12 @@ import serial
 from tkinter import messagebox
 from openpyxl import load_workbook
 import serial
-import threading
-
-
+from pandas import DataFrame
+import matplotlib.pyplot as plt
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+import numpy as np
+import time
+import math
 # -------------------------Classes and Functions-------------------------------
 
 def send_left():
@@ -87,223 +90,235 @@ def send_database(Nom,Prenom,Adresse,Num):
    wb.save(filename)
 
 
-def refresh(Ox_Sanguin_info, Temp_info, Rythme_Card_info, Intensite_info):
-    
-    print(ser.inWaiting())
-
-    x = ser.read(ser.inWaiting())
-
-    print(type(x))
-    print(x)
-
-    Ox_Sanguin_info.config(text = x[0])
-    Temp_info.config(text = x[1])
-    Rythme_Card_info.config(text = x[2])
-    Intensite_info.config(text = x[3])
-    
-    
-def serialEvent():
-    print ("aie aie aie")
-    return
-
 # ---------------------------------Main----------------------------------------
 
-ser = serial.Serial('COM11', 115200)
+ser = serial.Serial('COM3', 115200)
 
-def main():
-    
-    window = Tk()
-    window.title("IHM Projet Robot Infirmier")
 
     
-    menu = Canvas(window,width=2000, height=2000) 
-    menu.pack_propagate(False)
-    menu['bg']='#2B50AA'
-    menu.pack()
-    menu.create_line(0 , 80 , 1900 , 80 , fill = "white" )
-    menu.create_line(780 , 82 , 780 , 2000 , fill = "white" )
+window = Tk()
+window.title("IHM Projet Robot Infirmier")
+window.iconbitmap('C:/Users/paula/Desktop/IHMprojet/robot.ico')
+
+def refresh(Ox_Sanguin_info, Temp_info, Rythme_Card_info, Intensite_info):
+    print("hello world")
+    print(ser.inWaiting())
+    if (ser.inWaiting() >= 4) :
+        x = ser.read(ser.inWaiting())
+        afficher = []
+        for i in x :
+
+            afficher.append(i)
+        #print(afficher)
+    
+        if (afficher[0]==0) :
+            Ox_Sanguin_info.config(text = x[0])
+            Temp_info.config(text = x[1])
+            Rythme_Card_info.config(text = x[2])
+            Intensite_info.config(text = x[3])
+            window.after(1000, lambda: refresh(Ox_Sanguin_info, Temp_info, Rythme_Card_info, Intensite_info))
+        
+        if (afficher[0]==1) :
+            print(afficher)
+            Distances =[]
+            Angles = []
+            for i in range(len(afficher)-2) :
+                if (((i % 3) == 0) or i ==0):
+                    Distances.append(afficher[i+1])
+                    Angles.append(afficher[i+2])
+            #print(Distances)
+            print("angles :", Angles)
+            print("Distances :", Distances)
+            
+            fig = plt.figure()
+            ax = fig.add_subplot(111, projection='polar')
+            
+            
+            for i in range(len(Angles)) : 
+                ax.scatter(Angles[i],Distances[i])
+            
+            ax.set_xticks(np.arange(0,2.0*np.pi,np.pi/6.0))
+            ax.set_ylim(0,10)
+            ax.set_yticks(np.arange(0,10,1.0))
+            
+            
+            plt.show()
+            plt.close('all')
+            # plt.plot(Distances[0]*math.cos(Angles[0]),Distances[0]*math.sin(Angles[0]))
+            
+            # plt.set(xlim = (-300,300), ylim = (-300,300))
+            # plt.show()
+            # fig = plt.figure()
+            # ax = fig.add_subplot(111, projection='polar')
+            # for i in range(len(Distances)) : 
+            #     ax.scatter(Distances[i],Angles[i])
+            # ax.set_xticks(np.arange(0,2.0*np.pi,np.pi/6.0))
+            # scatter3 = FigureCanvasTkAgg(fig, window) 
+            # scatter3.get_tk_widget()(relx=0.40, rely=0.90, anchor=CENTER)
+            # ax.set_ylim(0,10)
+            # ax.set_yticks(np.arange(0,10,1.0))
+            # plt.savefig("polar_coordinates_03.png", bbox_inches='tight')
+            # plt.show()
+            window.after(1000, lambda: refresh(Ox_Sanguin_info, Temp_info, Rythme_Card_info, Intensite_info))
+    
+    #.place(relx=0.34, rely=0.85, anchor=CENTER)
+    
+    else :
+        window.after(1000, lambda: refresh(Ox_Sanguin_info, Temp_info, Rythme_Card_info, Intensite_info))
+
+menu = Canvas(window,width=2000, height=2000) 
+menu.pack_propagate(False)
+menu['bg']='#2B50AA'
+menu.pack()
+menu.create_line(0 , 80 , 1900 , 80 , fill = "white" )
+menu.create_line(780 , 82 , 780 , 2000 , fill = "white" )
 
 # Title Creation
-    Title = Label(text="Informations et Commande du robot", foreground="white")
-    Title.configure(font=("Ubuntu Light", 36, "roman"))
-    Title.place(relx=0.5, rely=0.05, anchor=CENTER)
-    Title['bg']='#2B50AA'
+Title = Label(text="Informations et Commande du robot", foreground="white")
+Title.configure(font=("Ubuntu Light", 36, "roman"))
+Title.place(relx=0.5, rely=0.05, anchor=CENTER)
+Title['bg']='#2B50AA'
 
 # Window left side
-    SubTitle = Label(text="Informations du patient", foreground="white")
-    SubTitle.configure(font=("Ubuntu Light", 24, "roman"))
-    SubTitle.place(relx=0.25, rely=0.2, anchor=CENTER)
-    SubTitle['bg']='#2B50AA'
+SubTitle = Label(text="Informations du patient", foreground="white")
+SubTitle.configure(font=("Ubuntu Light", 24, "roman"))
+SubTitle.place(relx=0.25, rely=0.2, anchor=CENTER)
+SubTitle['bg']='#2B50AA'
 
-    Ox_Sanguin = Label(text="Saturation en oxygène sanguin :", foreground="white")
-    Ox_Sanguin.configure(font=("Ubuntu Light", 18, "roman"))
-    Ox_Sanguin.place(relx=0.25, rely=0.30, anchor=CENTER)
-    Ox_Sanguin['bg']='#2B50AA'
+Ox_Sanguin = Label(text="Saturation en oxygène sanguin :", foreground="white")
+Ox_Sanguin.configure(font=("Ubuntu Light", 18, "roman"))
+Ox_Sanguin.place(relx=0.25, rely=0.30, anchor=CENTER)
+Ox_Sanguin['bg']='#2B50AA'
 
-    Temp = Label(text="Température du patient :", foreground="white")
-    Temp.configure(font=("Ubuntu Light", 18, "roman"))
-    Temp.place(relx=0.25, rely=0.35, anchor=CENTER)
-    Temp['bg']='#2B50AA'
+Temp = Label(text="Température du patient :", foreground="white")
+Temp.configure(font=("Ubuntu Light", 18, "roman"))
+Temp.place(relx=0.25, rely=0.35, anchor=CENTER)
+Temp['bg']='#2B50AA'
 
-    Rythme_Card = Label(text="Rythme cardiaque du patient :", foreground="white")
-    Rythme_Card.configure(font=("Ubuntu Light", 18, "roman"))
-    Rythme_Card.place(relx=0.25, rely=0.40, anchor=CENTER)
-    Rythme_Card['bg']='#2B50AA'
+Rythme_Card = Label(text="Rythme cardiaque du patient :", foreground="white")
+Rythme_Card.configure(font=("Ubuntu Light", 18, "roman"))
+Rythme_Card.place(relx=0.25, rely=0.40, anchor=CENTER)
+Rythme_Card['bg']='#2B50AA'
 
-    Nom_Patient_Label = Label(text="Nom du patient :", foreground="white")
-    Nom_Patient_Label.configure(font=("Ubuntu Light", 18, "roman"))
-    Nom_Patient_Label.place(relx=0.17, rely=0.50, anchor=CENTER)
-    Nom_Patient_Label['bg']='#2B50AA'
-    Nom_Patient = Text(menu, width=20, height=1)
-    Nom_Patient.configure(font=("Ubuntu Light", 18, "roman"))
-    Nom_Patient.place(relx=0.32, rely=0.50, anchor=CENTER)
+Nom_Patient_Label = Label(text="Nom du patient :", foreground="white")
+Nom_Patient_Label.configure(font=("Ubuntu Light", 18, "roman"))
+Nom_Patient_Label.place(relx=0.17, rely=0.50, anchor=CENTER)
+Nom_Patient_Label['bg']='#2B50AA'
+Nom_Patient = Text(menu, width=20, height=1)
+Nom_Patient.configure(font=("Ubuntu Light", 18, "roman"))
+Nom_Patient.place(relx=0.32, rely=0.50, anchor=CENTER)
 
-    Prenom_Patient_Label = Label(text="Prénom du patient :", foreground="white")
-    Prenom_Patient_Label.configure(font=("Ubuntu Light", 18, "roman"))
-    Prenom_Patient_Label.place(relx=0.17, rely=0.55, anchor=CENTER)
-    Prenom_Patient_Label['bg']='#2B50AA'
-    Prenom_Patient = Text(menu, width=20, height=1)
-    Prenom_Patient.configure(font=("Ubuntu Light", 18, "roman"))
-    Prenom_Patient.place(relx=0.32, rely=0.55, anchor=CENTER)
+Prenom_Patient_Label = Label(text="Prénom du patient :", foreground="white")
+Prenom_Patient_Label.configure(font=("Ubuntu Light", 18, "roman"))
+Prenom_Patient_Label.place(relx=0.17, rely=0.55, anchor=CENTER)
+Prenom_Patient_Label['bg']='#2B50AA'
+Prenom_Patient = Text(menu, width=20, height=1)
+Prenom_Patient.configure(font=("Ubuntu Light", 18, "roman"))
+Prenom_Patient.place(relx=0.32, rely=0.55, anchor=CENTER)
 
-    Adresse_Label = Label(text="Adresse du patient :", foreground="white")
-    Adresse_Label.configure(font=("Ubuntu Light", 18, "roman"))
-    Adresse_Label.place(relx=0.17, rely=0.60, anchor=CENTER)
-    Adresse_Label['bg']='#2B50AA'
-    Adresse = Text(menu, width=20, height=1)
-    Adresse.configure(font=("Ubuntu Light", 18, "roman"))
-    Adresse.place(relx=0.32, rely=0.60, anchor=CENTER)
+Adresse_Label = Label(text="Adresse du patient :", foreground="white")
+Adresse_Label.configure(font=("Ubuntu Light", 18, "roman"))
+Adresse_Label.place(relx=0.17, rely=0.60, anchor=CENTER)
+Adresse_Label['bg']='#2B50AA'
+Adresse = Text(menu, width=20, height=1)
+Adresse.configure(font=("Ubuntu Light", 18, "roman"))
+Adresse.place(relx=0.32, rely=0.60, anchor=CENTER)
 
-    Num_Label = Label(text="Numéro du patient :", foreground="white")
-    Num_Label.configure(font=("Ubuntu Light", 18, "roman"))
-    Num_Label.place(relx=0.17, rely=0.65, anchor=CENTER)
-    Num_Label['bg']='#2B50AA'
-    Num = Text(menu, width=20, height=1)
-    Num.configure(font=("Ubuntu Light", 18, "roman"))
-    Num.place(relx=0.32, rely=0.65, anchor=CENTER)
+Num_Label = Label(text="Numéro du patient :", foreground="white")
+Num_Label.configure(font=("Ubuntu Light", 18, "roman"))
+Num_Label.place(relx=0.17, rely=0.65, anchor=CENTER)
+Num_Label['bg']='#2B50AA'
+Num = Text(menu, width=20, height=1)
+Num.configure(font=("Ubuntu Light", 18, "roman"))
+Num.place(relx=0.32, rely=0.65, anchor=CENTER)
 
-    Button_Database = Button(menu, text="Envoyer dans base de données", command = lambda: send_database(Nom_Patient,Prenom_Patient,Adresse,Num))
-    Button_Database.configure(font=("Ubuntu Light", 18, "roman"))
-    Button_Database.place(relx=0.25, rely=0.75, anchor=CENTER)
-    Button_Database['bg']='white'
-    
-    Intensite_Label = Label(text="Intensité du système:", foreground="white")
-    Intensite_Label.configure(font=("Ubuntu Light", 18, "roman"))
-    Intensite_Label.place(relx=0.25, rely=0.85, anchor=CENTER)
-    Intensite_Label['bg']='#2B50AA'
+Button_Database = Button(menu, text="Envoyer dans base de données", command = lambda: send_database(Nom_Patient,Prenom_Patient,Adresse,Num))
+Button_Database.configure(font=("Ubuntu Light", 18, "roman"))
+Button_Database.place(relx=0.25, rely=0.75, anchor=CENTER)
+Button_Database['bg']='white'
+
+Intensite_Label = Label(text="Intensité du système:", foreground="white")
+Intensite_Label.configure(font=("Ubuntu Light", 18, "roman"))
+Intensite_Label.place(relx=0.25, rely=0.85, anchor=CENTER)
+Intensite_Label['bg']='#2B50AA'
 
 # Window right side
-    SubTitle = Label(text="Commande du robot", foreground="white")
-    SubTitle.configure(font=("Ubuntu Light", 24, "roman"))
-    SubTitle.place(relx=0.75, rely=0.2, anchor=CENTER)
-    SubTitle['bg']='#2B50AA'
+SubTitle = Label(text="Commande du robot", foreground="white")
+SubTitle.configure(font=("Ubuntu Light", 24, "roman"))
+SubTitle.place(relx=0.75, rely=0.2, anchor=CENTER)
+SubTitle['bg']='#2B50AA'
 
-    Button_PWM_UP = Button(menu,text = 'AVANCER', command=send_up)
-    Button_PWM_UP.configure(font=("Ubuntu Light", 18, "roman"))
-    Button_PWM_UP.place(relx=0.75, rely=0.33, anchor=CENTER)
-    Button_PWM_UP['bg']='white'
+Button_PWM_UP = Button(menu,text = 'AVANCER', command=send_up)
+Button_PWM_UP.configure(font=("Ubuntu Light", 18, "roman"))
+Button_PWM_UP.place(relx=0.75, rely=0.33, anchor=CENTER)
+Button_PWM_UP['bg']='white'
 
-    Button_PWM_DOWN = Button(menu,text = 'RECULER', command=send_down)
-    Button_PWM_DOWN.configure(font=("Ubuntu Light", 18, "roman"))
-    Button_PWM_DOWN.place(relx=0.75, rely=0.47, anchor=CENTER)
-    Button_PWM_DOWN['bg']='white'
+Button_PWM_DOWN = Button(menu,text = 'RECULER', command=send_down)
+Button_PWM_DOWN.configure(font=("Ubuntu Light", 18, "roman"))
+Button_PWM_DOWN.place(relx=0.75, rely=0.47, anchor=CENTER)
+Button_PWM_DOWN['bg']='white'
 
-    Button_PWM_LEFT = Button(menu,text = 'GAUCHE',command=send_left)
-    Button_PWM_LEFT.configure(font=("Ubuntu Light", 18, "roman"))
-    Button_PWM_LEFT.place(relx=0.67, rely=0.40, anchor=CENTER)
-    Button_PWM_LEFT['bg']='white'
+Button_PWM_LEFT = Button(menu,text = 'GAUCHE',command=send_left)
+Button_PWM_LEFT.configure(font=("Ubuntu Light", 18, "roman"))
+Button_PWM_LEFT.place(relx=0.67, rely=0.40, anchor=CENTER)
+Button_PWM_LEFT['bg']='white'
 
-    Button_PWM_RIGHT = Button(menu,text = 'DROITE',command=send_right)
-    Button_PWM_RIGHT.configure(font=("Ubuntu Light", 18, "roman"))
-    Button_PWM_RIGHT.place(relx=0.825, rely=0.40, anchor=CENTER)
-    Button_PWM_RIGHT['bg']='white'
+Button_PWM_RIGHT = Button(menu,text = 'DROITE',command=send_right)
+Button_PWM_RIGHT.configure(font=("Ubuntu Light", 18, "roman"))
+Button_PWM_RIGHT.place(relx=0.825, rely=0.40, anchor=CENTER)
+Button_PWM_RIGHT['bg']='white'
 
-    Button_PWM_STOP = Button(menu,text = 'STOP',command=send_stop)
-    Button_PWM_STOP.configure(font=("Ubuntu Light", 18, "roman"))
-    Button_PWM_STOP.place(relx=0.75, rely=0.40, anchor=CENTER)
-    Button_PWM_STOP['bg']='white'
+Button_PWM_STOP = Button(menu,text = 'STOP',command=send_stop)
+Button_PWM_STOP.configure(font=("Ubuntu Light", 18, "roman"))
+Button_PWM_STOP.place(relx=0.75, rely=0.40, anchor=CENTER)
+Button_PWM_STOP['bg']='white'
 
-    PWM_Label = Label(text="Nouvelle valeur PWM :", foreground="white")
-    PWM_Label.configure(font=("Ubuntu Light", 18, "roman"))
-    PWM_Label.place(relx=0.73, rely=0.65, anchor=CENTER)
-    PWM_Label['bg']='#2B50AA'
-    PWM = Text(menu, width=10, height=1)
-    PWM.configure(font=("Ubuntu Light", 18, "roman"))
-    PWM.place(relx=0.89, rely=0.65, anchor=CENTER)
+PWM_Label = Label(text="Nouvelle valeur PWM :", foreground="white")
+PWM_Label.configure(font=("Ubuntu Light", 18, "roman"))
+PWM_Label.place(relx=0.73, rely=0.65, anchor=CENTER)
+PWM_Label['bg']='#2B50AA'
+PWM = Text(menu, width=10, height=1)
+PWM.configure(font=("Ubuntu Light", 18, "roman"))
+PWM.place(relx=0.89, rely=0.65, anchor=CENTER)
 
-    Button_PWM = Button(menu, text="Mise à jour PWM",command = lambda: send_pwm(PWM))
-    Button_PWM.configure(font=("Ubuntu Light", 18, "roman"))
-    Button_PWM.place(relx=0.75, rely=0.75, anchor=CENTER)
-    Button_PWM['bg']='white'
-    
-    data = [0,0,0,0]
-    
-    Ox_Sanguin_info = Label(text=data[0], foreground="white")
-    Ox_Sanguin_info.configure(font=("Ubuntu Light", 18, "roman"))
-    Ox_Sanguin_info.place(relx=0.38, rely=0.30, anchor=CENTER)
-    Ox_Sanguin_info['bg']='#2B50AA'
-    
-    Temp_info = Label(text=data[1], foreground="white")
-    Temp_info.configure(font=("Ubuntu Light", 18, "roman"))
-    Temp_info.place(relx=0.35, rely=0.35, anchor=CENTER)
-    Temp_info['bg']='#2B50AA'
+Button_PWM = Button(menu, text="Mise à jour PWM",command = lambda: send_pwm(PWM))
+Button_PWM.configure(font=("Ubuntu Light", 18, "roman"))
+Button_PWM.place(relx=0.75, rely=0.75, anchor=CENTER)
+Button_PWM['bg']='white'
 
-    Rythme_Card_info = Label(text=data[2], foreground="white")
-    Rythme_Card_info.configure(font=("Ubuntu Light", 18, "roman"))
-    Rythme_Card_info.place(relx=0.37, rely=0.40, anchor=CENTER)
-    Rythme_Card_info['bg']='#2B50AA'
-    
-    Intensite_info = Label(text=data[3], foreground="white")
-    Intensite_info.configure(font=("Ubuntu Light", 18, "roman"))
-    Intensite_info.place(relx=0.34, rely=0.85, anchor=CENTER)
-    Intensite_info['bg']='#2B50AA'
-    
-    data = [20,20,30,40]
-    
-    
-    ser.reset_input_buffer()
-    ser.reset_output_buffer()
-    
-    
-    Button_Acq = Button(menu, text="Acquérir",command = lambda: refresh(Ox_Sanguin_info, Temp_info, Rythme_Card_info, Intensite_info))
-    Button_Acq.configure(font=("Ubuntu Light", 18, "roman"))
-    Button_Acq.place(relx=0.75, rely=0.85, anchor=CENTER)
-    Button_Acq['bg']='white'        
-    
-    
-    
-    
-    
-    t = threading.Thread(target=serialEvent)
-    t.start()
-    t.join()
-    
-    
-    
-    window.mainloop()
+data = [0,0,0,0]
 
-main()
+Ox_Sanguin_info = Label(text=data[0], foreground="white")
+Ox_Sanguin_info.configure(font=("Ubuntu Light", 18, "roman"))
+Ox_Sanguin_info.place(relx=0.38, rely=0.30, anchor=CENTER)
+Ox_Sanguin_info['bg']='#2B50AA'
+
+Temp_info = Label(text=data[1], foreground="white")
+Temp_info.configure(font=("Ubuntu Light", 18, "roman"))
+Temp_info.place(relx=0.35, rely=0.35, anchor=CENTER)
+Temp_info['bg']='#2B50AA'
+
+Rythme_Card_info = Label(text=data[2], foreground="white")
+Rythme_Card_info.configure(font=("Ubuntu Light", 18, "roman"))
+Rythme_Card_info.place(relx=0.37, rely=0.40, anchor=CENTER)
+Rythme_Card_info['bg']='#2B50AA'
+
+Intensite_info = Label(text=data[3], foreground="white")
+Intensite_info.configure(font=("Ubuntu Light", 18, "roman"))
+Intensite_info.place(relx=0.34, rely=0.85, anchor=CENTER)
+Intensite_info['bg']='#2B50AA'
+
+data = [20,20,30,40]
 
 
+ser.reset_input_buffer()
+ser.reset_output_buffer()
 
 
+Button_Acq = Button(menu, text="Acquérir",command = lambda: refresh(Ox_Sanguin_info, Temp_info, Rythme_Card_info, Intensite_info))
+Button_Acq.configure(font=("Ubuntu Light", 18, "roman"))
+Button_Acq.place(relx=0.75, rely=0.85, anchor=CENTER)
+Button_Acq['bg']='white'        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+window.after(1000, lambda: refresh(Ox_Sanguin_info, Temp_info, Rythme_Card_info, Intensite_info))
+window.mainloop()

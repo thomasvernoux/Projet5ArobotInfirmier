@@ -113,9 +113,14 @@ int main(void)
 
 
   demarrer_pwm_lidar();
-  lidar_scan();
+  //lidar_scan();
+  //lidar_force_scan();
+
+
+
 
   setup_com_M0();
+
 
 
 
@@ -130,6 +135,8 @@ int main(void)
 
 	  test_spi();
 	  //test_spi_inverse();
+
+	  //tests_lidar();
 
 
 

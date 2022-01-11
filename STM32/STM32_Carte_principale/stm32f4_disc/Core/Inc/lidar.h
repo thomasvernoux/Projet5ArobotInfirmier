@@ -10,6 +10,7 @@ void lidar_reception();
 void reception_octet_data();
 
 void lidar_scan();
+void lidar_force_scan();
 
 
 void demarrer_pwm_lidar();
