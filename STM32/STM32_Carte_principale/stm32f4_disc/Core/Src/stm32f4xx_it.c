@@ -257,19 +257,7 @@ void USART3_IRQHandler(void)
   HAL_UART_IRQHandler(&huart3);
   /* USER CODE BEGIN USART3_IRQn 1 */
 
-  //uart_lidar_recieve();
-
-  if (c1 < 100){
-
-	  HAL_UART_Transmit(&huart2, &UART3_rxBuffer, 1, 100);
-
-	  if (c1 > 1000){c1 = 0;}
-  }
-
-  c1 ++;
-
-  //HAL_UART_Transmit(&huart2, &UART3_rxBuffer, 1, 100);
-
+  uart_lidar_recieve();
 
   HAL_UART_Receive_IT(&huart3, &UART3_rxBuffer, 1);
 

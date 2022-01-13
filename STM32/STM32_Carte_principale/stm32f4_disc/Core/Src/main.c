@@ -112,9 +112,15 @@ int main(void)
 
 
 
+
+  reset_lidar();
+  HAL_Delay(30); // minimum 2 ms dans la doc du lidar
+
   demarrer_pwm_lidar();
   lidar_scan();
   //lidar_force_scan();
+
+
 
 
 
@@ -135,12 +141,19 @@ int main(void)
 
 	  HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_13);
 
-	  //test_spi();
+	  test_spi();
 	  //test_spi_inverse();
 
 	  //tests_lidar();
 
 	  HAL_Delay(500);
+
+
+	  /*
+	   * Debug !!
+	   */
+	  uint8_t constantes[4] = {'a', 'b', 'c', ' '};
+	  HAL_UART_Transmit(&huart2, constantes, sizeof(constantes), 100);
 
 
 
