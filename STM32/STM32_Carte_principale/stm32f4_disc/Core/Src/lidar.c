@@ -41,8 +41,8 @@ int NUMtrame = 0;
 
 void demarrer_pwm_lidar(){
 
-  //TIM1->CCR1 = 30000;
-  //HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
+  TIM1->CCR1 = 30000;
+  HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
   return;
 
 
@@ -56,21 +56,17 @@ void demarrer_pwm_lidar(){
  */
 void tests_lidar(){
 
-	//reset_lidar();
+	reset_lidar();
 
 	lidar_force_scan();
-	HAL_Delay(100);
+	HAL_Delay(1000);
 
 
-	uint8_t Data[2] = {0xA5, 0x25};
-	HAL_UART_Transmit(&huart3, Data, 2, 100);
+	//uint8_t Data[2] = {0xA5, 0x25};
+	//HAL_UART_Transmit(&huart3, Data, 2, 100);
 
 
-	HAL_Delay(100);
-
-
-
-
+	//HAL_Delay(100);
 
 	memset(lidar_message_recu,0,sizeof(lidar_message_recu));
 
@@ -163,26 +159,14 @@ void uart_lidar_recieve(){
 
 		case scan :
 
-			if (compteur == 4){
-
+			if (compteur == 5){ // modif attention (normalement le compteur va a 4
 				compteur = 0;
 
-				long angle;
-				long angle1 = lidar_message_recu[1] ;
-				long angle2 = lidar_message_recu[2] ;
-				//angle = angle;
-				float distance = (float)lidar_message_recu[4];
-
-
-				uint8_t angle_8 = (uint8_t) angle;
-				uint8_t distance_8 = (uint8_t) distance;
-
-				uint8_t message_a_transmettre[3] = {1,distance_8,angle_8};
-
+				uint8_t lidar_message_a_transmettre[5] = {1, lidar_message_recu[1], lidar_message_recu[2], lidar_message_recu[3], lidar_message_recu[4]};
 
 				// on reduit le nombre de trames qu'on envoit
 				if (NUMtrame == 100){
-					HAL_UART_Transmit(&huart2, message_a_transmettre, 3, 100);
+					HAL_UART_Transmit(&huart2, lidar_message_a_transmettre, 5, 100);
 					NUMtrame = 0;
 				}
 				NUMtrame ++;
@@ -194,6 +178,10 @@ void uart_lidar_recieve(){
 
 
 			break;
+
+		default:
+			break;
+
 
 
 

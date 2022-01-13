@@ -30,7 +30,7 @@ import win32com.client.connect  # provides COM connexion
 import serial
 from tkinter import messagebox
 from openpyxl import load_workbook
-import serial
+#from serial import Serial
 from pandas import DataFrame
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
@@ -38,6 +38,10 @@ import numpy as np
 import time
 import math
 # -------------------------Classes and Functions-------------------------------
+
+
+
+
 
 def send_left():
    values = bytearray([4, 13])
@@ -92,79 +96,168 @@ def send_database(Nom,Prenom,Adresse,Num):
 
 # ---------------------------------Main----------------------------------------
 
-ser = serial.Serial('COM3', 115200)
+lidar_x = []
+lidar_y = []
+
+lidar_angles = []
+lidar_distances = []
+
+lidar_taille_buffer = 500
+
+
+ser = serial.Serial('COM15', 115200)
 
 
     
 window = Tk()
 window.title("IHM Projet Robot Infirmier")
-window.iconbitmap('C:/Users/paula/Desktop/IHMprojet/robot.ico')
+
+
+
+
+
+def lidar_plt():
+    plt.close("all")
+    
+    global lidar_angles
+    global lidar_distances
+    
+    if len(lidar_angles) > lidar_taille_buffer:
+        indice_debut = len(lidar_angles) - lidar_taille_buffer
+        lidar_angles = lidar_angles[indice_debut:]
+        lidar_distances = lidar_distances[indice_debut:]
+    
+    
+    
+            
+            
+    for i in range(len(lidar_angles)) : 
+        
+        x = lidar_distances[i] * math.cos(3.14159*lidar_angles[i]/360)
+        y = lidar_distances[i] * math.sin(3.14159*lidar_angles[i]/360)
+        
+        #plt.plot(x,y, '.')
+        
+        
+    amplitude = 250
+    #plt.xlim(-amplitude, amplitude)
+    #plt.ylim(-amplitude, amplitude)
+    #plt.show()
+    
+    #print("ditances", len(lidar_angles), lidar_distances)
+    #print("angles", len(lidar_angles), lidar_angles)
+    
+    
+    return
+
 
 def refresh(Ox_Sanguin_info, Temp_info, Rythme_Card_info, Intensite_info):
-    print("hello world")
-    print(ser.inWaiting())
+    #print("Nouvelle boucle refresh")
+    #print("serial : ", ser.inWaiting())
+    j = []
     if (ser.inWaiting() >= 4) :
         x = ser.read(ser.inWaiting())
-        afficher = []
-        for i in x :
-
-            afficher.append(i)
-        #print(afficher)
-    
-        if (afficher[0]==0) :
-            Ox_Sanguin_info.config(text = x[0])
-            Temp_info.config(text = x[1])
-            Rythme_Card_info.config(text = x[2])
-            Intensite_info.config(text = x[3])
-            window.after(1000, lambda: refresh(Ox_Sanguin_info, Temp_info, Rythme_Card_info, Intensite_info))
         
-        if (afficher[0]==1) :
-            print(afficher)
-            Distances =[]
-            Angles = []
-            for i in range(len(afficher)-2) :
-                if (((i % 3) == 0) or i ==0):
-                    Distances.append(afficher[i+1])
-                    Angles.append(afficher[i+2])
-            #print(Distances)
-            print("angles :", Angles)
-            print("Distances :", Distances)
-            
-            fig = plt.figure()
-            ax = fig.add_subplot(111, projection='polar')
-            
-            
-            for i in range(len(Angles)) : 
-                ax.scatter(Angles[i],Distances[i])
-            
-            ax.set_xticks(np.arange(0,2.0*np.pi,np.pi/6.0))
-            ax.set_ylim(0,10)
-            ax.set_yticks(np.arange(0,10,1.0))
-            
-            
-            plt.show()
-            plt.close('all')
-            # plt.plot(Distances[0]*math.cos(Angles[0]),Distances[0]*math.sin(Angles[0]))
-            
-            # plt.set(xlim = (-300,300), ylim = (-300,300))
-            # plt.show()
-            # fig = plt.figure()
-            # ax = fig.add_subplot(111, projection='polar')
-            # for i in range(len(Distances)) : 
-            #     ax.scatter(Distances[i],Angles[i])
-            # ax.set_xticks(np.arange(0,2.0*np.pi,np.pi/6.0))
-            # scatter3 = FigureCanvasTkAgg(fig, window) 
-            # scatter3.get_tk_widget()(relx=0.40, rely=0.90, anchor=CENTER)
-            # ax.set_ylim(0,10)
-            # ax.set_yticks(np.arange(0,10,1.0))
-            # plt.savefig("polar_coordinates_03.png", bbox_inches='tight')
-            # plt.show()
-            window.after(1000, lambda: refresh(Ox_Sanguin_info, Temp_info, Rythme_Card_info, Intensite_info))
+        for i in x: # on met en forme pour avoir un tableau lisible
+            j.append(i)
     
-    #.place(relx=0.34, rely=0.85, anchor=CENTER)
+    #print("j", len(j), j)
     
-    else :
-        window.after(1000, lambda: refresh(Ox_Sanguin_info, Temp_info, Rythme_Card_info, Intensite_info))
+
+        
+    while len(j) >= 10:
+        
+        if (j[0] == 1): # on a une donnee du lidar
+            a1 = j[1]
+            a2 = j[2]
+            d1 = j[3]
+            d2 = j[4]
+            
+            print(a1, a2)
+            print(d1, d2)
+            
+            angle = (128 * a2 )/64
+            
+            #print("angle",angle)
+            distance = (256*d2 + d1) * 0.004
+        
+            lidar_distances.append(distance)
+            lidar_angles.append(angle)
+            j = j[5:]
+            
+        #   print("j", j)
+            
+            
+            
+            
+            
+            
+            
+        
+        if (j[0] == 0):
+            Ox_Sanguin_info.config(text = j[1])
+            Temp_info.config(text = j[2])
+            Rythme_Card_info.config(text = j[3])
+            Intensite_info.config(text = j[4])
+            j = j[5]
+                
+                
+        
+    lidar_plt()
+        
+        
+                        
+
+        
+        
+        # afficher = []
+        # for i in x :
+
+        #     #afficher.append(i)
+        # #print(afficher)
+    
+        # if (afficher[0]==0):
+        #     Ox_Sanguin_info.config(text = x[0])
+        #     Temp_info.config(text = x[1])
+        #     Rythme_Card_info.config(text = x[2])
+        #     Intensite_info.config(text = x[3])
+        #     window.after(1000, lambda: refresh(Ox_Sanguin_info, Temp_info, Rythme_Card_info, Intensite_info))
+        
+        # if (afficher[0]==1) : # alors on a une donnée lidar
+        #     #print(afficher)
+        #     #Distances =[]
+        #     #Angles = []
+        #     for i in range(len(afficher)-2) :
+        #         if (((i % 3) == 0) or i ==0):
+        #             Distances.append(afficher[i+1])
+        #             Angles.append(afficher[i+2])
+        #     #print(Distances)
+        #     #print("angles :", Angles)
+        #     #print("Distances :", Distances)
+            
+        #     fig = plt.figure()
+        #     ax = fig.add_subplot(111, projection='polar')
+            
+            
+        #     for i in range(len(Angles)) : 
+        #         ax.scatter(Angles[i],Distances[i])
+            
+        #     ax.set_xticks(np.arange(0,2.0*np.pi,np.pi/6.0))
+        #     ax.set_ylim(0,10)
+        #     ax.set_yticks(np.arange(0,10,1.0))
+            
+            
+        #     plt.show()
+            
+            
+            
+   
+    window.after(3000, lambda: refresh(Ox_Sanguin_info, Temp_info, Rythme_Card_info, Intensite_info))
+
+    return
+
+
+
 
 menu = Canvas(window,width=2000, height=2000) 
 menu.pack_propagate(False)
@@ -322,3 +415,32 @@ Button_Acq['bg']='white'
 
 window.after(1000, lambda: refresh(Ox_Sanguin_info, Temp_info, Rythme_Card_info, Intensite_info))
 window.mainloop()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ser.close()
+print("serial fermé")
+plt.close('all')
+print("Figures fermees")
+
+
+
+
+
