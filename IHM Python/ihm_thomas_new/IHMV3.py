@@ -105,7 +105,7 @@ lidar_distances = []
 lidar_taille_buffer = 500
 
 
-ser = serial.Serial('COM14', 115200)
+ser = serial.Serial('COM19', 115200)
 
 
     
@@ -124,8 +124,8 @@ def lidar_plt():
     
     if len(lidar_angles) > lidar_taille_buffer:
         indice_debut = len(lidar_angles) - lidar_taille_buffer
-        lidar_angles = lidar_angles[indice_debut:]
-        lidar_distances = lidar_distances[indice_debut:]
+        lidar_angles    = lidar_angles     [indice_debut:]
+        lidar_distances = lidar_distances  [indice_debut:]
     
     
     
@@ -136,24 +136,24 @@ def lidar_plt():
         x = lidar_distances[i] * math.cos(3.14159*lidar_angles[i]/360)
         y = lidar_distances[i] * math.sin(3.14159*lidar_angles[i]/360)
         
-        #plt.plot(x,y, '.')
+        plt.plot(x,y, '.')
         
         
     amplitude = 250
-    #plt.xlim(-amplitude, amplitude)
-    #plt.ylim(-amplitude, amplitude)
-    #plt.show()
+    plt.xlim(-amplitude, amplitude)
+    plt.ylim(-amplitude, amplitude)
+    plt.show()
     
-    #print("ditances", len(lidar_angles), lidar_distances)
-    #print("angles", len(lidar_angles), lidar_angles)
+    print("ditances", len(lidar_angles), lidar_distances)
+    print("angles", len(lidar_angles), lidar_angles)
     
     
     return
 
 
 def refresh(Ox_Sanguin_info, Temp_info, Rythme_Card_info, Intensite_info):
-    #print("Nouvelle boucle refresh")
-    #print("serial : ", ser.inWaiting())
+    print("Nouvelle boucle refresh")
+    print("serial : ", ser.inWaiting())
     j = [2,0,0,0]
     if (ser.inWaiting() >= 4) :
         x = ser.read(ser.inWaiting())
@@ -161,7 +161,7 @@ def refresh(Ox_Sanguin_info, Temp_info, Rythme_Card_info, Intensite_info):
         for i in x: # on met en forme pour avoir un tableau lisible
             j.append(i)
     
-    print("j", len(j), j)
+    #print("j", len(j), j)
     
 
         
@@ -173,13 +173,13 @@ def refresh(Ox_Sanguin_info, Temp_info, Rythme_Card_info, Intensite_info):
             d1 = j[3]
             d2 = j[4]
 
-            print(a1, a2)
-            print(d1, d2)
+            print(a1, a2, d1, d2)
             
-            angle = (128 * a2 )/64
+            
+            angle = a2
             
             #print("angle",angle)
-            distance = (256*d2 + d1) * 0.004
+            distance = d2
         
             lidar_distances.append(distance)
             lidar_angles.append(angle)
@@ -199,7 +199,11 @@ def refresh(Ox_Sanguin_info, Temp_info, Rythme_Card_info, Intensite_info):
             Temp_info.config(text = j[2])
             Rythme_Card_info.config(text = j[3])
             Intensite_info.config(text = j[4])
-            j = j[5]
+            j = j[5:]
+            
+        else :
+            j = j[1:]
+            
                 
                 
         
@@ -209,47 +213,6 @@ def refresh(Ox_Sanguin_info, Temp_info, Rythme_Card_info, Intensite_info):
                         
 
         
-        
-        # afficher = []
-        # for i in x :
-
-        #     #afficher.append(i)
-        # #print(afficher)
-    
-        # if (afficher[0]==0):
-        #     Ox_Sanguin_info.config(text = x[0])
-        #     Temp_info.config(text = x[1])
-        #     Rythme_Card_info.config(text = x[2])
-        #     Intensite_info.config(text = x[3])
-        #     window.after(1000, lambda: refresh(Ox_Sanguin_info, Temp_info, Rythme_Card_info, Intensite_info))
-        
-        # if (afficher[0]==1) : # alors on a une donnée lidar
-        #     #print(afficher)
-        #     #Distances =[]
-        #     #Angles = []
-        #     for i in range(len(afficher)-2) :
-        #         if (((i % 3) == 0) or i ==0):
-        #             Distances.append(afficher[i+1])
-        #             Angles.append(afficher[i+2])
-        #     #print(Distances)
-        #     #print("angles :", Angles)
-        #     #print("Distances :", Distances)
-            
-        #     fig = plt.figure()
-        #     ax = fig.add_subplot(111, projection='polar')
-            
-            
-        #     for i in range(len(Angles)) : 
-        #         ax.scatter(Angles[i],Distances[i])
-            
-        #     ax.set_xticks(np.arange(0,2.0*np.pi,np.pi/6.0))
-        #     ax.set_ylim(0,10)
-        #     ax.set_yticks(np.arange(0,10,1.0))
-            
-            
-        #     plt.show()
-            
-            
             
    
     window.after(3000, lambda: refresh(Ox_Sanguin_info, Temp_info, Rythme_Card_info, Intensite_info))
@@ -415,6 +378,7 @@ Button_Acq['bg']='white'
 
 window.after(1000, lambda: refresh(Ox_Sanguin_info, Temp_info, Rythme_Card_info, Intensite_info))
 window.mainloop()
+
 
 
 

@@ -160,7 +160,7 @@ void uart_lidar_recieve(){
 				uint8_t lidar_message_a_transmettre[5] = {1, lidar_message_recu[1], lidar_message_recu[2], lidar_message_recu[3], lidar_message_recu[4]};
 
 				// on reduit le nombre de trames qu'on envoit
-				if (NUMtrame == 100){
+				if (NUMtrame >= 100){
 					HAL_UART_Transmit(&huart2, lidar_message_a_transmettre, 5, 100);
 					NUMtrame = 0;
 				}

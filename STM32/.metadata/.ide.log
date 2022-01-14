@@ -19630,3 +19630,7 @@
 2022-01-13 08:38:02,280 [INFO] IPUIPlugin:74 - create IPUIPlugin
 2022-01-13 08:38:02,349 [INFO] ApiDbMcu:468 - Load IP Config File for PDM2PCM
 2022-01-13 08:38:02,489 [INFO] OpenFileManager:333 - Restore cursor
+2022-01-14 13:33:23,213 [INFO] Activator:177 - 
+
+
+2022-01-14 13:33:23,213 [INFO] Activator:178 - !SESSION log4j initialized

@@ -113,7 +113,7 @@ int main(void)
 
 
 
-  reset_lidar();
+  //reset_lidar();
   demarrer_pwm_lidar();
   lidar_scan();
   //lidar_force_scan();
