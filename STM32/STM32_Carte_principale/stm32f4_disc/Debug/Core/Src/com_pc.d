@@ -29,7 +29,8 @@ Core/Src/com_pc.o: ../Core/Src/com_pc.c ../Core/Inc/com_pc.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
- ../Core/Inc/main.h ../Core/Inc/moteur.h
+ ../Core/Inc/main.h ../Core/Inc/moteur.h ../Core/Inc/com_FPGA_spi.h \
+ ../Core/Inc/spi.h
 
 ../Core/Inc/com_pc.h:
 
@@ -98,3 +99,7 @@ Core/Src/com_pc.o: ../Core/Src/com_pc.c ../Core/Inc/com_pc.h \
 ../Core/Inc/main.h:
 
 ../Core/Inc/moteur.h:
+
+../Core/Inc/com_FPGA_spi.h:
+
+../Core/Inc/spi.h:

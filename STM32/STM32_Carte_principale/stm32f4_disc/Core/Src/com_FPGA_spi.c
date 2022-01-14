@@ -162,7 +162,14 @@ void fct_vierge(){
 }
 
 
-
+void spi_transmission(){
+	HAL_SPI_Init( &hspi1 );
+	HAL_SPI_Transmit (&hspi1, txData, 2, 100);
+	while( hspi1.State == HAL_SPI_STATE_BUSY );
+	HAL_SPI_DeInit( &hspi1 );
+	//HAL_Delay(10);
+	return;
+}
 
 
 

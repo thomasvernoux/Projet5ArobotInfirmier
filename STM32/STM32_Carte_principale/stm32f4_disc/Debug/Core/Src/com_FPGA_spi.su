@@ -14,3 +14,4 @@ com_FPGA_spi.c:135:6:config_freq_PWM_p1	4	static
 com_FPGA_spi.c:141:6:config_freq_PWM_p16	4	static
 com_FPGA_spi.c:151:6:vit_rap_cyc	16	static
 com_FPGA_spi.c:159:6:fct_vierge	4	static
+com_FPGA_spi.c:165:6:spi_transmission	8	static

@@ -3,12 +3,13 @@
 #include "main.h"
 #include <String.h>
 #include "moteur.h"
+#include "com_FPGA_spi.h"
 
 
 
 // variable globale
 char message_recu_PC [100];
-
+extern uint8_t txData [2];
 int pwm = 0;
 
 //MOTOR_STATE_SPEED motor_state_speed;
@@ -52,7 +53,7 @@ void recevoir_message_pc(){
 
 void recevoir_message_pc2(){
 
-	if (UART2_rxBuffer_2[pc_message_recu_index] == '\r'){ // on est a la fin du message
+	if (UART2_rxBuffer_2[pc_message_recu_index] == 101){ // on est a la fin du message
 		strcpy((char *)message_recu_PC,(char *)UART2_rxBuffer_2);
 		pc_message_recu_index = 0;
 		traiter_message_pc();
@@ -68,6 +69,9 @@ void recevoir_message_pc2(){
 
 void traiter_message_pc(){
 
+
+	fct_vierge();
+
 	int a;
 
 
@@ -81,6 +85,15 @@ void traiter_message_pc(){
 		break;
 
 	case 1:   // avancer
+		fct_vierge();
+		moteur1();
+		cmd_marche();
+		spi_transmission();
+
+		fct_vierge();
+		moteur2();
+		cmd_marche();
+		spi_transmission();
 
 
 		break;
@@ -100,12 +113,25 @@ void traiter_message_pc(){
 		break;
 
 	case 5:   // controle PWM
+		fct_vierge();
+		moteur2();
+		config_freq_PWM();
+		txData[1] = message_recu_PC[1];
+		spi_transmission();
+		break;
 
-		a = 5;
+	case 6:  // contrôle du rapport cyclique
+		fct_vierge();
+		moteur2();
+		vit_rap_cyc(message_recu_PC[1]);
+		spi_transmission();
 
-		pwm = 2 * UART2_rxBuffer_2[1]; // on a un rapport *2
 		break;
 	}
+
+
+
+
 
 }
 
