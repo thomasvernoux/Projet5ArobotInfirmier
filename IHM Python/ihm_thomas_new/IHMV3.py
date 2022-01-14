@@ -44,23 +44,23 @@ import math
 
 
 def send_left():
-   values = bytearray([4, 13])
+   values = bytearray([4, 101])
    ser.write(values)
 
 def send_right():
-   values = bytearray([3, 13])
+   values = bytearray([3, 101])
    ser.write(values)
    
 def send_up():
-   values = bytearray([1, 13])
+   values = bytearray([1, 101])
    ser.write(values)
    
 def send_down():
-   values = bytearray([2, 13])
+   values = bytearray([2, 101])
    ser.write(values)
    
 def send_stop():
-   values = bytearray([0, 13])
+   values = bytearray([0, 101])
    ser.write(values)
    
 def send_pwm(pwm):
@@ -68,7 +68,15 @@ def send_pwm(pwm):
    print(int(pwm.get("1.0","end-1c")))
    print(type(pwm.get("1.0","end-1c")))
    print(type(int(pwm.get("1.0","end-1c"))))
-   values = bytearray([5,int(pwm.get("1.0","end-1c")), 13])
+   values = bytearray([5,int(pwm.get("1.0","end-1c")), 101])
+   ser.write(values)
+   
+def send_prescaler(Prescaler):
+   print(Prescaler.get("1.0","end-1c"))
+   print(int(Prescaler.get("1.0","end-1c")))
+   print(type(Prescaler.get("1.0","end-1c")))
+   print(type(int(Prescaler.get("1.0","end-1c"))))
+   values = bytearray([6,int(Prescaler.get("1.0","end-1c")), 101])
    ser.write(values)
    
 def send_database(Nom,Prenom,Adresse,Num):
@@ -105,7 +113,7 @@ lidar_distances = []
 lidar_taille_buffer = 500
 
 
-ser = serial.Serial('COM19', 115200)
+ser = serial.Serial('COM3', 115200)
 
 
     
@@ -140,9 +148,9 @@ def lidar_plt():
         
         
     amplitude = 250
-    plt.xlim(-amplitude, amplitude)
-    plt.ylim(-amplitude, amplitude)
-    plt.show()
+    #plt.xlim(-amplitude, amplitude)
+    #plt.ylim(-amplitude, amplitude)
+    #plt.show()
     
     print("ditances", len(lidar_angles), lidar_distances)
     print("angles", len(lidar_angles), lidar_angles)
@@ -337,9 +345,22 @@ PWM = Text(menu, width=10, height=1)
 PWM.configure(font=("Ubuntu Light", 18, "roman"))
 PWM.place(relx=0.89, rely=0.65, anchor=CENTER)
 
+Prescaler_Label = Label(text="Nouvelle valeur Prescaler :", foreground="white")
+Prescaler_Label.configure(font=("Ubuntu Light", 18, "roman"))
+Prescaler_Label.place(relx=0.73, rely=0.60, anchor=CENTER)
+Prescaler_Label['bg']='#2B50AA'
+Prescaler = Text(menu, width=10, height=1)
+Prescaler.configure(font=("Ubuntu Light", 18, "roman"))
+Prescaler.place(relx=0.89, rely=0.60, anchor=CENTER)
+
+Button_Prescaler = Button(menu, text="Mise à jour Prescaler",command = lambda: send_prescaler(Prescaler))
+Button_Prescaler.configure(font=("Ubuntu Light", 18, "roman"))
+Button_Prescaler.place(relx=0.75, rely=0.70, anchor=CENTER)
+Button_Prescaler['bg']='white'
+
 Button_PWM = Button(menu, text="Mise à jour PWM",command = lambda: send_pwm(PWM))
 Button_PWM.configure(font=("Ubuntu Light", 18, "roman"))
-Button_PWM.place(relx=0.75, rely=0.75, anchor=CENTER)
+Button_PWM.place(relx=0.75, rely=0.77, anchor=CENTER)
 Button_PWM['bg']='white'
 
 data = [0,0,0,0]
@@ -403,8 +424,3 @@ ser.close()
 print("serial fermé")
 plt.close('all')
 print("Figures fermees")
-
-
-
-
-
