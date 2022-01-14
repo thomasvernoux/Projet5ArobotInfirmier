@@ -9,21 +9,47 @@ void test_spi(){
 
 	fct_vierge();
 	moteur2();
-	cmd_marche_arret();
-
-	//txData[0] = 0b10000000;
-	txData[1] = 0b11001010;
-
-
-
-
+	cmd_marche();
 
 	HAL_SPI_Init( &hspi1 );
 	HAL_SPI_Transmit (&hspi1, txData, 2, 100);
 	while( hspi1.State == HAL_SPI_STATE_BUSY );
 	HAL_SPI_DeInit( &hspi1 );
-
 	HAL_Delay(10);
+
+
+
+	fct_vierge();
+	moteur2();
+	vit_rap_cyc(64);
+
+	HAL_SPI_Init( &hspi1 );
+	HAL_SPI_Transmit (&hspi1, txData, 2, 100);
+	while( hspi1.State == HAL_SPI_STATE_BUSY );
+	HAL_SPI_DeInit( &hspi1 );
+	HAL_Delay(10);
+
+
+	fct_vierge();
+	moteur2();
+	vit_rap_cyc(127);
+
+	HAL_SPI_Init( &hspi1 );
+	HAL_SPI_Transmit (&hspi1, txData, 2, 100);
+	while( hspi1.State == HAL_SPI_STATE_BUSY );
+	HAL_SPI_DeInit( &hspi1 );
+	HAL_Delay(10);
+
+	fct_vierge();
+	moteur2();
+	vit_rap_cyc(13);
+
+	HAL_SPI_Init( &hspi1 );
+	HAL_SPI_Transmit (&hspi1, txData, 2, 100);
+	while( hspi1.State == HAL_SPI_STATE_BUSY );
+	HAL_SPI_DeInit( &hspi1 );
+	HAL_Delay(10);
+
 
 	return;
 }
@@ -60,8 +86,8 @@ void moteur2(){
  */
 void cmd_marche_arret(){
 
-	txData[0] &=  0b11111001;
-	txData[0] |=  0b00000001;
+	txData[0] &=  0b11111010;
+	txData[0] |=  0b00000010;
 }
 
 void cmd_marche(){
@@ -131,9 +157,10 @@ void vit_rap_cyc(uint8_t vitesse){
 
 
 void fct_vierge(){
-	txData[0] &=  0b00000000;
-	txData[1] &=  0b00000000;
+	txData[0] =  0b00000000;
+	txData[1] =  0b00000000;
 }
+
 
 
 

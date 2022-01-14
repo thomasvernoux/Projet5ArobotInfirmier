@@ -48,9 +48,6 @@ void demarrer_pwm_lidar(){
 
   }
 
-
-
-
 /*
  * Test
  */
@@ -95,17 +92,15 @@ void reset_lidar(){
 	uint8_t Data[2] = {0xA5, 0x40};
 	HAL_UART_Transmit(&huart3, Data, 2, 100);
 	memset(lidar_message_recu,0,sizeof(lidar_message_recu));
+	HAL_Delay(1000);
 	return;
 }
-
-
 
 void lidar_get_info(){
 	uint8_t Data[2] = {0xA5, 0x50};
 	HAL_UART_Transmit(&huart3, Data, 2, 100);
 	return;
 }
-
 
 void lidar_scan(){
 	uint8_t Data[2] = {0xA5, 0x20};
@@ -118,8 +113,6 @@ void lidar_force_scan(){
 	HAL_UART_Transmit(&huart3, Data, 2, 100);
 	return;
 }
-
-
 
 void uart_lidar_recieve(){
 
@@ -159,7 +152,9 @@ void uart_lidar_recieve(){
 
 		case scan :
 
-			if (compteur == 5){ // modif attention (normalement le compteur va a 4
+			error_check();
+
+			if (compteur == 4){
 				compteur = 0;
 
 				uint8_t lidar_message_a_transmettre[5] = {1, lidar_message_recu[1], lidar_message_recu[2], lidar_message_recu[3], lidar_message_recu[4]};
@@ -181,9 +176,6 @@ void uart_lidar_recieve(){
 
 		default:
 			break;
-
-
-
 
 
 		}
@@ -215,6 +207,25 @@ void lidar_fin_du_message_recu(){      // on transmet le message au PC
 
 
 	return;
+
+
+
+}
+
+
+void error_check(){
+
+	uint8_t trame_copie = UART3_rxBuffer;
+
+	if (compteur == 0){
+		trame_copie &= 0b00000011;
+
+		if (trame_copie == 0b11 || trame_copie == 0b00){
+			while(1){	//ERREUR !!!
+			}
+		}
+
+	}
 
 
 

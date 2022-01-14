@@ -166,13 +166,13 @@ def refresh(Ox_Sanguin_info, Temp_info, Rythme_Card_info, Intensite_info):
 
         
     while len(j) >= 10:
-        
+
         if (j[0] == 1): # on a une donnee du lidar
             a1 = j[1]
             a2 = j[2]
             d1 = j[3]
             d2 = j[4]
-            
+
             print(a1, a2)
             print(d1, d2)
             

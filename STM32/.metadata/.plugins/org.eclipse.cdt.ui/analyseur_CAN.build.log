@@ -1,4 +1,4 @@
-11:40:41 **** Incremental Build of configuration Debug for project analyseur_CAN ****
+12:13:43 **** Incremental Build of configuration Debug for project analyseur_CAN ****
 make -j8 all 
 arm-none-eabi-size   analyseur_CAN.elf 
    text	   data	    bss	    dec	    hex	filename
@@ -6,5 +6,5 @@ arm-none-eabi-size   analyseur_CAN.elf
 Finished building: default.size.stdout
  
 
-11:40:42 Build Finished. 0 errors, 0 warnings. (took 289ms)
+12:13:43 Build Finished. 0 errors, 0 warnings. (took 292ms)
 
