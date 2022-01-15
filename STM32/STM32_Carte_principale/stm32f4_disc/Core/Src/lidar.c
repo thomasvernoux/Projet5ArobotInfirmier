@@ -152,12 +152,24 @@ void uart_lidar_recieve(){
 
 		case scan :
 
-			error_check();
+
 
 			if (compteur == 4){
 				compteur = 0;
 
-				uint8_t lidar_message_a_transmettre[5] = {1, lidar_message_recu[1], lidar_message_recu[2], lidar_message_recu[3], lidar_message_recu[4]};
+				if (error_check() == 1){
+					compteur = 4;
+				}
+
+				uint8_t a1 = lidar_message_recu[1] && 0b01111111;
+				uint8_t a2 = lidar_message_recu[2];
+				uint8_t d1 = lidar_message_recu[3];
+				uint8_t d2 = lidar_message_recu[4];
+
+
+
+
+				uint8_t lidar_message_a_transmettre[5] = {1, a1, a2, d1, d2};
 
 				// on reduit le nombre de trames qu'on envoit
 				if (NUMtrame >= 100){
@@ -213,22 +225,14 @@ void lidar_fin_du_message_recu(){      // on transmet le message au PC
 }
 
 
-void error_check(){
+int error_check(){
 
-	uint8_t trame_copie = UART3_rxBuffer;
-
-	if (compteur == 0){
-		trame_copie &= 0b00000011;
-
-		if (trame_copie == 0b11 || trame_copie == 0b00){
-			while(1){	//ERREUR !!!
-			}
+	uint8_t trame_copie = lidar_message_recu[0];
+	trame_copie &= 0b11000000;
+		if (trame_copie == 0b11000000 || trame_copie == 0b00000000){
+			return 1;
 		}
-
-	}
-
-
-
+	return 0;
 }
 
 

@@ -20,7 +20,7 @@ void uart_lidar_recieve();
 
 void lidar_fin_du_message_recu();
 
-void error_check();
+int error_check();
 
 
 
