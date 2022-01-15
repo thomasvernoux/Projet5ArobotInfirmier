@@ -22,11 +22,14 @@ enum LIDAR_STATE {stop, scan, force_scan};
 enum LIDAR_STATE lidar_state = stop;
 
 
+
 uint8_t taille_message_recu;
 uint8_t lidar_message_recu [20];
 int index_ecriture_message_recu;
 
 uint8_t octet_recu;
+
+int num_frame_scan = 0; // numerot de la frame en scan (pour le debug)
 
 /// variables du mode scan
 int compteur = 0;
@@ -155,6 +158,7 @@ void uart_lidar_recieve(){
 
 
 			if (compteur == 4){
+				num_frame_scan ++;
 				compteur = 0;
 
 				if (error_check() == 1){
