@@ -11,6 +11,7 @@ void reception_octet_data();
 
 void lidar_scan();
 void lidar_force_scan();
+void lidar_stop();
 
 
 void demarrer_pwm_lidar();
