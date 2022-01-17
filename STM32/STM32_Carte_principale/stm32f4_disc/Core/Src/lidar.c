@@ -40,13 +40,22 @@ int NUMtrame = 0;
 
 
 
+// DEBUG
+uint8_t historique_reception [1000];
+int indice_historique_reception = 0;
+
+
+
 
 
 void demarrer_pwm_lidar(){
 
-  TIM1->CCR1 = 30000;
+  TIM1->CCR1 = 20000;
   HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
   return;
+
+  // debug
+  memset(historique_reception,0,sizeof(historique_reception));
 
 
   }
@@ -117,9 +126,23 @@ void lidar_force_scan(){
 	return;
 }
 
+void lidar_stop(){
+	uint8_t Data[2] = {0xA5, 0x25};
+	HAL_UART_Transmit(&huart3, Data, 2, 100);
+	return;
+}
+
 void uart_lidar_recieve(){
 
 	octet_recu = UART3_rxBuffer;
+
+	historique_reception[indice_historique_reception] = UART3_rxBuffer;
+	indice_historique_reception ++;
+
+	if (indice_historique_reception == 500){
+		int a = 3;
+	}
+
 
 	switch (lidar_state){
 
@@ -161,7 +184,7 @@ void uart_lidar_recieve(){
 				num_frame_scan ++;
 				compteur = 0;
 
-				if (error_check() == 1){
+				if (error_check() == 0){
 					compteur = 4;
 				}
 
@@ -233,9 +256,20 @@ int error_check(){
 
 	uint8_t trame_copie = lidar_message_recu[0];
 	trame_copie &= 0b11000000;
-		if (trame_copie == 0b11000000 || trame_copie == 0b00000000){
-			return 1;
-		}
+
+
+	if (trame_copie == 0b11000000 || trame_copie == 0b00000000){
+		index_ecriture_message_recu = 0;
+		return 1; // erreur sur le bit S et S/
+	}
+
+	uint8_t trame_copie2 = lidar_message_recu[1];
+	trame_copie2 &= 0b10000000;
+	if (trame_copie2 == 0B0 && index_ecriture_message_recu >= 1){
+		index_ecriture_message_recu = 0;
+		return 1;
+	}
+
 	return 0;
 }
 
