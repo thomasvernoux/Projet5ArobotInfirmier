@@ -113,7 +113,7 @@ lidar_distances = []
 lidar_taille_buffer = 500
 
 
-ser = serial.Serial('COM3', 115200)
+ser = serial.Serial('COM19', 115200)
 
 
     
@@ -148,9 +148,9 @@ def lidar_plt():
         
         
     amplitude = 250
-    #plt.xlim(-amplitude, amplitude)
-    #plt.ylim(-amplitude, amplitude)
-    #plt.show()
+    plt.xlim(-amplitude, amplitude)
+    plt.ylim(-amplitude, amplitude)
+    plt.show()
     
     print("ditances", len(lidar_angles), lidar_distances)
     print("angles", len(lidar_angles), lidar_angles)
