@@ -115,11 +115,14 @@ int main(void)
 
   //reset_lidar();
   //demarrer_pwm_lidar();
+  lidar_stop();
+  HAL_Delay(50);
+
   //lidar_scan();
 
-  lidar_stop();
 
-  HAL_Delay(50);
+
+
   lidar_force_scan();
 
 
@@ -143,7 +146,7 @@ int main(void)
 
 	  HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_13);
 
-	  test_spi();
+	  //test_spi();
 	  //test_spi_inverse();
 
 	  //tests_lidar();

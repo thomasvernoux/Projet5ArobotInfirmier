@@ -44,13 +44,16 @@ int NUMtrame = 0;
 uint8_t historique_reception [1000];
 int indice_historique_reception = 0;
 
+int historique_angle [100];
+int indice_historique_angle = 0;
+
 
 
 
 
 void demarrer_pwm_lidar(){
 
-  TIM1->CCR1 = 20000;
+  TIM1->CCR1 = 30000;
   HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
   return;
 
@@ -137,10 +140,12 @@ void uart_lidar_recieve(){
 	octet_recu = UART3_rxBuffer;
 
 	historique_reception[indice_historique_reception] = UART3_rxBuffer;
-	indice_historique_reception ++;
+	//indice_historique_reception ++;
+
+
 
 	if (indice_historique_reception == 500){
-		int a = 3;
+		indice_historique_reception = 0;
 	}
 
 
@@ -184,14 +189,34 @@ void uart_lidar_recieve(){
 				num_frame_scan ++;
 				compteur = 0;
 
-				if (error_check() == 0){
-					compteur = 4;
+				if (error_check() == 1){
+					compteur = 0;
 				}
 
-				uint8_t a1 = lidar_message_recu[1] && 0b01111111;
+
+				uint8_t a1 = lidar_message_recu[1] >> 1;
 				uint8_t a2 = lidar_message_recu[2];
 				uint8_t d1 = lidar_message_recu[3];
 				uint8_t d2 = lidar_message_recu[4];
+
+				//historique_angle[indice_historique_angle] = (int)(128*(int)a2 + (int)a1)/64;
+				//historique_angle[indice_historique_angle] = 8;
+				indice_historique_angle ++;
+
+				uint16_t angle_16 = 0;
+				angle_16 = a2 << 8 | a1;
+				angle_16 = angle_16 >> 1;
+
+				historique_angle[indice_historique_angle] = (int)angle_16 / 64;
+
+
+				if (indice_historique_angle >= 100){
+					indice_historique_angle  = 0;
+				}
+
+				a1 = angle_16;
+				a2 = angle_16 >> 8;
+
 
 
 
@@ -199,7 +224,7 @@ void uart_lidar_recieve(){
 				uint8_t lidar_message_a_transmettre[5] = {1, a1, a2, d1, d2};
 
 				// on reduit le nombre de trames qu'on envoit
-				if (NUMtrame >= 100){
+				if (NUMtrame >= 10){
 					HAL_UART_Transmit(&huart2, lidar_message_a_transmettre, 5, 100);
 					NUMtrame = 0;
 				}

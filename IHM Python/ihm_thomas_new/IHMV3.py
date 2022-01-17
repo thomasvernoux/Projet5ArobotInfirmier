@@ -145,9 +145,9 @@ def lidar_plt():
         y = lidar_distances[i] * math.sin(3.14159*lidar_angles[i]/360)
         
         plt.plot(x,y, '.')
-        
-        
-    amplitude = 250
+    
+    
+    amplitude = 2000
     plt.xlim(-amplitude, amplitude)
     plt.ylim(-amplitude, amplitude)
     plt.show()
@@ -184,10 +184,10 @@ def refresh(Ox_Sanguin_info, Temp_info, Rythme_Card_info, Intensite_info):
             print(a1, a2, d1, d2)
             
             
-            angle = a2
+            angle = (a2 * 255 + a1)/64;
             
-            #print("angle",angle)
-            distance = d2
+            print("angle",angle)
+            distance = d2 * 255 + d1
         
             lidar_distances.append(distance)
             lidar_angles.append(angle)
