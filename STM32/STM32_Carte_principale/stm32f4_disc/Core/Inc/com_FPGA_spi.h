@@ -2,6 +2,9 @@
 #include "spi.h"
 
 
+uint8_t objectif_vitesse;
+uint8_t vitesse_actuelle;
+
 
 void test_spi();
 void test_spi_inverse();
@@ -29,6 +32,8 @@ void vit_rap_cyc(uint8_t vitesse);
 void spi_transmission();
 
 extern uint8_t txData [2];
+
+void callback_adoucissement_vitesse();
 
 
 

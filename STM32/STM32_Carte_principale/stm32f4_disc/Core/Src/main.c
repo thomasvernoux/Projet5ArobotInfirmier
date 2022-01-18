@@ -118,12 +118,8 @@ int main(void)
   lidar_stop();
   HAL_Delay(50);
 
-  //lidar_scan();
-
-
-
-
-  lidar_force_scan();
+  lidar_scan();
+  //lidar_force_scan();
 
 
 
@@ -151,7 +147,8 @@ int main(void)
 
 	  //tests_lidar();
 
-	  HAL_Delay(500);
+	  //HAL_Delay(500);
+	  callback_adoucissement_vitesse()
 
 
 	  /*

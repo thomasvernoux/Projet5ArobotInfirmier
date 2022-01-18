@@ -44,7 +44,7 @@ int NUMtrame = 0;
 uint8_t historique_reception [1000];
 int indice_historique_reception = 0;
 
-int historique_angle [100];
+int historique_angle [1000];
 int indice_historique_angle = 0;
 
 
@@ -210,21 +210,23 @@ void uart_lidar_recieve(){
 				historique_angle[indice_historique_angle] = (int)angle_16 / 64;
 
 
-				if (indice_historique_angle >= 100){
+				if (indice_historique_angle >= 900){
 					indice_historique_angle  = 0;
 				}
 
-				a1 = angle_16;
-				a2 = angle_16 >> 8;
+				//a1 = angle_16;
+				//a2 = angle_16 >> 8;
+
+				angle_16 = (int) (angle_16 / 64 / 1.42);
 
 
 
 
 
-				uint8_t lidar_message_a_transmettre[5] = {1, a1, a2, d1, d2};
+				uint8_t lidar_message_a_transmettre[5] = {1, angle_16, a2, d1, d2};
 
 				// on reduit le nombre de trames qu'on envoit
-				if (NUMtrame >= 10){
+				if (NUMtrame >= 2){
 					HAL_UART_Transmit(&huart2, lidar_message_a_transmettre, 5, 100);
 					NUMtrame = 0;
 				}
@@ -287,7 +289,6 @@ int error_check(){
 		index_ecriture_message_recu = 0;
 		return 1; // erreur sur le bit S et S/
 	}
-
 	uint8_t trame_copie2 = lidar_message_recu[1];
 	trame_copie2 &= 0b10000000;
 	if (trame_copie2 == 0B0 && index_ecriture_message_recu >= 1){

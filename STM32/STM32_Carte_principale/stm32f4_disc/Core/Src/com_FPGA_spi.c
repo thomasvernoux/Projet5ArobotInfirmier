@@ -3,6 +3,9 @@
 
 uint8_t txData [2] = {0b00000000, 0b00000000};
 
+extern uint8_t objectif_vitesse;
+extern uint8_t vitesse_actuelle;
+
 
 
 void test_spi(){
@@ -149,7 +152,7 @@ void config_freq_PWM_p16(){
  * attention c'est sur 7 bits
  */
 void vit_rap_cyc(uint8_t vitesse){
-	txData[0] &=  0b11111111;
+	txData[0] &=  0b00000000;
 	txData[0] |=  0b00000111;
 	txData[1] =  vitesse << 1;
 }
@@ -172,6 +175,42 @@ void spi_transmission(){
 }
 
 
+
+void callback_adoucissement_vitesse(){
+	HAL_Delay(1);
+
+	if (vitesse_actuelle < objectif_vitesse){
+		vitesse_actuelle += 1;
+
+		fct_vierge();
+		moteur2();
+		vit_rap_cyc(vitesse_actuelle);
+
+		HAL_SPI_Init( &hspi1 );
+		HAL_SPI_Transmit (&hspi1, txData, 2, 100);
+		while( hspi1.State == HAL_SPI_STATE_BUSY );
+		HAL_SPI_DeInit( &hspi1 );
+		HAL_Delay(10);
+
+
+
+	}
+	else if (vitesse_actuelle > objectif_vitesse){
+		viesse_actuelle -= 1;
+
+		fct_vierge();
+		moteur2();
+		vit_rap_cyc(vitesse_actuelle);
+
+		HAL_SPI_Init( &hspi1 );
+		HAL_SPI_Transmit (&hspi1, txData, 2, 100);
+		while( hspi1.State == HAL_SPI_STATE_BUSY );
+		HAL_SPI_DeInit( &hspi1 );
+		HAL_Delay(10);
+
+	}
+
+}
 
 /// CONFIG VALUE
 

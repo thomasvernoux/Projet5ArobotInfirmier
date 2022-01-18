@@ -22,11 +22,14 @@ enum LIDAR_STATE {stop, scan, force_scan};
 enum LIDAR_STATE lidar_state = stop;
 
 
+
 uint8_t taille_message_recu;
 uint8_t lidar_message_recu [20];
 int index_ecriture_message_recu;
 
 uint8_t octet_recu;
+
+int num_frame_scan = 0; // numerot de la frame en scan (pour le debug)
 
 /// variables du mode scan
 int compteur = 0;
@@ -34,6 +37,15 @@ int compteur = 0;
 
 // reducteur de trames
 int NUMtrame = 0;
+
+
+
+// DEBUG
+uint8_t historique_reception [1000];
+int indice_historique_reception = 0;
+
+int historique_angle [1000];
+int indice_historique_angle = 0;
 
 
 
@@ -45,11 +57,11 @@ void demarrer_pwm_lidar(){
   HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
   return;
 
+  // debug
+  memset(historique_reception,0,sizeof(historique_reception));
+
 
   }
-
-
-
 
 /*
  * Test
@@ -95,18 +107,15 @@ void reset_lidar(){
 	uint8_t Data[2] = {0xA5, 0x40};
 	HAL_UART_Transmit(&huart3, Data, 2, 100);
 	memset(lidar_message_recu,0,sizeof(lidar_message_recu));
-	HAL_Delay(10);
+	HAL_Delay(1000);
 	return;
 }
-
-
 
 void lidar_get_info(){
 	uint8_t Data[2] = {0xA5, 0x50};
 	HAL_UART_Transmit(&huart3, Data, 2, 100);
 	return;
 }
-
 
 void lidar_scan(){
 	uint8_t Data[2] = {0xA5, 0x20};
@@ -120,11 +129,25 @@ void lidar_force_scan(){
 	return;
 }
 
-
+void lidar_stop(){
+	uint8_t Data[2] = {0xA5, 0x25};
+	HAL_UART_Transmit(&huart3, Data, 2, 100);
+	return;
+}
 
 void uart_lidar_recieve(){
 
 	octet_recu = UART3_rxBuffer;
+
+	historique_reception[indice_historique_reception] = UART3_rxBuffer;
+	//indice_historique_reception ++;
+
+
+
+	if (indice_historique_reception == 500){
+		indice_historique_reception = 0;
+	}
+
 
 	switch (lidar_state){
 
@@ -160,15 +183,50 @@ void uart_lidar_recieve(){
 
 		case scan :
 
-			error_check();
+
 
 			if (compteur == 4){
+				num_frame_scan ++;
 				compteur = 0;
 
-				uint8_t lidar_message_a_transmettre[5] = {1, lidar_message_recu[1], lidar_message_recu[2], lidar_message_recu[3], lidar_message_recu[4]};
+				if (error_check() == 1){
+					compteur = 0;
+				}
+
+
+				uint8_t a1 = lidar_message_recu[1] >> 1;
+				uint8_t a2 = lidar_message_recu[2];
+				uint8_t d1 = lidar_message_recu[3];
+				uint8_t d2 = lidar_message_recu[4];
+
+				//historique_angle[indice_historique_angle] = (int)(128*(int)a2 + (int)a1)/64;
+				//historique_angle[indice_historique_angle] = 8;
+				indice_historique_angle ++;
+
+				uint16_t angle_16 = 0;
+				angle_16 = a2 << 8 | a1;
+				angle_16 = angle_16 >> 1;
+
+				historique_angle[indice_historique_angle] = (int)angle_16 / 64;
+
+
+				if (indice_historique_angle >= 900){
+					indice_historique_angle  = 0;
+				}
+
+				//a1 = angle_16;
+				//a2 = angle_16 >> 8;
+
+				angle_16 = (int)angle_16 / 64 / 1.42;
+
+
+
+
+
+				uint8_t lidar_message_a_transmettre[5] = {1, angle_16, a2, d1, d2};
 
 				// on reduit le nombre de trames qu'on envoit
-				if (NUMtrame == 100){
+				if (NUMtrame >= 2){
 					HAL_UART_Transmit(&huart2, lidar_message_a_transmettre, 5, 100);
 					NUMtrame = 0;
 				}
@@ -221,22 +279,25 @@ void lidar_fin_du_message_recu(){      // on transmet le message au PC
 }
 
 
-void error_check(){
+int error_check(){
 
-	uint8_t trame_copie = UART3_rxBuffer;
+	uint8_t trame_copie = lidar_message_recu[0];
+	trame_copie &= 0b11000000;
 
-	if (compteur == 0){
-		trame_copie &= 0b00000011;
 
-		if (trame_copie == 0b11 || trame_copie == 0b00){
-			while(1){	//ERREUR !!!
-			}
-		}
-
+	if (trame_copie == 0b11000000 || trame_copie == 0b00000000){
+		index_ecriture_message_recu = 0;
+		return 1; // erreur sur le bit S et S/
 	}
 
+	uint8_t trame_copie2 = lidar_message_recu[1];
+	trame_copie2 &= 0b10000000;
+	if (trame_copie2 == 0B0 && index_ecriture_message_recu >= 1){
+		index_ecriture_message_recu = 0;
+		return 1;
+	}
 
-
+	return 0;
 }
 
 

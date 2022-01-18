@@ -136,18 +136,21 @@ def lidar_plt():
         lidar_distances = lidar_distances  [indice_debut:]
     
     
-    
-            
+    #fig = plt.figure()
+    #ax = fig.add_subplot(111, projection='polar')   
             
     for i in range(len(lidar_angles)) : 
         
-        x = lidar_distances[i] * math.cos(3.14159*lidar_angles[i]/360)
-        y = lidar_distances[i] * math.sin(3.14159*lidar_angles[i]/360)
+        x = lidar_distances[i] * math.cos(2*3.14159*lidar_angles[i]/360)
+        y = lidar_distances[i] * math.sin(2*3.14159*lidar_angles[i]/360)
+        
+        #ax.set_xticks(lidar_angles[i])
+        #ax.set_yticks(lidar_distances[i])
         
         plt.plot(x,y, '.')
     
     
-    amplitude = 2000
+    amplitude = 1
     plt.xlim(-amplitude, amplitude)
     plt.ylim(-amplitude, amplitude)
     plt.show()
@@ -184,10 +187,11 @@ def refresh(Ox_Sanguin_info, Temp_info, Rythme_Card_info, Intensite_info):
             print(a1, a2, d1, d2)
             
             
-            angle = (a2 * 255 + a1)/64;
+            #angle = (a2 * 128 + a1)/64;
+            angle = 1.42 * a1;
             
             print("angle",angle)
-            distance = d2 * 255 + d1
+            distance = (d2 * 255 + d1)/4000
         
             lidar_distances.append(distance)
             lidar_angles.append(angle)
@@ -223,7 +227,7 @@ def refresh(Ox_Sanguin_info, Temp_info, Rythme_Card_info, Intensite_info):
         
             
    
-    window.after(3000, lambda: refresh(Ox_Sanguin_info, Temp_info, Rythme_Card_info, Intensite_info))
+    window.after(1000, lambda: refresh(Ox_Sanguin_info, Temp_info, Rythme_Card_info, Intensite_info))
 
     return
 

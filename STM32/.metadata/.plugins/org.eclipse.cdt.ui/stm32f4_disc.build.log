@@ -1,10 +1,14 @@
-11:37:37 **** Incremental Build of configuration Debug for project stm32f4_disc ****
+13:55:02 **** Incremental Build of configuration Debug for project stm32f4_disc ****
 make -j8 all 
-arm-none-eabi-size   stm32f4_disc.elf 
-   text	   data	    bss	    dec	    hex	filename
-  19440	     24	   4016	  23480	   5bb8	stm32f4_disc.elf
-Finished building: default.size.stdout
- 
+arm-none-eabi-gcc "../Core/Src/com_FPGA_spi.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/com_FPGA_spi.d" -MT"Core/Src/com_FPGA_spi.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/com_FPGA_spi.o"
+../Core/Src/com_FPGA_spi.c: In function 'callback_adoucissement_vitesse':
+../Core/Src/com_FPGA_spi.c:185:3: error: 'viesse_actuelle' undeclared (first use in this function); did you mean 'vitesse_actuelle'?
+  185 |   viesse_actuelle -= 1;
+      |   ^~~~~~~~~~~~~~~
+      |   vitesse_actuelle
+../Core/Src/com_FPGA_spi.c:185:3: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:61: Core/Src/com_FPGA_spi.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
 
-11:37:37 Build Finished. 0 errors, 0 warnings. (took 380ms)
+13:55:02 Build Failed. 2 errors, 0 warnings. (took 475ms)
 

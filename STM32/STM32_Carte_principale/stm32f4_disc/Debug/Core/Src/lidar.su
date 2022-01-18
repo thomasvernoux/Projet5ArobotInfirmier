@@ -7,6 +7,6 @@ lidar.c:120:6:lidar_scan	16	static
 lidar.c:126:6:lidar_force_scan	16	static
 lidar.c:132:6:lidar_stop	16	static
 lidar.c:138:6:uart_lidar_recieve	24	static
-lidar.c:250:6:reception_octet_data	8	static
-lidar.c:263:6:lidar_fin_du_message_recu	4	static
-lidar.c:280:5:error_check	16	static
+lidar.c:252:6:reception_octet_data	8	static
+lidar.c:265:6:lidar_fin_du_message_recu	4	static
+lidar.c:282:5:error_check	16	static

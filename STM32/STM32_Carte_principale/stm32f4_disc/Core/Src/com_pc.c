@@ -15,7 +15,8 @@ int pwm = 0;
 //MOTOR_STATE_SPEED motor_state_speed;
 
 
-
+extern uint8_t objectif_vitesse = 0;
+extern uint8_t vitesse_actuelle = 0;
 
 
 /*
@@ -123,7 +124,8 @@ void traiter_message_pc(){
 	case 6:  // contrôle du rapport cyclique
 		fct_vierge();
 		moteur2();
-		vit_rap_cyc(message_recu_PC[1]);
+		//vit_rap_cyc(message_recu_PC[1]);
+		objectif_vitesse = message_recu_PC[1];
 		spi_transmission();
 
 		break;
