@@ -31,7 +31,7 @@
 
 uint8_t UART2_rxBuffer;
 uint8_t UART3_rxBuffer;
-uint8_t UART2_rxBuffer_2 [100];
+uint8_t UART2_rxBuffer_2 [3];
 
 
 uint8_t UART2_txBuffer [50];

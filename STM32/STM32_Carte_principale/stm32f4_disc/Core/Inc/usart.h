@@ -47,7 +47,7 @@ extern uint8_t UART3_rxBuffer;
 extern uint8_t UART2_txBuffer [50];
 extern uint8_t UART3_txBuffer [50];
 
-extern uint8_t UART2_rxBuffer_2 [100];
+extern uint8_t UART2_rxBuffer_2 [3];
 
 extern uint8_t pc_message_recu [100];
 extern uint8_t pc_message_recu_index;

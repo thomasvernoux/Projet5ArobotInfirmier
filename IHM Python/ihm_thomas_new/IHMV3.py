@@ -151,9 +151,9 @@ def lidar_plt():
     
     
     amplitude = 1
-    plt.xlim(-amplitude, amplitude)
-    plt.ylim(-amplitude, amplitude)
-    plt.show()
+    #plt.xlim(-amplitude, amplitude)
+    #plt.ylim(-amplitude, amplitude)
+    #plt.show()
     
     print("ditances", len(lidar_angles), lidar_distances)
     print("angles", len(lidar_angles), lidar_angles)
@@ -341,7 +341,7 @@ Button_PWM_STOP.configure(font=("Ubuntu Light", 18, "roman"))
 Button_PWM_STOP.place(relx=0.75, rely=0.40, anchor=CENTER)
 Button_PWM_STOP['bg']='white'
 
-PWM_Label = Label(text="Nouvelle valeur PWM :", foreground="white")
+PWM_Label = Label(text="N valeur frequence :", foreground="white")
 PWM_Label.configure(font=("Ubuntu Light", 18, "roman"))
 PWM_Label.place(relx=0.73, rely=0.65, anchor=CENTER)
 PWM_Label['bg']='#2B50AA'
@@ -349,7 +349,7 @@ PWM = Text(menu, width=10, height=1)
 PWM.configure(font=("Ubuntu Light", 18, "roman"))
 PWM.place(relx=0.89, rely=0.65, anchor=CENTER)
 
-Prescaler_Label = Label(text="Nouvelle valeur Prescaler :", foreground="white")
+Prescaler_Label = Label(text="Rapport cyclique :", foreground="white")
 Prescaler_Label.configure(font=("Ubuntu Light", 18, "roman"))
 Prescaler_Label.place(relx=0.73, rely=0.60, anchor=CENTER)
 Prescaler_Label['bg']='#2B50AA'
@@ -357,12 +357,12 @@ Prescaler = Text(menu, width=10, height=1)
 Prescaler.configure(font=("Ubuntu Light", 18, "roman"))
 Prescaler.place(relx=0.89, rely=0.60, anchor=CENTER)
 
-Button_Prescaler = Button(menu, text="Mise à jour Prescaler",command = lambda: send_prescaler(Prescaler))
+Button_Prescaler = Button(menu, text="Mise à jour rapport cyclique",command = lambda: send_prescaler(Prescaler))
 Button_Prescaler.configure(font=("Ubuntu Light", 18, "roman"))
 Button_Prescaler.place(relx=0.75, rely=0.70, anchor=CENTER)
 Button_Prescaler['bg']='white'
 
-Button_PWM = Button(menu, text="Mise à jour PWM",command = lambda: send_pwm(PWM))
+Button_PWM = Button(menu, text="Mise à jour frequence",command = lambda: send_pwm(PWM))
 Button_PWM.configure(font=("Ubuntu Light", 18, "roman"))
 Button_PWM.place(relx=0.75, rely=0.77, anchor=CENTER)
 Button_PWM['bg']='white'

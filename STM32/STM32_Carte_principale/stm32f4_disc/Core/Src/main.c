@@ -117,14 +117,19 @@ int main(void)
 
 
 
+  objectif_vitesse = 0;
+  vitesse_actuelle = 0;
+
+
+
 
 
   //reset_lidar();
   //demarrer_pwm_lidar();
-  lidar_stop();
+  //lidar_stop();
   HAL_Delay(50);
 
-  lidar_scan();
+  //lidar_scan();
   //lidar_force_scan();
 
 
@@ -138,23 +143,18 @@ int main(void)
 
   //tests_lidar();
 
-  /*
-   * Config FPGA
-   */
-  fct_vierge();
-  config_freq_PWM_p127();
-  HAL_SPI_Init( &hspi1 );
-  HAL_SPI_Transmit (&hspi1, txData, 2, 100);
-  while( hspi1.State == HAL_SPI_STATE_BUSY );
-  HAL_SPI_DeInit( &hspi1 );
+
 
   /*
    * Test rampe
    */
   vitesse_actuelle = 0;
-  objectif_vitesse = 20;
+  //objectif_vitesse = 20;
 
   HAL_TIM_Base_Start_IT(&htim2);
+
+
+
 
   /* USER CODE END 2 */
 
@@ -166,7 +166,7 @@ int main(void)
 	  HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_13);
 
 	  //test_spi();
-	  //test_spi_inverse();
+
 
 	  //tests_lidar();
 
@@ -177,6 +177,32 @@ int main(void)
 	  /*
 	   * Debug !!
 	   */
+
+	  /*
+	 * Sequence test fpga
+	 */
+/*
+	fct_vierge();
+	moteur2();
+	config_freq_PWM_p127();
+	spi_transmission();
+
+	HAL_Delay(50);
+
+	fct_vierge();
+	moteur2();
+	vit_rap_cyc(30);
+	spi_transmission();
+
+	HAL_Delay(50);
+
+	fct_vierge();
+	moteur2();
+	vit_rap_cyc(60);
+	spi_transmission();
+
+	HAL_Delay(50);
+	*/
 
 
 

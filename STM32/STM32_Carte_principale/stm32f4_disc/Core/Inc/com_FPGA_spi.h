@@ -36,6 +36,9 @@ extern uint8_t txData [2];
 
 void callback_adoucissement_vitesse();
 
+void sens_rotation_arriere();
+void sens_rotation_avant();
+
 
 
 

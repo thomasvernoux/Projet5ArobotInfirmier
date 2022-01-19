@@ -7,4 +7,6 @@ void traiter_message_pc();
 
 extern int pwm;
 
+char message_recu_PC [100];
+
 

@@ -8,15 +8,15 @@
 
 
 // variable globale
-char message_recu_PC [100];
+extern char message_recu_PC [100];
 extern uint8_t txData [2];
 int pwm = 0;
 
 //MOTOR_STATE_SPEED motor_state_speed;
 
 
-extern uint8_t objectif_vitesse = 0;
-extern uint8_t vitesse_actuelle = 0;
+extern uint8_t objectif_vitesse;
+extern uint8_t vitesse_actuelle;
 
 
 /*
@@ -54,7 +54,18 @@ void recevoir_message_pc(){
 
 void recevoir_message_pc2(){
 
+
+/*
+	if (UART2_rxBuffer_2[2] == 101){
+		strcpy((char *)message_recu_PC,(char *)UART2_rxBuffer_2);
+		HAL_UART_Receive_IT(&huart2, UART2_rxBuffer_2, sizeof(UART2_rxBuffer_2));
+		traiter_message_pc();
+	}
+*/
+
+
 	if (UART2_rxBuffer_2[pc_message_recu_index] == 101){ // on est a la fin du message
+		pc_message_recu_index = 0;
 		strcpy((char *)message_recu_PC,(char *)UART2_rxBuffer_2);
 		pc_message_recu_index = 0;
 		traiter_message_pc();
@@ -65,42 +76,83 @@ void recevoir_message_pc2(){
 
 	pc_message_recu_index ++;
 
+
 }
 
 
 void traiter_message_pc(){
 
-
-	fct_vierge();
-
 	int a;
 
-
+	fct_vierge();
 
 	switch(message_recu_PC[0]){
 
 
 
 	case 0:   // stop
-		a = 0;
-		break;
-
-	case 1:   // avancer
 		fct_vierge();
 		moteur1();
-		cmd_marche();
+		cmd_arret();
 		spi_transmission();
 
 		fct_vierge();
 		moteur2();
-		cmd_marche();
+		cmd_arret();
 		spi_transmission();
+
+		break;
+
+	case 1:   // avancer
+
+		fct_vierge();
+		moteur1();
+		sens_rotation_avant();
+		spi_transmission();
+
+		fct_vierge();
+		moteur2();
+		sens_rotation_avant();
+		spi_transmission();
+
+
+		fct_vierge();
+		moteur1();
+		vit_rap_cyc(10); // on va a 10 pourcent
+		spi_transmission();
+
+		fct_vierge();
+		moteur2();
+		vit_rap_cyc(10);
+		spi_transmission();
+
 
 
 		break;
 
 	case 2:   // reculer
-		a = 2;
+
+		fct_vierge();
+		moteur1();
+		sens_rotation_arriere();
+		spi_transmission();
+
+		fct_vierge();
+		moteur2();
+		sens_rotation_arriere();
+		spi_transmission();
+
+
+		fct_vierge();
+		moteur1();
+		vit_rap_cyc(10); // on va a 10 pourcent
+		spi_transmission();
+
+		fct_vierge();
+		moteur2();
+		vit_rap_cyc(10);
+		spi_transmission();
+
 
 		break;
 
@@ -117,15 +169,15 @@ void traiter_message_pc(){
 		fct_vierge();
 		moteur2();
 		config_freq_PWM();
-		txData[1] = message_recu_PC[1];
+		txData[1] = message_recu_PC[1] << 1;
 		spi_transmission();
 		break;
 
 	case 6:  // contrôle du rapport cyclique
 		fct_vierge();
 		moteur2();
-		//vit_rap_cyc(message_recu_PC[1]);  // modif pour la rampe d'accélération
-		objectif_vitesse = message_recu_PC[1];
+		vit_rap_cyc(message_recu_PC[1]);  // modif pour la rampe d'accélération
+		//objectif_vitesse = message_recu_PC[1];
 		spi_transmission();
 
 		break;
