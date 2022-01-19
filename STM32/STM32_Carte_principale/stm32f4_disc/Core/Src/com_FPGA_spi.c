@@ -141,6 +141,12 @@ void config_freq_PWM_p1(){
 	txData[1] =  0b00000010;
 }
 
+void config_freq_PWM_p127(){
+	txData[0] &=  0b11111100;
+	txData[0] |=  0b00000100;
+	txData[1] =  127 << 1;
+}
+
 void config_freq_PWM_p16(){
 	txData[0] &=  0b11111100;
 	txData[0] |=  0b00000100;
@@ -177,7 +183,6 @@ void spi_transmission(){
 
 
 void callback_adoucissement_vitesse(){
-	HAL_Delay(1);
 
 	if (vitesse_actuelle < objectif_vitesse){
 		vitesse_actuelle += 1;
@@ -190,13 +195,12 @@ void callback_adoucissement_vitesse(){
 		HAL_SPI_Transmit (&hspi1, txData, 2, 100);
 		while( hspi1.State == HAL_SPI_STATE_BUSY );
 		HAL_SPI_DeInit( &hspi1 );
-		HAL_Delay(10);
 
 
 
 	}
 	else if (vitesse_actuelle > objectif_vitesse){
-		viesse_actuelle -= 1;
+		vitesse_actuelle -= 1;
 
 		fct_vierge();
 		moteur2();
@@ -206,8 +210,13 @@ void callback_adoucissement_vitesse(){
 		HAL_SPI_Transmit (&hspi1, txData, 2, 100);
 		while( hspi1.State == HAL_SPI_STATE_BUSY );
 		HAL_SPI_DeInit( &hspi1 );
-		HAL_Delay(10);
+		HAL_Delay(100);
 
+	}
+
+	else if (vitesse_actuelle == objectif_vitesse){
+		int a = 3; // onjectif atteint
+		a++;
 	}
 
 }

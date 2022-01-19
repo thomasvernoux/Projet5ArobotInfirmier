@@ -124,7 +124,7 @@ void traiter_message_pc(){
 	case 6:  // contrôle du rapport cyclique
 		fct_vierge();
 		moteur2();
-		//vit_rap_cyc(message_recu_PC[1]);
+		//vit_rap_cyc(message_recu_PC[1]);  // modif pour la rampe d'accélération
 		objectif_vitesse = message_recu_PC[1];
 		spi_transmission();
 

@@ -34,6 +34,10 @@
 #include "spi.h"
 #include "moteur.h"
 
+extern uint8_t objectif_vitesse;
+extern uint8_t vitesse_actuelle;
+
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -103,12 +107,14 @@ int main(void)
   MX_SPI1_Init();
   MX_TIM1_Init();
   MX_USART6_UART_Init();
+  MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
 
 
 
   HAL_UART_Receive_IT(&huart2, UART2_rxBuffer_2, sizeof(&UART2_rxBuffer_2));
   HAL_UART_Receive_IT(&huart3, &UART3_rxBuffer, 1);
+
 
 
 
@@ -132,6 +138,23 @@ int main(void)
 
   //tests_lidar();
 
+  /*
+   * Config FPGA
+   */
+  fct_vierge();
+  config_freq_PWM_p127();
+  HAL_SPI_Init( &hspi1 );
+  HAL_SPI_Transmit (&hspi1, txData, 2, 100);
+  while( hspi1.State == HAL_SPI_STATE_BUSY );
+  HAL_SPI_DeInit( &hspi1 );
+
+  /*
+   * Test rampe
+   */
+  vitesse_actuelle = 0;
+  objectif_vitesse = 20;
+
+  HAL_TIM_Base_Start_IT(&htim2);
 
   /* USER CODE END 2 */
 
@@ -148,7 +171,7 @@ int main(void)
 	  //tests_lidar();
 
 	  //HAL_Delay(500);
-	  callback_adoucissement_vitesse()
+	  //callback_adoucissement_vitesse();
 
 
 	  /*

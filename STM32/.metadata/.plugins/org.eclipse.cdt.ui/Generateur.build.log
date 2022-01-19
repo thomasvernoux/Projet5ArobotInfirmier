@@ -1,4 +1,4 @@
-13:55:01 **** Incremental Build of configuration Debug for project Generateur ****
+13:25:37 **** Incremental Build of configuration Debug for project Generateur ****
 make -j8 all 
 arm-none-eabi-size   Generateur.elf 
    text	   data	    bss	    dec	    hex	filename
@@ -6,5 +6,5 @@ arm-none-eabi-size   Generateur.elf
 Finished building: default.size.stdout
  
 
-13:55:01 Build Finished. 0 errors, 0 warnings. (took 326ms)
+13:25:37 Build Finished. 0 errors, 0 warnings. (took 270ms)
 

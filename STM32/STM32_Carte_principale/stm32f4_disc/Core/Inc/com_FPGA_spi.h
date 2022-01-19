@@ -26,6 +26,7 @@ void cmd_arret();
 void config_freq_PWM();
 void config_freq_PWM_p1();
 void config_freq_PWM_p16();
+void config_freq_PWM_p127();
 
 void vit_rap_cyc(uint8_t vitesse);
 
