@@ -1,0 +1,8 @@
+
+
+
+
+
+void init_joueurs();
+void retirer_un_centieme();
+void afficher_ecran();

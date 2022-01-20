@@ -1,0 +1,20 @@
+18:17:33 **** Incremental Build of configuration Debug for project pendule_echecs_v2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/echecs.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/echecs.d" -MT"Core/Src/echecs.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/echecs.o"
+arm-none-eabi-gcc -o "pendule_echecs_v2.elf" @"objects.list"   -mcpu=cortex-m3 -T"A:\Bureau\Codes\STM32\pendule_echecs_v2\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pendule_echecs_v2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pendule_echecs_v2.elf
+ 
+arm-none-eabi-size   pendule_echecs_v2.elf 
+arm-none-eabi-objdump -h -S  pendule_echecs_v2.elf  > "pendule_echecs_v2.list"
+arm-none-eabi-objcopy  -O binary  pendule_echecs_v2.elf  "pendule_echecs_v2.bin"
+   text	   data	    bss	    dec	    hex	filename
+   9248	     36	   1700	  10984	   2ae8	pendule_echecs_v2.elf
+Finished building: default.size.stdout
+ 
+Finished building: pendule_echecs_v2.bin
+ 
+Finished building: pendule_echecs_v2.list
+ 
+
+18:17:34 Build Finished. 0 errors, 0 warnings. (took 1s.48ms)
+

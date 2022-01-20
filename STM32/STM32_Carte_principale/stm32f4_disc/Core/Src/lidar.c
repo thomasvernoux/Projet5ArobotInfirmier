@@ -145,7 +145,12 @@ void uart_lidar_recieve(){
 
 
 	if (indice_historique_reception == 500){
+<<<<<<< Updated upstream
 		indice_historique_reception = 0;
+=======
+
+		indice_historique_reception == 0;
+>>>>>>> Stashed changes
 	}
 
 
@@ -193,8 +198,12 @@ void uart_lidar_recieve(){
 					compteur = 0;
 				}
 
+<<<<<<< Updated upstream
 
 				uint8_t a1 = lidar_message_recu[1] >> 1;
+=======
+				uint8_t a1 = (lidar_message_recu[1] & 0b11111110) >> 1;
+>>>>>>> Stashed changes
 				uint8_t a2 = lidar_message_recu[2];
 				uint8_t d1 = lidar_message_recu[3];
 				uint8_t d2 = lidar_message_recu[4];
@@ -225,8 +234,13 @@ void uart_lidar_recieve(){
 
 				uint8_t lidar_message_a_transmettre[5] = {1, angle_16, a2, d1, d2};
 
+<<<<<<< Updated upstream
 				// on reduit le nombre de trames qu'on envoit
 				if (NUMtrame >= 2){
+=======
+				// on reduit le nombre de trames qu'on envoie
+				if (NUMtrame >= 1){
+>>>>>>> Stashed changes
 					HAL_UART_Transmit(&huart2, lidar_message_a_transmettre, 5, 100);
 					NUMtrame = 0;
 				}

@@ -1,18 +1,10 @@
-19:44:56 **** Incremental Build of configuration Debug for project stm32f4_disc ****
+18:16:06 **** Incremental Build of configuration Debug for project stm32f4_disc ****
 make -j4 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-In file included from ../Core/Inc/rplidar_driver.h:36,
-                 from ../Core/Inc/rplidar.h:42,
-                 from ../Core/Src/main.c:37:
-../Core/Inc/sl_lidar_driver.h:35:2: error: #error "The Slamtec LIDAR SDK requires a C++ compiler to be built"
-   35 | #error "The Slamtec LIDAR SDK requires a C++ compiler to be built"
-      |  ^~~~~
-../Core/Inc/sl_lidar_driver.h:38:10: fatal error: vector: No such file or directory
-   38 | #include <vector>
-      |          ^~~~~~~~
-compilation terminated.
-make: *** [Core/Src/subdir.mk:61: Core/Src/main.o] Error 1
-"make -j4 all" terminated with exit code 2. Build might be incomplete.
+arm-none-eabi-size   stm32f4_disc.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19860	     24	   3608	  23492	   5bc4	stm32f4_disc.elf
+Finished building: default.size.stdout
+ 
 
-19:44:56 Build Failed. 3 errors, 0 warnings. (took 491ms)
+18:16:06 Build Finished. 0 errors, 0 warnings. (took 350ms)
 

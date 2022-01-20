@@ -1,0 +1,136 @@
+#include "echecs.h"
+#include "main.h"
+#include <LiquidCrystal.h>
+#include "stm32f1xx_hal.h"
+
+
+
+
+int time = 10; // temps des joueurs en minutes
+
+
+enum STATE {stop, joueur1, joueur2, pause, selection_du_mode};
+
+
+struct JOUEUR{
+	uint16_t minutes;
+	uint16_t secondes;
+	uint16_t centiemes;
+};
+
+
+struct JOUEUR j_1;
+struct JOUEUR j_2;
+
+
+
+
+enum STATE state = stop;
+
+LiquidCrystal(GPIOA, rs, rw, enable, d0, d1, d2, d3);
+
+
+
+/*
+ * Initialise le temps des joueurs
+ */
+void init_joueurs(){
+	j_1.minutes = time;
+	j_1.secondes = 0;
+	j_1.centiemes = 0;
+
+	j_2.minutes = time;
+	j_2.secondes = 0;
+	j_2.centiemes = 0;
+}
+
+/*
+ * Enlève un centième a l'un des joueurs si la partie est en cours
+ */
+void retirer_un_centieme(){
+
+	afficher_ecran();
+
+
+	switch (state){
+	case joueur1:
+		j_1.centiemes -=1;
+		if (j_1.centiemes == 0){
+			j_1.centiemes = 99;
+			j_1.secondes -=1;
+		}
+		if (j_1.secondes == 0){
+					j_1.secondes = 59;
+					j_1.minutes -=1;
+				}
+		break;
+
+	case joueur2:
+		j_2.centiemes -=1;
+				if (j_2.centiemes == 0){
+					j_2.centiemes = 99;
+					j_2.secondes -=1;
+				}
+				if (j_2.secondes == 0){
+							j_2.secondes = 59;
+							j_2.minutes -=1;
+						}
+				break;
+	default :
+		break;
+	}
+}
+
+void afficher_ecran(){
+	clear();
+	home();
+	print("test");
+}
+
+
+
+/*
+ * LCD
+ */
+
+
+void start_screen(){
+
+
+
+
+	return;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

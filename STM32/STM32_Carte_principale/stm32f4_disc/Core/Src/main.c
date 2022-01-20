@@ -120,6 +120,7 @@ int main(void)
   objectif_vitesse = 0;
   vitesse_actuelle = 0;
 
+<<<<<<< Updated upstream
 
 
 
@@ -130,6 +131,15 @@ int main(void)
   HAL_Delay(50);
 
   //lidar_scan();
+=======
+  //reset_lidar();
+  demarrer_pwm_lidar();
+  lidar_scan();
+
+  //lidar_stop();
+
+  //HAL_Delay(50);
+>>>>>>> Stashed changes
   //lidar_force_scan();
 
 
@@ -164,9 +174,15 @@ int main(void)
   {
 
 	  HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_13);
+	  uint8_t test[3] = {1,2,3};
+	  HAL_UART_Transmit(&huart2, test, 3, 100);
 
 	  //test_spi();
+<<<<<<< Updated upstream
 
+=======
+	  //test_spi_inverse();
+>>>>>>> Stashed changes
 
 	  //tests_lidar();
 
@@ -293,4 +309,3 @@ void assert_failed(uint8_t *file, uint32_t line)
 }
 #endif /* USE_FULL_ASSERT */
 
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
