@@ -220,7 +220,7 @@ void TIM2_IRQHandler(void)
   HAL_TIM_IRQHandler(&htim2);
   /* USER CODE BEGIN TIM2_IRQn 1 */
 
-  //callback_adoucissement_vitesse();
+  callback_adoucissement_vitesse();
 
 
 

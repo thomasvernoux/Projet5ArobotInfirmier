@@ -63,18 +63,42 @@ void recevoir_message_pc2(){
 	}
 */
 
+	message_recu_PC[pc_message_recu_index] = UART2_rxBuffer;
+	pc_message_recu_index ++;
 
-	if (UART2_rxBuffer_2[pc_message_recu_index] == 101){ // on est a la fin du message
+
+	if (UART2_rxBuffer == 101){ // on est a la fin du message
+		pc_message_recu_index = 0;
+
+
+		traiter_message_pc();
+
+		message_recu_PC[0] = 0;
+		message_recu_PC[1] = 0;
+		message_recu_PC[2] = 0;
+		message_recu_PC[3] = 0;
+
+
+	}
+
+	HAL_UART_Receive_IT(&huart2, &UART2_rxBuffer, 1);
+
+
+	/*
+	 * if (UART2_rxBuffer_2[pc_message_recu_index] == 101){ // on est a la fin du message
 		pc_message_recu_index = 0;
 		strcpy((char *)message_recu_PC,(char *)UART2_rxBuffer_2);
 		pc_message_recu_index = 0;
 		traiter_message_pc();
 
 		HAL_UART_Abort(&huart2);
-		HAL_UART_Receive_IT(&huart2, UART2_rxBuffer_2, sizeof(UART2_rxBuffer_2));
+		MX_USART2_UART_Init();
+		HAL_Delay(10);
+		HAL_UART_Receive_IT(&huart2, UART2_rxBuffer_2, sizeof(&UART2_rxBuffer_2));
 	}
 
 	pc_message_recu_index ++;
+	 */
 
 
 }
@@ -174,11 +198,11 @@ void traiter_message_pc(){
 		break;
 
 	case 6:  // contrôle du rapport cyclique
-		fct_vierge();
-		moteur2();
-		vit_rap_cyc(message_recu_PC[1]);  // modif pour la rampe d'accélération
-		//objectif_vitesse = message_recu_PC[1];
-		spi_transmission();
+		//fct_vierge();
+		//moteur2();
+		//vit_rap_cyc(message_recu_PC[1]);  // modif pour la rampe d'accélération
+		objectif_vitesse = message_recu_PC[1];
+		//spi_transmission();
 
 		break;
 	}

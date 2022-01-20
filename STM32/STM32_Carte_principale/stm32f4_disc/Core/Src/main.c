@@ -112,7 +112,7 @@ int main(void)
 
 
 
-  HAL_UART_Receive_IT(&huart2, UART2_rxBuffer_2, sizeof(&UART2_rxBuffer_2));
+  HAL_UART_Receive_IT(&huart2, &UART2_rxBuffer, 1);
   HAL_UART_Receive_IT(&huart3, &UART3_rxBuffer, 1);
 
 
